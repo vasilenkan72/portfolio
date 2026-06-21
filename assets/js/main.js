@@ -386,6 +386,103 @@ function renderReviews() {
 })();
 
 /* ════════════════════
+   ROI CALCULATOR
+════════════════════ */
+(function() {
+  const modal     = $('#roiModal');
+  if (!modal) return;
+  const overlay   = $('#roiOverlay');
+  const closeBtn  = $('#roiClose');
+  const openBtn   = $('#openRoi');
+  const empRange  = $('#roiEmp');
+  const empVal    = $('#roiEmpVal');
+  const salaryInp = $('#roiSalary');
+  const routRange = $('#roiRoutine');
+  const routVal   = $('#roiRoutineVal');
+  const presets   = $$('.roi-preset');
+  const outLoss   = $('#roiLoss');
+  const outSave   = $('#roiSave');
+  const outYear   = $('#roiYear');
+  const outROI    = $('#roiROI');
+  const payText   = $('#roiPaybackText');
+  const ctaLink   = $('#roiCTA');
+
+  let implementCost = 1500;
+
+  function openModal() {
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    calculate();
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (openBtn) openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  ctaLink.addEventListener('click', closeModal);
+
+  presets.forEach(p => {
+    p.addEventListener('click', () => {
+      presets.forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      implementCost = parseInt(p.dataset.cost);
+      calculate();
+    });
+  });
+
+  empRange.addEventListener('input',  () => { empVal.textContent  = empRange.value;        calculate(); });
+  salaryInp.addEventListener('input', calculate);
+  routRange.addEventListener('input', () => { routVal.textContent = routRange.value + '%'; calculate(); });
+
+  function fmt(n) { return new Intl.NumberFormat('ru-RU').format(Math.round(n)); }
+
+  function plural(n, one, two, five) {
+    const m10 = n % 10, m100 = n % 100;
+    if (m100 >= 11 && m100 <= 14) return five;
+    if (m10 === 1) return one;
+    if (m10 >= 2 && m10 <= 4) return two;
+    return five;
+  }
+
+  function calculate() {
+    const emp     = parseInt(empRange.value)    || 1;
+    const salary  = parseFloat(salaryInp.value) || 0;
+    const routine = parseInt(routRange.value)   / 100;
+
+    const monthLoss = emp * salary * routine;
+    const monthSave = monthLoss * 0.80;
+    const yearSave  = monthSave * 12;
+    const payback   = monthSave > 0 ? Math.ceil(implementCost / monthSave) : 0;
+    const roi3      = yearSave  > 0 ? Math.round(((yearSave * 3 - implementCost) / implementCost) * 100) : 0;
+
+    outLoss.textContent = salary > 0 ? fmt(monthLoss) + ' BYN' : '—';
+    outSave.textContent = salary > 0 ? fmt(monthSave) + ' BYN' : '—';
+    outYear.textContent = salary > 0 ? fmt(yearSave)  + ' BYN' : '—';
+    outROI.textContent  = salary > 0 ? roi3 + '%'              : '—';
+
+    payText.textContent = '';
+    if (salary <= 0) {
+      payText.textContent = 'Укажите зарплату сотрудников для расчёта';
+    } else {
+      const mo = plural(payback, 'месяц', 'месяца', 'месяцев');
+      const strong = document.createElement('strong');
+      strong.textContent = payback + ' ' + mo;
+      payText.append('ИИ-агент окупится за ');
+      payText.append(strong);
+      payText.append(' и начнёт приносить чистую прибыль');
+    }
+  }
+
+  calculate();
+})();
+
+/* ════════════════════
    INIT
 ════════════════════ */
 renderMarquee();

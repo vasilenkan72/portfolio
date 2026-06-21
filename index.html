@@ -67,9 +67,9 @@
           Внедряю автономных ИИ-агентов под ключ. Пока ваши менеджеры заняты рутиной — мои ИИ-системы рассчитывают стоимость проектов за 30 секунд, закрывают 80% вопросов в Telegram 24/7 и удерживают клиентов без выгорания и больничных.
         </p>
         <div class="hero__cta reveal-fade" style="--d:.52s">
-          <a href="#contact" class="btn btn-primary magnetic"
+          <button id="openRoi" class="btn btn-primary magnetic"
              data-ru="Рассчитать окупаемость ИИ-агента"
-             data-en="Calculate AI Agent ROI">Рассчитать окупаемость ИИ-агента</a>
+             data-en="Calculate AI Agent ROI">Рассчитать окупаемость ИИ-агента</button>
           <a href="#portfolio" class="btn btn-ghost magnetic"
              data-ru="Посмотреть работы"
              data-en="See my work">Посмотреть работы</a>
@@ -320,6 +320,83 @@
       </div>
     </div>
   </footer>
+
+  <!-- ROI CALCULATOR MODAL -->
+  <div id="roiModal" class="roi-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="roi-modal__overlay" id="roiOverlay"></div>
+    <div class="roi-modal__box">
+      <button class="roi-modal__close" id="roiClose" aria-label="Закрыть">×</button>
+      <h2 class="roi-modal__title" data-ru="Калькулятор окупаемости ИИ-агента" data-en="AI Agent ROI Calculator">Калькулятор окупаемости ИИ-агента</h2>
+      <p class="roi-modal__sub" data-ru="Введите параметры бизнеса — получите реальные цифры" data-en="Enter your business parameters — get real numbers">Введите параметры бизнеса — получите реальные цифры</p>
+
+      <div class="roi-modal__body">
+        <div class="roi-inputs">
+
+          <div class="roi-field">
+            <label>Сотрудников на рутинных задачах &nbsp;<span class="roi-field__val" id="roiEmpVal">3</span></label>
+            <input type="range" class="roi-range" id="roiEmp" min="1" max="30" value="3">
+          </div>
+
+          <div class="roi-field">
+            <label>Средняя зарплата одного сотрудника, BYN/мес</label>
+            <input type="number" class="roi-input" id="roiSalary" placeholder="1500" value="1500" min="0">
+          </div>
+
+          <div class="roi-field">
+            <label>Сколько времени уходит на рутину &nbsp;<span class="roi-field__val" id="roiRoutineVal">40%</span></label>
+            <input type="range" class="roi-range" id="roiRoutine" min="10" max="90" value="40" step="5">
+          </div>
+
+          <div class="roi-field">
+            <label>Стоимость внедрения ИИ-агента</label>
+            <div class="roi-presets">
+              <button class="roi-preset" data-cost="500">Базовый<br><span>500 BYN</span></button>
+              <button class="roi-preset active" data-cost="1500">Стандарт<br><span>1 500 BYN</span></button>
+              <button class="roi-preset" data-cost="3000">Комплекс<br><span>3 000 BYN</span></button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="roi-results">
+          <div class="roi-results__title">Результат расчёта</div>
+
+          <div class="roi-metric">
+            <div class="roi-metric__label">Затраты на рутину сейчас</div>
+            <div class="roi-metric__value" id="roiLoss">—</div>
+            <div class="roi-metric__note">в месяц</div>
+          </div>
+
+          <div class="roi-metric">
+            <div class="roi-metric__label">Экономия с ИИ-агентом</div>
+            <div class="roi-metric__value roi-accent" id="roiSave">—</div>
+            <div class="roi-metric__note">в месяц (агент берёт 80% рутины)</div>
+          </div>
+
+          <div class="roi-divider"></div>
+
+          <div class="roi-metric">
+            <div class="roi-metric__label">Экономия за год</div>
+            <div class="roi-metric__value" id="roiYear">—</div>
+          </div>
+
+          <div class="roi-metric">
+            <div class="roi-metric__label">ROI за 3 года</div>
+            <div class="roi-metric__value roi-accent" id="roiROI">—</div>
+          </div>
+
+          <div class="roi-payback">
+            <span class="roi-payback__icon">⚡</span>
+            <div class="roi-payback__text" id="roiPaybackText">
+              Укажите зарплату сотрудников для расчёта
+            </div>
+          </div>
+
+          <a href="#contact" class="roi-cta" id="roiCTA">Хочу такой ИИ-агент →</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
