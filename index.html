@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Наталья Василенко — AI Expert & Prompt Engineer</title>
+  <meta name="description" content="Внедряю автономных ИИ-агентов и виртуальных фрилансеров под ключ. ИИ-эксперт, промпт-инженер, вайбкодер из Гродно.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a class="nav__logo" href="#hero" aria-label="На главную">
+        <span class="logo-bracket">[</span>N<span class="logo-dot">·</span>AI<span class="logo-bracket">]</span>
+      </a>
+      <ul class="nav__list" id="navList">
+        <li><a href="#about"     data-ru="Обо мне"  data-en="About">Обо мне</a></li>
+        <li><a href="#skills"    data-ru="Стек"      data-en="Stack">Стек</a></li>
+        <li><a href="#portfolio" data-ru="Работы"    data-en="Works">Работы</a></li>
+        <li><a href="#reviews"   data-ru="Отзывы"    data-en="Reviews">Отзывы</a></li>
+        <li><a href="#contact"   data-ru="Контакт"   data-en="Contact">Контакт</a></li>
+      </ul>
+      <div class="nav__right">
+        <button class="lang-btn" id="langToggle" aria-label="Switch language">EN</button>
+        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="hero__eyebrow reveal-fade">
+          <span class="eyebrow-line"></span>
+          <span data-ru="// AI эксперт · промпт-инженер · вайбкодер" data-en="// AI expert · prompt engineer · vibe coder">// AI эксперт · промпт-инженер · вайбкодер</span>
+        </p>
+        <p class="hero__name reveal-up" style="--d:.1s">
+          <span class="hero__name-solid">Наталья</span>
+          <span class="hero__name-stroke">Василенко</span>
+        </p>
+        <h1 class="hero__heading reveal-up" style="--d:.22s"
+            data-ru="Превращу хаос в вашем бизнесе в настоящие деньги."
+            data-en="I'll turn chaos in your business into real money.">
+          Превращу хаос в вашем бизнесе в настоящие деньги.
+        </h1>
+        <p class="hero__tagline reveal-fade" style="--d:.38s"
+           data-ru="Внедряю автономных ИИ-агентов под ключ. Пока ваши менеджеры заняты рутиной — мои ИИ-системы рассчитывают стоимость проектов за 30 секунд, закрывают 80% вопросов в Telegram 24/7 и удерживают клиентов без выгорания и больничных."
+           data-en="I deploy autonomous AI agents, turnkey. While your managers handle routine — my AI systems calculate project costs in 30 seconds, close 80% of Telegram inquiries 24/7, and retain clients without burnout or sick days.">
+          Внедряю автономных ИИ-агентов под ключ. Пока ваши менеджеры заняты рутиной — мои ИИ-системы рассчитывают стоимость проектов за 30 секунд, закрывают 80% вопросов в Telegram 24/7 и удерживают клиентов без выгорания и больничных.
+        </p>
+        <div class="hero__cta reveal-fade" style="--d:.52s">
+          <a href="#contact" class="btn btn-primary magnetic"
+             data-ru="Рассчитать окупаемость ИИ-агента"
+             data-en="Calculate AI Agent ROI">Рассчитать окупаемость ИИ-агента</a>
+          <a href="#portfolio" class="btn btn-ghost magnetic"
+             data-ru="Посмотреть работы"
+             data-en="See my work">Посмотреть работы</a>
+        </div>
+      </div>
+
+      <div class="hero__photo reveal-up" style="--d:.15s">
+        <div class="hero__photo-wrap">
+          <img src="assets/img/natalia.jpg" alt="Наталья Василенко" loading="eager">
+          <span class="photo-corner pc-tl"></span>
+          <span class="photo-corner pc-tr"></span>
+          <span class="photo-corner pc-bl"></span>
+          <span class="photo-corner pc-br"></span>
+        </div>
+        <div class="hero__photo-badge">
+          <span>3+</span>
+          <span data-ru="года в ИИ" data-en="years in AI">года в ИИ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-track"></div>
+      <span data-ru="скролл" data-en="scroll">скролл</span>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="about" id="about">
+    <div class="container">
+      <span class="section-tag reveal-fade" data-ru="// обо мне" data-en="// about">// обо мне</span>
+
+      <div class="about__grid">
+        <div class="about__visual reveal-up">
+          <div class="avatar-frame">
+            <div class="avatar-inner">
+              <img src="assets/img/natalia.jpg" alt="Наталья Василенко" class="avatar-photo">
+              <div class="avatar-ring-1"></div>
+              <div class="avatar-ring-2"></div>
+            </div>
+            <span class="corner c-tl"></span>
+            <span class="corner c-tr"></span>
+            <span class="corner c-bl"></span>
+            <span class="corner c-br"></span>
+          </div>
+          <div class="stats">
+            <div class="stat reveal-up" style="--d:.15s">
+              <span class="stat-num" data-target="3" data-suffix="+">0+</span>
+              <span class="stat-label" data-ru="года в ИИ" data-en="years in AI">года в ИИ</span>
+            </div>
+            <div class="stat reveal-up" style="--d:.3s">
+              <span class="stat-num" data-target="20" data-suffix="+">0+</span>
+              <span class="stat-label" data-ru="проектов" data-en="projects">проектов</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__text">
+          <h2 class="about__title reveal-up"
+              data-ru="Эксперт по внедрению ИИ-решений для бизнеса"
+              data-en="Expert in AI Solution Implementation for Business">
+            Эксперт по внедрению ИИ-решений для бизнеса
+          </h2>
+          <p class="about__desc reveal-up" style="--d:.1s"
+             data-ru="Профессиональный промпт-инженер, дизайнер и вайбкодер. Разрабатываю Telegram-ботов, автономных ИИ-агентов и комплексные веб-решения для бизнеса. Специализируюсь на Google Gemini, Claude Code и высокоэффективных системах без кода."
+             data-en="Professional prompt engineer, designer, and vibe coder. I build Telegram bots, autonomous AI agents, and complex web solutions for business. Specializing in Google Gemini, Claude Code, and high-performance no-code systems.">
+            Профессиональный промпт-инженер, дизайнер и вайбкодер. Разрабатываю Telegram-ботов, автономных ИИ-агентов и комплексные веб-решения для бизнеса. Специализируюсь на Google Gemini, Claude Code и высокоэффективных системах без кода.
+          </p>
+          <ul class="about__pills reveal-up" style="--d:.2s">
+            <li><span class="pill-icon">⚡</span>
+              <span data-ru="Чёткий результат: решение ваших задач точно и в срок"
+                    data-en="Sharp results: your tasks solved precisely and on time">Чёткий результат: решение ваших задач точно и в срок</span></li>
+            <li><span class="pill-icon">🤖</span>
+              <span data-ru="Передовая ИИ-архитектура: создаю уникальные инструменты под ваш запрос"
+                    data-en="Advanced AI architecture: unique tools tailored to your request">Передовая ИИ-архитектура: создаю уникальные инструменты под ваш запрос</span></li>
+            <li><span class="pill-icon">🎯</span>
+              <span data-ru="Решения под конкретную задачу бизнеса"
+                    data-en="Solutions tailored to your specific business task">Решения под конкретную задачу бизнеса</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <span class="section-tag reveal-fade" data-ru="// 02. стек" data-en="// 02. stack">// 02. стек</span>
+      <h2 class="section-title reveal-up" data-ru="Стек и технологии" data-en="Stack &amp; Technologies">Стек и технологии</h2>
+      <div class="stack-cards">
+        <div class="stack-card reveal-up" style="--d:.1s">
+          <div class="stack-card__icon">🧠</div>
+          <h3 class="stack-card__title" data-ru="ИИ-платформы и LLM" data-en="AI Platforms &amp; LLM">ИИ-платформы и LLM</h3>
+          <ul class="stack-card__list">
+            <li>Google Gemini</li>
+            <li>Anthropic Claude</li>
+            <li>Claude Code</li>
+            <li>OpenAI</li>
+            <li>OpenRouter</li>
+          </ul>
+        </div>
+        <div class="stack-card reveal-up" style="--d:.2s">
+          <div class="stack-card__icon">⚙️</div>
+          <h3 class="stack-card__title" data-ru="Среда и интеграции" data-en="Environment &amp; Integrations">Среда и интеграции</h3>
+          <ul class="stack-card__list">
+            <li>VS Code</li>
+            <li>API-архитектура</li>
+            <li>MCP-серверы</li>
+            <li>Автоматизация процессов</li>
+          </ul>
+        </div>
+        <div class="stack-card reveal-up" style="--d:.3s">
+          <div class="stack-card__icon">🌐</div>
+          <h3 class="stack-card__title" data-ru="No-Code и Веб-решения" data-en="No-Code &amp; Web Solutions">No-Code и Веб-решения</h3>
+          <ul class="stack-card__list">
+            <li>Telegram Mini Apps</li>
+            <li>Умные виджеты</li>
+            <li>Интеграция с CRM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PORTFOLIO ═══ -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <span class="section-tag reveal-fade" data-ru="// 03. работы" data-en="// 03. works">// 03. работы</span>
+      <div class="portfolio__head">
+        <h2 class="section-title reveal-up" data-ru="Портфолио" data-en="Portfolio">Портфолио</h2>
+        <div class="filter-group reveal-fade" id="filterBtns" role="group">
+          <button class="filter-btn active" data-filter="all"  data-ru="Все"     data-en="All">Все</button>
+          <button class="filter-btn"        data-filter="bot"  data-ru="ИИ-боты" data-en="AI Bots">ИИ-боты</button>
+          <button class="filter-btn"        data-filter="web"  data-ru="Веб"     data-en="Web">Веб</button>
+        </div>
+      </div>
+      <div class="portfolio__grid" id="portfolioGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ REVIEWS ═══ -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <span class="section-tag reveal-fade" data-ru="// 04. отзывы" data-en="// 04. reviews">// 04. отзывы</span>
+      <h2 class="section-title reveal-up" data-ru="Что говорят клиенты" data-en="What clients say">Что говорят клиенты</h2>
+      <div class="reviews__grid" id="reviewsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <span class="section-tag reveal-fade" data-ru="// 05. контакт" data-en="// 05. contact">// 05. контакт</span>
+      <h2 class="contact__heading reveal-up" data-ru="Начнём работу?" data-en="Let's work together?">Начнём<br>работу?</h2>
+
+      <div class="contact__grid">
+        <div class="contact__left reveal-up">
+          <p class="contact__hint"
+             data-ru="Необходимо решение - заполни форму или напиши."
+             data-en="Need a solution - fill the form or write to me.">
+            Необходимо решение - заполни форму или напиши.
+          </p>
+          <div class="social-links">
+            <a href="https://wa.me/375296588003" class="social-link magnetic" target="_blank" rel="noopener">
+              <span class="social-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+                  <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.38-.22-3.91 1.02 1.05-3.82-.24-.39A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2a9.93 9.93 0 0 1 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.47-7.34c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.19-.57-.34z" fill="#25D366"/>
+                </svg>
+              </span>
+              <span>WhatsApp</span><span class="social-arrow">→</span>
+            </a>
+            <a href="https://t.me/NatalliaVas" class="social-link magnetic" target="_blank" rel="noopener">
+              <span class="social-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+                  <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="#29B6F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>Telegram @NatalliaVas</span><span class="social-arrow">→</span>
+            </a>
+            <a href="mailto:vni72@mail.ru" class="social-link magnetic">
+              <span class="social-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="4" width="20" height="16" rx="3" stroke="var(--lime)" stroke-width="1.8"/>
+                  <path d="M2 7L12 14L22 7" stroke="var(--lime)" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span>vni72@mail.ru</span><span class="social-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact__form reveal-up" style="--d:.15s"
+              id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field">
+            <label for="f-name" data-ru="Ваше имя" data-en="Your name">Ваше имя</label>
+            <input id="f-name" type="text" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-msg" data-ru="Расскажите о задаче" data-en="Tell me about your task">Расскажите о задаче</label>
+            <textarea id="f-msg" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic" id="submitBtn"
+                  data-ru="Отправить заявку" data-en="Send request">Отправить заявку</button>
+          <p class="form-msg form-ok hidden" id="formOk"
+             data-ru="✓ Отправлено! Отвечу в течение дня."
+             data-en="✓ Sent! I'll reply within a day."></p>
+          <p class="form-msg form-err hidden" id="formErr"
+             data-ru="Ошибка. Напишите мне в Telegram."
+             data-en="Error. Please contact me via Telegram."></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__col">
+          <span class="footer__logo">
+            <span class="logo-bracket">[</span>N<span class="logo-dot">·</span>AI<span class="logo-bracket">]</span>
+          </span>
+          <p class="footer__tagline">Разработка ИИ-агентов и систем автоматизации для бизнеса.</p>
+        </div>
+        <nav class="footer__col footer__nav" aria-label="Навигация">
+          <span class="footer__nav-title">Навигация</span>
+          <a href="#hero"      data-ru="Главная"    data-en="Home">Главная</a>
+          <a href="#about"     data-ru="Обо мне"    data-en="About">Обо мне</a>
+          <a href="#skills"    data-ru="Стек"        data-en="Stack">Стек</a>
+          <a href="#portfolio" data-ru="Портфолио"  data-en="Portfolio">Портфолио</a>
+          <a href="#contact"   data-ru="Контакты"   data-en="Contacts">Контакты</a>
+        </nav>
+        <div class="footer__col footer__legal">
+          <p>Республика Беларусь</p>
+          <p>УНП: HA0177254</p>
+          <p>тел. +375 29 658-80-03</p>
+          <p class="footer__copy">© 2026 Наталья Василенко. Все права защищены.</p>
+          <div class="footer__policy">
+            <a href="#">Политика конфиденциальности</a>
+            <span>·</span>
+            <a href="#">Условия использования</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
