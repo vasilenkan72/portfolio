@@ -147,6 +147,7 @@ button { cursor:pointer; font-family:var(--ff-mono); }
 .reveal-fade { transform:none; }
 .reveal-up.visible,
 .reveal-fade.visible { opacity:1; transform:none; }
+[data-motion-bound] { transition:none; }
 
 /* ══════════════
    HEADER

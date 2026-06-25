@@ -143,22 +143,63 @@ function initTilt() {
 }
 
 /* ════════════════════
-   SCROLL REVEAL
+   SCROLL REVEAL (Motion.dev)
 ════════════════════ */
 function initReveal() {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
+  if (!window.Motion) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
         e.target.classList.add('visible');
         obs.unobserve(e.target);
-        // trigger counter if stat-num
-        const nums = $$('.stat-num', e.target.closest('.about__visual') || e.target);
-        nums.forEach(n => animateCounter(n));
-      }
-    });
-  }, { threshold: 0.12 });
+        $$('.stat-num', e.target.closest('.about__visual') || e.target)
+          .forEach(n => animateCounter(n));
+      });
+    }, { threshold: 0.12 });
+    $$('.reveal-up, .reveal-fade').forEach(el => obs.observe(el));
+    return;
+  }
 
-  $$('.reveal-up, .reveal-fade').forEach(el => obs.observe(el));
+  const { inView, animate } = window.Motion;
+
+  $$('.reveal-up').forEach(el => {
+    if (el.dataset.motionBound) return;
+    el.dataset.motionBound = '1';
+    const delay = parseFloat(getComputedStyle(el).getPropertyValue('--d')) || 0;
+    const stop = inView(el, () => {
+      animate(el, { opacity: [0, 1], y: [32, 0] }, {
+        duration: 0.7, delay, easing: [0.22, 1, 0.36, 1]
+      });
+      $$('.stat-num', el.closest('.about__visual') || el)
+        .forEach(n => animateCounter(n));
+      stop();
+    }, { amount: 0.1 });
+  });
+
+  $$('.reveal-fade').forEach(el => {
+    if (el.dataset.motionBound) return;
+    el.dataset.motionBound = '1';
+    const delay = parseFloat(getComputedStyle(el).getPropertyValue('--d')) || 0;
+    const stop = inView(el, () => {
+      animate(el, { opacity: [0, 1] }, { duration: 0.9, delay, easing: 'ease-out' });
+      stop();
+    }, { amount: 0.1 });
+  });
+}
+
+/* ════════════════════
+   PARALLAX (Motion.dev)
+════════════════════ */
+function initParallax() {
+  if (!window.Motion) return;
+  const { scroll, animate } = window.Motion;
+  const hero = $('#hero');
+  if (!hero) return;
+  const o1 = $('.orb-1'), o2 = $('.orb-2'), o3 = $('.orb-3');
+  const opts = { target: hero, offset: ['start start', 'end start'] };
+  if (o1) scroll(animate(o1, { y: [0, -120] }), opts);
+  if (o2) scroll(animate(o2, { y: [0,   80] }), opts);
+  if (o3) scroll(animate(o3, { y: [0,  -60] }), opts);
 }
 
 /* ════════════════════
@@ -488,3 +529,4 @@ renderPortfolio();
 renderReviews();
 initReveal();
 initMagnetic();
+initParallax();
