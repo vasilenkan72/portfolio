@@ -247,7 +247,7 @@ function renderReviews() {
   if (!grid) return;
   grid.innerHTML = REVIEWS.map(r => `
     <article class="rcard reveal-up${r.photo ? ' rcard--featured' : ''}">
-      ${r.photo ? `<img class="rcard__photo" src="${esc(r.photo)}" alt="${esc(r.author)}" loading="lazy" width="560" height="406">` : ''}
+      ${r.photo ? `<img class="rcard__photo" src="${esc(r.photo)}" alt="${esc(r.author)}" loading="lazy" width="1200" height="875">` : ''}
       <div class="rcard__content">
         <p class="rcard__text">${esc(r.text[lang])}</p>
         <div>
