@@ -70,6 +70,42 @@ const PROJECTS = [
     link: 'https://github.com/vasilenkan72/ai-relationship-analyzer',
     image: null,
   },
+  {
+    id: 5,
+    category: 'presentation',
+    title: { ru: '105 лет солидарности', en: '105 Years of Solidarity' },
+    description: {
+      ru: 'Классный час к 105-летию Белорусского профсоюза работников образования и науки: таймлайн истории, цифры, блок для молодёжи и интерактивная игра «Верю – не верю».',
+      en: 'Class-hour deck for the 105th anniversary of the Belarusian trade union of education and science workers: history timeline, key numbers, a youth block and an interactive quiz.',
+    },
+    tech: ['35 слайдов', 'PowerPoint', 'Русский'],
+    page: 'cases/solidarity.html',
+    slides: { dir: 'assets/img/cases/solidarity', pick: [1, 6, 15, 29] },
+  },
+  {
+    id: 6,
+    category: 'presentation',
+    title: { ru: 'Маркетинговая стратегия Bi-Oil', en: 'Bi-Oil Marketing Strategy' },
+    description: {
+      ru: 'Стратегия продвижения средства для ухода за кожей на рынке Чехии: сегменты аудитории, пирамида УТП, каналы и идеи контента с целевыми метриками.',
+      en: 'Go-to-market strategy for a skincare oil in Czechia: audience segments, USP pyramid, channels and content ideas with target metrics.',
+    },
+    tech: ['8 слайдов', 'Gamma', 'Чешский'],
+    page: 'cases/bioil-strategy.html',
+    slides: { dir: 'assets/img/cases/bioil-strategy', pick: [1, 2, 4, 5] },
+  },
+  {
+    id: 7,
+    category: 'presentation',
+    title: { ru: 'Анализ конкурентов Bi-Oil', en: 'Bi-Oil Competitor Analysis' },
+    description: {
+      ru: 'JTBD-сравнение с Palmers, Mixa и Bioderma, пирамида конкурентных позиций и разбор коммуникации брендов Blistex и Batiste с рекомендациями.',
+      en: 'JTBD comparison with Palmers, Mixa and Bioderma, competitive positioning and a breakdown of Blistex and Batiste communication with recommendations.',
+    },
+    tech: ['8 слайдов', 'Gamma', 'Чешский'],
+    page: 'cases/bioil-competitors.html',
+    slides: { dir: 'assets/img/cases/bioil-competitors', pick: [1, 2, 3, 6] },
+  },
 ];
 
 const REVIEWS = [

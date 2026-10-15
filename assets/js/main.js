@@ -170,6 +170,7 @@ function renderPortfolio() {
   const TYPES = {
     bot: { ru: 'ИИ-бот · агент', en: 'AI bot · agent' },
     web: { ru: 'Веб-приложение', en: 'Web app' },
+    presentation: { ru: 'Презентация', en: 'Presentation' },
   };
 
   grid.innerHTML = list.map(p => {
@@ -177,13 +178,19 @@ function renderPortfolio() {
     const desc    = esc(p.description[lang]);
     const type    = esc((TYPES[p.category] || TYPES.web)[lang]);
     const hasLink = p.link && p.link !== '#';
+    const href    = p.page || (hasLink ? p.link : null);
+    const isCase  = Boolean(p.page);
+    const preview = p.slides
+      ? `<div class="pcard__slides">${p.slides.pick.map(n =>
+          `<img src="${esc(p.slides.dir)}/s${String(n).padStart(2, '0')}-sm.webp" alt="" loading="lazy" width="640" height="360">`).join('')}</div>`
+      : p.image
+        ? `<img src="${esc(p.image)}" alt="${title}" loading="lazy">`
+        : `<div class="pcard__placeholder">${type}</div>`;
 
     return `
       <article class="pcard reveal-up">
         <div class="pcard__img">
-          ${p.image
-            ? `<img src="${esc(p.image)}" alt="${title}" loading="lazy">`
-            : `<div class="pcard__placeholder">${type}</div>`}
+          ${preview}
         </div>
         <div class="pcard__body">
           <h3 class="pcard__title">${title}</h3>
@@ -193,9 +200,9 @@ function renderPortfolio() {
             ${p.tech.map(t => `<span class="tech-tag">${esc(t)}</span>`).join('')}
           </div>
         </div>
-        ${hasLink ? `
-          <a href="${esc(p.link)}" target="_blank" rel="noopener" class="pcard__link link-arrow">
-            ${lang === 'ru' ? 'Смотреть проект' : 'View project'} <span class="arrow">→</span>
+        ${href ? `
+          <a href="${esc(href)}" ${isCase ? '' : 'target="_blank" rel="noopener"'} class="pcard__link link-arrow">
+            ${isCase ? (lang === 'ru' ? 'Смотреть кейс' : 'View case') : (lang === 'ru' ? 'Смотреть проект' : 'View project')} <span class="arrow">→</span>
           </a>` : ''}
       </article>`;
   }).join('');
