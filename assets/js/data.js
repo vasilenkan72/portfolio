@@ -1,5 +1,5 @@
 /* ============================================================
-   data.js — Данные портфолио Натальи Василенко
+   data.js – Данные портфолио Натальи Василенко
    ============================================================ */
 
 const SKILLS = [
@@ -27,8 +27,8 @@ const PROJECTS = [
     category: 'bot',
     title: { ru: 'Astroline Mini App', en: 'Astroline Mini App' },
     description: {
-      ru: 'ИИ-экосистема для астропсихологической платформы: Telegram-бот и Mini App с анализом переписок, хорарными ответами и чат-сессиями с ИИ-психологом. Разработала под ключ — от технической части до автомаркетинга.',
-      en: 'AI ecosystem for an astropsychology platform: Telegram bot and Mini App with correspondence analysis, horary answers, and chat sessions with an AI psychologist. Built end-to-end — from technical setup to automated marketing.',
+      ru: 'ИИ-экосистема для астропсихологической платформы: Telegram-бот и Mini App с анализом переписок, хорарными ответами и чат-сессиями с ИИ-психологом. Разработала под ключ – от технической части до автомаркетинга.',
+      en: 'AI ecosystem for an astropsychology platform: Telegram bot and Mini App with correspondence analysis, horary answers, and chat sessions with an AI psychologist. Built end-to-end – from technical setup to automated marketing.',
     },
     tech: ['Claude AI', 'Gemini API', 'Python', 'Telegram Mini App'],
     link: 'https://t.me/astroline_application_bot',
@@ -37,10 +37,10 @@ const PROJECTS = [
   {
     id: 2,
     category: 'bot',
-    title: { ru: 'ASTRA — Контент-агент', en: 'ASTRA — Content Agent' },
+    title: { ru: 'ASTRA – Контент-агент', en: 'ASTRA – Content Agent' },
     description: {
-      ru: 'ИИ-агент генерирует контент-план и готовые посты для 4 соцсетей (Telegram, Instagram, Facebook, Threads) и автоматически публикует их по расписанию через Metricool. Один запуск — неделя контента.',
-      en: 'AI agent that generates a content plan and ready-made posts for 4 social networks (Telegram, Instagram, Facebook, Threads) and auto-publishes them on schedule via Metricool. One run — a full week of content.',
+      ru: 'ИИ-агент генерирует контент-план и готовые посты для 4 соцсетей (Telegram, Instagram, Facebook, Threads) и автоматически публикует их по расписанию через Metricool. Один запуск – неделя контента.',
+      en: 'AI agent that generates a content plan and ready-made posts for 4 social networks (Telegram, Instagram, Facebook, Threads) and auto-publishes them on schedule via Metricool. One run – a full week of content.',
     },
     tech: ['Gemini API', 'Python', 'Metricool', 'Railway'],
     link: 'https://t.me/astraline_astra_bot',
@@ -51,8 +51,8 @@ const PROJECTS = [
     category: 'bot',
     title: { ru: 'Velvet Night Jazz Agent', en: 'Velvet Night Jazz Agent' },
     description: {
-      ru: 'Контент-агент для YouTube-канала Velvet Night Jazz. Автоматически генерирует описания, теги и Telegram-посты на основе ИИ — экономит 4+ часа ручной работы в неделю.',
-      en: 'Content agent for the Velvet Night Jazz YouTube channel. Auto-generates descriptions, tags, and Telegram posts using AI — saving 4+ hours of manual work per week.',
+      ru: 'Контент-агент для YouTube-канала Velvet Night Jazz. Автоматически генерирует описания, теги и Telegram-посты на основе ИИ – экономит 4+ часа ручной работы в неделю.',
+      en: 'Content agent for the Velvet Night Jazz YouTube channel. Auto-generates descriptions, tags, and Telegram posts using AI – saving 4+ hours of manual work per week.',
     },
     tech: ['Gemini API', 'Claude AI', 'Python'],
     link: '#',
@@ -63,8 +63,8 @@ const PROJECTS = [
     category: 'web',
     title: { ru: 'AI Relationship Analyzer', en: 'AI Relationship Analyzer' },
     description: {
-      ru: 'Веб-приложение для анализа совместимости двух людей с помощью ИИ. Чистый JS + Gemini API без бэкенда — молниеносная загрузка и полная конфиденциальность данных.',
-      en: 'Web app for compatibility analysis using AI. Pure JS + Gemini API with no backend — lightning-fast and fully private.',
+      ru: 'Веб-приложение для анализа совместимости двух людей с помощью ИИ. Чистый JS + Gemini API без бэкенда – молниеносная загрузка и полная конфиденциальность данных.',
+      en: 'Web app for compatibility analysis using AI. Pure JS + Gemini API with no backend – lightning-fast and fully private.',
     },
     tech: ['JavaScript', 'Gemini API', 'HTML/CSS'],
     link: 'https://github.com/vasilenkan72/ai-relationship-analyzer',
@@ -75,8 +75,8 @@ const PROJECTS = [
 const REVIEWS = [
   {
     text: {
-      ru: 'Наталья создала бота, который реально работает. Никакого копипаста — всё под нашу задачу. Советую!',
-      en: 'Natalia built a bot that actually works. No copy-paste — everything tailored to our needs. Highly recommend!',
+      ru: 'Наталья создала бота, который реально работает. Никакого копипаста – всё под нашу задачу. Советую!',
+      en: 'Natalia built a bot that actually works. No copy-paste – everything tailored to our needs. Highly recommend!',
     },
     author: 'Мария К.',
     role: { ru: 'Владелец интернет-магазина', en: 'E-commerce owner' },
@@ -91,10 +91,45 @@ const REVIEWS = [
   },
   {
     text: {
-      ru: 'Сайт готов за 2 дня — красиво, быстро, адаптивно. Наталья сама предложила улучшения, которые я не заметила.',
-      en: "Site ready in 2 days — beautiful, fast, responsive. Natalia suggested improvements I hadn't even noticed.",
+      ru: 'Сайт готов за 2 дня – красиво, быстро, адаптивно. Наталья сама предложила улучшения, которые я не заметила.',
+      en: "Site ready in 2 days – beautiful, fast, responsive. Natalia suggested improvements I hadn't even noticed.",
     },
     author: 'Анна В.',
     role: { ru: 'Предприниматель', en: 'Entrepreneur' },
+  },
+];
+
+/* ЧЕРНОВИК: цены взяты из пресетов ROI-калькулятора (500 / 1 500 / 3 000 BYN).
+   Состав пакетов и сроки нужно подтвердить у Натальи. */
+const SERVICES = [
+  {
+    name:  { ru: 'Старт',  en: 'Start' },
+    price: 500,
+    desc:  { ru: 'Telegram-бот или ИИ-ассистент для одной задачи', en: 'Telegram bot or AI assistant for one task' },
+    items: {
+      ru: ['Ответы на частые вопросы по вашей базе знаний', 'Сбор заявок с передачей вам в Telegram', 'Настройка, запуск и инструкция'],
+      en: ['Answers to FAQs from your knowledge base', 'Lead capture forwarded to your Telegram', 'Setup, launch and a how-to guide'],
+    },
+    term:  { ru: 'от 5 дней', en: 'from 5 days' },
+  },
+  {
+    name:  { ru: 'Стандарт', en: 'Standard' },
+    price: 1500,
+    desc:  { ru: 'ИИ-агент под конкретный бизнес-процесс', en: 'AI agent for a specific business process' },
+    items: {
+      ru: ['Квалификация лидов или расчёт стоимости', 'Интеграция с CRM, таблицами или сайтом', 'Сценарии под ваш бизнес', '2 недели поддержки после запуска'],
+      en: ['Lead qualification or cost estimates', 'Integration with CRM, sheets or your site', 'Scenarios built for your business', '2 weeks of support after launch'],
+    },
+    term:  { ru: 'от 2 недель', en: 'from 2 weeks' },
+  },
+  {
+    name:  { ru: 'Комплекс', en: 'Complex' },
+    price: 3000,
+    desc:  { ru: 'Система из нескольких агентов под ключ', en: 'Turnkey multi-agent system' },
+    items: {
+      ru: ['Агенты для продаж, поддержки и контента', 'Telegram Mini App или сайт', 'Интеграции с вашими сервисами', 'Обучение команды'],
+      en: ['Agents for sales, support and content', 'Telegram Mini App or website', 'Integrations with your services', 'Team training'],
+    },
+    term:  { ru: 'от 4 недель', en: 'from 4 weeks' },
   },
 ];
