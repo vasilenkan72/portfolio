@@ -53,6 +53,11 @@
 .case-table tr:last-child td { border-bottom: none; }
 .case-table td:first-child { color: var(--color-cloud-dancer); font-weight: 500; }
 .case-table .is-accent td:first-child { color: var(--color-coral); }
+.case-text--wide { max-width: none; }
+.case-table--wide { min-width: 760px; font-size: 14px; }
+.case-table--wide td { vertical-align: top; line-height: 1.5; }
+.case-quote__author { display: flex; align-items: center; gap: 12px; }
+.case-quote__author img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
 
 /* ── Lightbox ── */
 .lightbox { position: fixed; inset: 0; z-index: 100; background: var(--color-void); display: none; flex-direction: column; }

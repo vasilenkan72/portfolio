@@ -121,6 +121,16 @@ const REVIEWS = [
   },
   {
     text: {
+      ru: 'Самым полезным оказались JTBD-анализ и детальная проработка болей целевой аудитории: это дало железобетонное понимание продукта и рынка. Проект был подготовлен мощный, и это избавило от страха оказаться некомпетентной. Работа, на которую я сама потратила бы куда больше времени, энергии и сил, была готова за достаточно короткий срок. Несомненно, буду обращаться и в дальнейшем.',
+      en: 'The most useful parts were the JTBD analysis and the detailed work on the target audience’s pain points: it gave me a rock-solid understanding of the product and the market. The project was powerful and took away my fear of looking incompetent. Work that would have cost me much more time, energy and effort was ready in a short time. I will definitely come back.',
+    },
+    author: 'Мария',
+    avatar: 'assets/img/reviews/maria.webp',
+    role: { ru: 'Клиент · маркетинговый проект Bi-Oil', en: 'Client · Bi-Oil marketing project' },
+    link: 'cases/bioil-competitors.html',
+  },
+  {
+    text: {
       ru: 'Наталья создала бота, который реально работает. Никакого копипаста – всё под нашу задачу. Советую!',
       en: 'Natalia built a bot that actually works. No copy-paste – everything tailored to our needs. Highly recommend!',
     },

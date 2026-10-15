@@ -250,9 +250,12 @@ function renderReviews() {
       ${r.photo ? `<img class="rcard__photo" src="${esc(r.photo)}" alt="${esc(r.author)}" loading="lazy" width="1200" height="875">` : ''}
       <div class="rcard__content">
         <p class="rcard__text">${esc(r.text[lang])}</p>
-        <div>
-          <span class="rcard__name">${esc(r.author)}</span>
-          <span class="rcard__role">${esc(r.role[lang])}</span>
+        <div class="rcard__author">
+          ${r.avatar ? `<img class="rcard__avatar" src="${esc(r.avatar)}" alt="" loading="lazy" width="48" height="48">` : ''}
+          <div>
+            <span class="rcard__name">${esc(r.author)}</span>
+            <span class="rcard__role">${esc(r.role[lang])}</span>
+          </div>
         </div>
         ${r.link ? `<a href="${esc(r.link)}" class="link-arrow rcard__link">${lang === 'ru' ? 'Смотреть кейс' : 'View case'} <span class="arrow">→</span></a>` : ''}
       </div>
