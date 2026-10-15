@@ -78,7 +78,7 @@ const PROJECTS = [
       ru: 'Классный час к 105-летию Белорусского профсоюза работников образования и науки: таймлайн истории, цифры, блок для молодёжи и интерактивная игра «Верю – не верю».',
       en: 'Class-hour deck for the 105th anniversary of the Belarusian trade union of education and science workers: history timeline, key numbers, a youth block and an interactive quiz.',
     },
-    tech: ['35 слайдов', 'NotebookLM', 'Русский'],
+    tech: ['35 слайдов', 'Claude + NotebookLM', 'Русский'],
     page: 'cases/solidarity.html',
     slides: { dir: 'assets/img/cases/solidarity', pick: [1, 6, 15, 29] },
   },
