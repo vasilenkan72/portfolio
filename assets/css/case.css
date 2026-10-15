@@ -23,6 +23,8 @@
 .case-text li { padding-left: 18px; position: relative; }
 .case-text li::before { content: '–'; position: absolute; left: 0; color: var(--color-ash); }
 .case-text strong { color: var(--color-cloud-dancer); font-weight: 500; }
+.case-text a { color: var(--color-cloud-dancer); text-decoration: underline; text-underline-offset: 3px; }
+.case-text a:hover { color: var(--color-coral); }
 
 .case-gallery { padding: var(--section-gap) 0 0; }
 .case-gallery__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; }
