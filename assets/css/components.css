@@ -55,6 +55,11 @@
 /* ── Reviews ── */
 .reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--element-gap); }
 .rcard { background: var(--color-obsidian); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; gap: 20px; justify-content: space-between; }
+.rcard__content { display: flex; flex-direction: column; gap: 20px; justify-content: space-between; flex: 1; }
+.rcard--featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.rcard--featured .rcard__text { font-size: var(--text-heading); line-height: 1.43; color: var(--color-cloud-dancer); letter-spacing: -0.01em; }
+.rcard--featured .rcard__content { justify-content: center; }
+.rcard__photo { width: 100%; height: auto; border-radius: var(--radius-md); }
 .rcard__text { font-size: 16px; color: var(--color-stone); }
 .rcard__name { display: block; font-weight: 500; }
 .rcard__role { display: block; font-size: var(--text-caption); color: var(--color-ash); }
@@ -102,6 +107,7 @@
   .contact__grid { grid-template-columns: 1fr; gap: 40px; }
 }
 @media (max-width: 640px) {
+  .rcard--featured { grid-template-columns: 1fr; gap: 20px; }
   .portfolio__grid, .services__grid, .reviews__grid { grid-template-columns: 1fr; }
   .contact__form { padding: 20px; }
 }

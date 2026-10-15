@@ -246,13 +246,16 @@ function renderReviews() {
   const grid = $('#reviewsGrid');
   if (!grid) return;
   grid.innerHTML = REVIEWS.map(r => `
-    <article class="rcard reveal-up">
-      <p class="rcard__text">${esc(r.text[lang])}</p>
-      <div>
-        <span class="rcard__name">${esc(r.author)}</span>
-        <span class="rcard__role">${esc(r.role[lang])}</span>
+    <article class="rcard reveal-up${r.photo ? ' rcard--featured' : ''}">
+      ${r.photo ? `<img class="rcard__photo" src="${esc(r.photo)}" alt="${esc(r.author)}" loading="lazy" width="560" height="406">` : ''}
+      <div class="rcard__content">
+        <p class="rcard__text">${esc(r.text[lang])}</p>
+        <div>
+          <span class="rcard__name">${esc(r.author)}</span>
+          <span class="rcard__role">${esc(r.role[lang])}</span>
+        </div>
+        ${r.link ? `<a href="${esc(r.link)}" class="link-arrow rcard__link">${lang === 'ru' ? 'Смотреть кейс' : 'View case'} <span class="arrow">→</span></a>` : ''}
       </div>
-      ${r.link ? `<a href="${esc(r.link)}" class="link-arrow rcard__link">${lang === 'ru' ? 'Смотреть кейс' : 'View case'} <span class="arrow">→</span></a>` : ''}
     </article>`).join('');
   setTimeout(() => initReveal(), 40);
 }
