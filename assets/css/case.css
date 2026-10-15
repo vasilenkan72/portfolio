@@ -38,6 +38,10 @@
 .case-cta h2 { font-size: var(--text-heading-lg); line-height: 1.2; font-weight: 400; letter-spacing: -0.01em; }
 .case-next { display: flex; justify-content: space-between; gap: 16px; padding: 24px 0 48px; border-top: 1px solid var(--color-graphite); }
 
+.case-quote { border-left: 2px solid var(--color-coral); padding: 4px 0 4px 24px; display: flex; flex-direction: column; gap: 12px; }
+.case-quote p { font-size: var(--text-heading); line-height: 1.43; color: var(--color-cloud-dancer); letter-spacing: -0.01em; }
+.case-quote footer { font-size: 15px; color: var(--color-ash); }
+
 /* ── Lightbox ── */
 .lightbox { position: fixed; inset: 0; z-index: 100; background: var(--color-void); display: none; flex-direction: column; }
 .lightbox.open { display: flex; }

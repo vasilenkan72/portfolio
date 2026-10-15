@@ -252,6 +252,7 @@ function renderReviews() {
         <span class="rcard__name">${esc(r.author)}</span>
         <span class="rcard__role">${esc(r.role[lang])}</span>
       </div>
+      ${r.link ? `<a href="${esc(r.link)}" class="link-arrow rcard__link">${lang === 'ru' ? 'Смотреть кейс' : 'View case'} <span class="arrow">→</span></a>` : ''}
     </article>`).join('');
   setTimeout(() => initReveal(), 40);
 }

@@ -111,6 +111,15 @@ const PROJECTS = [
 const REVIEWS = [
   {
     text: {
+      ru: 'Презентация прошла на УРА! Несмотря на серьёзную тему о профсоюзах, дети слушали с интересом. Спасибо большое!',
+      en: 'The presentation was a huge success! Despite the serious topic of trade unions, the kids listened with interest. Thank you so much!',
+    },
+    author: 'Наталья Б.',
+    role: { ru: 'Педагог · презентация «105 лет солидарности»', en: 'Teacher · “105 Years of Solidarity” deck' },
+    link: 'cases/solidarity.html',
+  },
+  {
+    text: {
       ru: 'Наталья создала бота, который реально работает. Никакого копипаста – всё под нашу задачу. Советую!',
       en: 'Natalia built a bot that actually works. No copy-paste – everything tailored to our needs. Highly recommend!',
     },
