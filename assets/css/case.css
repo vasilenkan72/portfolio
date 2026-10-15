@@ -18,7 +18,7 @@
 
 .case-body { display: grid; grid-template-columns: 280px 1fr; gap: 64px; padding: var(--section-gap) 0 0; }
 .case-body h2 { font-size: var(--text-heading); line-height: 1.43; font-weight: 400; letter-spacing: -0.01em; }
-.case-text { display: flex; flex-direction: column; gap: 16px; max-width: 720px; color: var(--color-stone); font-size: 17px; }
+.case-text { min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 720px; color: var(--color-stone); font-size: 17px; }
 .case-text ul { display: flex; flex-direction: column; gap: 10px; }
 .case-text li { padding-left: 18px; position: relative; }
 .case-text li::before { content: '–'; position: absolute; left: 0; color: var(--color-ash); }
@@ -45,6 +45,14 @@
 .case-quote { border-left: 2px solid var(--color-coral); padding: 4px 0 4px 24px; display: flex; flex-direction: column; gap: 12px; }
 .case-quote p { font-size: var(--text-heading); line-height: 1.43; color: var(--color-cloud-dancer); letter-spacing: -0.01em; }
 .case-quote footer { font-size: 15px; color: var(--color-ash); }
+
+.case-table-wrap { overflow-x: auto; border: 1px solid var(--color-graphite); border-radius: var(--radius-lg); }
+.case-table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 480px; }
+.case-table th { text-align: left; font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--color-ash); padding: 14px 16px; border-bottom: 1px solid var(--color-graphite); }
+.case-table td { padding: 14px 16px; color: var(--color-stone); border-bottom: 1px solid var(--color-graphite); }
+.case-table tr:last-child td { border-bottom: none; }
+.case-table td:first-child { color: var(--color-cloud-dancer); font-weight: 500; }
+.case-table .is-accent td:first-child { color: var(--color-coral); }
 
 /* ── Lightbox ── */
 .lightbox { position: fixed; inset: 0; z-index: 100; background: var(--color-void); display: none; flex-direction: column; }
