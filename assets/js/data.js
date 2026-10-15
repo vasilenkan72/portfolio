@@ -126,34 +126,9 @@ const REVIEWS = [
     },
     author: 'Мария',
     avatar: 'assets/img/reviews/maria.webp',
-    role: { ru: 'Клиент · маркетинговый проект Bi-Oil', en: 'Client · Bi-Oil marketing project' },
+    role: { ru: 'Маркетинговый проект Bi-Oil', en: 'Bi-Oil marketing project' },
     link: 'cases/bioil-competitors.html',
-  },
-  {
-    text: {
-      ru: 'Наталья создала бота, который реально работает. Никакого копипаста – всё под нашу задачу. Советую!',
-      en: 'Natalia built a bot that actually works. No copy-paste – everything tailored to our needs. Highly recommend!',
-    },
-    author: 'Мария К.',
-    role: { ru: 'Владелец интернет-магазина', en: 'E-commerce owner' },
-  },
-  {
-    text: {
-      ru: 'Промпт для GPT-саппорта сократил время ответа в 3 раза. Профессиональный подход, чёткие сроки.',
-      en: 'The GPT support prompt cut response time by 3x. Professional approach, clear deadlines.',
-    },
-    author: 'Дмитрий Р.',
-    role: { ru: 'IT-директор', en: 'CTO' },
-  },
-  {
-    text: {
-      ru: 'Сайт готов за 2 дня – красиво, быстро, адаптивно. Наталья сама предложила улучшения, которые я не заметила.',
-      en: "Site ready in 2 days – beautiful, fast, responsive. Natalia suggested improvements I hadn't even noticed.",
-    },
-    author: 'Анна В.',
-    role: { ru: 'Предприниматель', en: 'Entrepreneur' },
-  },
-];
+  },];
 
 /* ЧЕРНОВИК: цены взяты из пресетов ROI-калькулятора (500 / 1 500 / 3 000 BYN).
    Состав пакетов и сроки нужно подтвердить у Натальи. */
