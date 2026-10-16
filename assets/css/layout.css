@@ -55,7 +55,12 @@ section { padding: var(--section-gap) 0; }
 .about__points li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--color-graphite); color: var(--color-stone); }
 .about__cta { font-size: 15px; }
 .about__edu { display: flex; flex-direction: column; gap: 10px; padding: 20px; background: var(--color-obsidian); border-radius: var(--radius-lg); font-size: 15px; color: var(--color-stone); }
-.about__edu .link-arrow { color: var(--color-cloud-dancer); }
+.about__edu .link-arrow { color: var(--color-cloud-dancer); align-self: flex-start; }
+.certs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 4px 0; }
+.cert { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--color-ash); transition: color .2s; }
+.cert img { width: 100%; height: auto; aspect-ratio: 10 / 7; object-fit: contain; background: var(--color-void); border-radius: var(--radius-md); }
+.cert:hover { color: var(--color-coral); }
+@media (max-width: 640px) { .certs { grid-template-columns: 1fr 1fr; } }
 .about__points .num { font-size: 13px; font-weight: 500; color: var(--color-ash); letter-spacing: .04em; padding-top: 3px; }
 
 /* ── Stack ── */
