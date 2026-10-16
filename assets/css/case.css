@@ -59,6 +59,9 @@
 .case-quote__author { display: flex; align-items: center; gap: 12px; }
 .case-quote__author img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
 
+.case-gallery__grid--phones { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.case-gallery__grid--phones img { aspect-ratio: 300 / 531; border-radius: var(--radius-lg); }
+
 /* ── Lightbox ── */
 .lightbox { position: fixed; inset: 0; z-index: 100; background: var(--color-void); display: none; flex-direction: column; }
 .lightbox.open { display: flex; }

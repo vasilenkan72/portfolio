@@ -24,7 +24,7 @@ const SKILLS = [
 const PROJECTS = [
   {
     id: 1,
-    category: 'bot',
+    category: 'app',
     title: { ru: 'Astroline Mini App', en: 'Astroline Mini App' },
     description: {
       ru: 'ИИ-экосистема для астропсихологической платформы: Telegram-бот и Mini App с анализом переписок, хорарными ответами и чат-сессиями с ИИ-психологом. Разработала под ключ – от технической части до автомаркетинга.',
@@ -32,7 +32,8 @@ const PROJECTS = [
     },
     tech: ['Claude AI', 'Gemini API', 'Python', 'Telegram Mini App'],
     link: 'https://t.me/astroline_application_bot',
-    image: null,
+    page: 'cases/astroline.html',
+    image: 'assets/img/cases/astroline/cover-sm.webp',
   },
   {
     id: 2,

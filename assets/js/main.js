@@ -168,7 +168,8 @@ function renderPortfolio() {
   }
 
   const TYPES = {
-    bot: { ru: 'ИИ-бот · агент', en: 'AI bot · agent' },
+    app: { ru: 'Telegram Mini App', en: 'Telegram Mini App' },
+    bot: { ru: 'ИИ-агент', en: 'AI agent' },
     web: { ru: 'Веб-приложение', en: 'Web app' },
     presentation: { ru: 'Презентация', en: 'Presentation' },
   };
