@@ -42,7 +42,7 @@
   background: var(--color-obsidian); border-radius: var(--radius-lg); padding: 28px;
   display: flex; flex-direction: column; gap: 20px;
 }
-.scard__name { font-size: var(--text-heading); line-height: 1.43; letter-spacing: -0.01em; }
+.scard__name { font-size: var(--text-heading); line-height: 1.43; letter-spacing: -0.01em; font-weight: 400; }
 .scard__price { font-size: var(--text-heading-lg); line-height: 1.2; letter-spacing: -0.01em; }
 .scard__price small { font-size: 15px; color: var(--color-ash); letter-spacing: 0; }
 .scard__desc { font-size: 15px; color: var(--color-ash); }
@@ -50,7 +50,14 @@
 .scard__list li { font-size: 15px; color: var(--color-stone); padding-left: 18px; position: relative; }
 .scard__list li::before { content: '–'; position: absolute; left: 0; color: var(--color-ash); }
 .scard__meta { font-size: var(--text-caption); color: var(--color-ash); }
-.services__note { margin-top: 24px; font-size: 15px; color: var(--color-ash); }
+.services__cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+.price-list { display: flex; flex-direction: column; border-top: 1px solid var(--color-graphite); }
+.price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--color-graphite); }
+.price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.price-row__name { display: flex; flex-direction: column; gap: 2px; font-size: 15px; color: var(--color-stone); }
+.price-row__name small { font-size: 13px; color: var(--color-ash); }
+.price-row__price { font-size: var(--text-heading); white-space: nowrap; letter-spacing: -0.01em; }
+.price-row__price small { font-size: 13px; color: var(--color-ash); letter-spacing: 0; }
 
 /* ── Reviews ── */
 .reviews__grid { display: grid; grid-template-columns: 1fr; gap: var(--element-gap); }

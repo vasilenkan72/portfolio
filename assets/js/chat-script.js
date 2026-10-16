@@ -141,3 +141,18 @@ const CHAT_ROI = {
   },
   months: { ru: ['месяц', 'месяца', 'месяцев'], en: ['month', 'months', 'months'] },
 };
+
+/* Квиз «Рассчитать стоимость»: цены берутся из PRICES (data.js) */
+const CHAT_PRICE = {
+  intro:   { ru: 'Подберём ориентир по стоимости. Что нужно сделать?', en: 'Let’s find a price guide. What do you need?' },
+  variant: { ru: 'Какой вариант ближе к вашей задаче?', en: 'Which option is closest to your task?' },
+  support: { ru: 'Нужна ли поддержка после запуска? Для ботов и ИИ это ещё и оплата нейросети.', en: 'Do you need support after launch? For bots and AI it also covers the AI model.' },
+  yes:     { ru: 'Да, нужна', en: 'Yes' },
+  no:      { ru: 'Нет, только запуск', en: 'No, launch only' },
+  result:  { ru: 'Ориентир: «{name}» от {price} BYN, срок {term}.', en: 'Guide: “{name}” from {price} BYN, timeline {term}.' },
+  withSupport: { ru: ' Плюс поддержка от {price} BYN в месяц.', en: ' Plus support from {price} BYN per month.' },
+  note:    { ru: 'Точную стоимость Наталья назовёт после короткого брифа: она зависит от объёма и интеграций.', en: 'Natallia will give the exact price after a short brief: it depends on scope and integrations.' },
+  guide:   { ru: 'Ориентир по цене:', en: 'Price guide:' },
+  roiLink: { ru: 'Посчитать выгоду ИИ-агента', en: 'Estimate AI agent benefit' },
+  supportTopics: ['site', 'agent', 'webapp'],
+};

@@ -38,7 +38,8 @@
 .chat__msg p { white-space: pre-line; }
 .chat__msg--bot { align-self: flex-start; color: var(--color-cloud-dancer); }
 .chat__msg--user { align-self: flex-end; background: var(--color-graphite); color: var(--color-cloud-dancer); border-radius: var(--radius-lg); padding: 10px 14px; }
-.chat__links { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.chat__links { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; font-size: 14px; }
+.chat__inline { font-size: 14px; color: var(--color-cloud-dancer); padding: 0; }
 
 .chat__typing { display: inline-flex; gap: 4px; padding: 6px 0; }
 .chat__typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--color-ash); animation: chatDot 1s infinite ease-in-out; }

@@ -130,37 +130,37 @@ const REVIEWS = [
     link: 'cases/bioil-competitors.html',
   },];
 
-/* ЧЕРНОВИК: цены взяты из пресетов ROI-калькулятора (500 / 1 500 / 3 000 BYN).
-   Состав пакетов и сроки нужно подтвердить у Натальи. */
-const SERVICES = [
-  {
-    name:  { ru: 'Старт',  en: 'Start' },
-    price: 500,
-    desc:  { ru: 'Telegram-бот или ИИ-ассистент для одной задачи', en: 'Telegram bot or AI assistant for one task' },
-    items: {
-      ru: ['Ответы на частые вопросы по вашей базе знаний', 'Сбор заявок с передачей вам в Telegram', 'Настройка, запуск и инструкция'],
-      en: ['Answers to FAQs from your knowledge base', 'Lead capture forwarded to your Telegram', 'Setup, launch and a how-to guide'],
-    },
-    term:  { ru: 'от 5 дней', en: 'from 5 days' },
-  },
-  {
-    name:  { ru: 'Стандарт', en: 'Standard' },
-    price: 1500,
-    desc:  { ru: 'ИИ-агент под конкретный бизнес-процесс', en: 'AI agent for a specific business process' },
-    items: {
-      ru: ['Квалификация лидов или расчёт стоимости', 'Интеграция с CRM, таблицами или сайтом', 'Сценарии под ваш бизнес', '2 недели поддержки после запуска'],
-      en: ['Lead qualification or cost estimates', 'Integration with CRM, sheets or your site', 'Scenarios built for your business', '2 weeks of support after launch'],
-    },
-    term:  { ru: 'от 2 недель', en: 'from 2 weeks' },
-  },
-  {
-    name:  { ru: 'Комплекс', en: 'Complex' },
-    price: 3000,
-    desc:  { ru: 'Система из нескольких агентов под ключ', en: 'Turnkey multi-agent system' },
-    items: {
-      ru: ['Агенты для продаж, поддержки и контента', 'Telegram Mini App или сайт', 'Интеграции с вашими сервисами', 'Обучение команды'],
-      en: ['Agents for sales, support and content', 'Telegram Mini App or website', 'Integrations with your services', 'Team training'],
-    },
-    term:  { ru: 'от 4 недель', en: 'from 4 weeks' },
-  },
+/* ПРАЙС (утверждён Натальей 16.10.2026, цены «от», BYN).
+   Один источник для блока «Услуги и цены», ответов ассистента и квиза «Рассчитать стоимость».
+   topic = id темы ассистента из chat-script.js. */
+const PRICE_GROUPS = [
+  { topic: 'analysis',     title: { ru: 'Анализ', en: 'Analysis' } },
+  { topic: 'presentation', title: { ru: 'Презентации', en: 'Presentations' } },
+  { topic: 'site',         title: { ru: 'Сайты', en: 'Websites' } },
+  { topic: 'agent',        title: { ru: 'Боты и ИИ-агенты', en: 'Bots & AI agents' } },
+  { topic: 'webapp',       title: { ru: 'Приложения', en: 'Apps' } },
 ];
+
+const PRICES = [
+  { topic: 'analysis', price: 250,
+    name: { ru: 'Экспресс-аудит сайта', en: 'Express website audit' }, term: { ru: '2–3 дня', en: '2–3 days' } },
+  { topic: 'analysis', price: 600,
+    name: { ru: 'Аудит + анализ конкурентов (JTBD)', en: 'Audit + competitor analysis (JTBD)' }, term: { ru: '5 дней', en: '5 days' } },
+  { topic: 'presentation', price: 400,
+    name: { ru: 'Презентация до 15 слайдов', en: 'Presentation up to 15 slides' }, term: { ru: '2–3 дня', en: '2–3 days' } },
+  { topic: 'presentation', price: 800,
+    name: { ru: 'Стратегическая презентация с исследованием', en: 'Strategy deck with research' }, term: { ru: 'от 3 дней', en: 'from 3 days' } },
+  { topic: 'site', price: 800,
+    name: { ru: 'Лендинг с текстами и формой', en: 'Landing page with copy and form' }, term: { ru: '7–10 дней', en: '7–10 days' } },
+  { topic: 'agent', price: 600,
+    name: { ru: 'Telegram-бот для заявок / FAQ', en: 'Telegram bot for leads / FAQ' }, term: { ru: '5–7 дней', en: '5–7 days' } },
+  { topic: 'agent', price: 1200,
+    name: { ru: 'ИИ-ассистент с базой знаний', en: 'AI assistant with knowledge base' }, term: { ru: '2 недели', en: '2 weeks' } },
+  { topic: 'agent', price: 2000,
+    name: { ru: 'ИИ-агент под процесс, с интеграциями', en: 'AI agent for a process, with integrations' }, term: { ru: 'от 3 недель', en: 'from 3 weeks' } },
+  { topic: 'webapp', price: 2500,
+    name: { ru: 'Telegram Mini App', en: 'Telegram Mini App' }, term: { ru: 'от 3 недель', en: 'from 3 weeks' } },
+];
+
+const PRICE_SUPPORT = { price: 100,
+  name: { ru: 'Поддержка и абонплата ИИ', en: 'Support and AI subscription' }, unit: { ru: 'в месяц', en: 'per month' } };

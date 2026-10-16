@@ -84,8 +84,23 @@
     if (!topic.answer) { await bot(T('askOther')); return showForm(true); }
     if (CHAT_CONFIG.contactFirst) { await bot(T('askContact')); return showForm(false); }
     await bot(topic.answer[lang], caseLinks(topic));
+    await priceGuide(topic.id);
     await bot(T('askContact'));
     showForm(false);
+  }
+
+  /* ── prices from data.js ── */
+  const P = CHAT_PRICE;
+  const money = n => new Intl.NumberFormat('ru-RU').format(n);
+  const from = () => (lang === 'ru' ? 'от' : 'from');
+  async function priceGuide(topicId) {
+    const rows = PRICES.filter(r => r.topic === topicId);
+    if (!rows.length) return;
+    const lines = rows.map(r => `– ${r.name[lang]}: ${from()} ${money(r.price)} BYN, ${r.term[lang]}`).join('\n');
+    const roiLink = topicId === 'agent'
+      ? `<div class="chat__links"><button type="button" class="link-arrow chat__inline" data-chat-open="roi">${esc(P.roiLink[lang])} <span class="arrow">→</span></button></div>`
+      : '';
+    await bot(`${P.guide[lang]}\n${lines}`, roiLink);
   }
 
   function showForm(noteRequired) {
@@ -126,7 +141,7 @@
       const res = await fetch(CHAT_CONFIG.endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ source: 'chat', topic: topic.label.ru, name, contact, note, estimate: topic.id === 'roi' ? roi.summary : '', consent: 'yes' }),
+        body: JSON.stringify({ source: 'chat', topic: topic.label.ru, name, contact, note, estimate: ['roi', 'price'].includes(topic.id) ? roi.summary : '', consent: 'yes' }),
       });
       ok = res.ok;
     } catch { ok = false; }
@@ -179,6 +194,51 @@
     showForm(false);
   }
 
+  /* ── price quiz (button «Рассчитать стоимость») ── */
+  const quiz = { group: null, row: null };
+  function choices(items, attr) {
+    actions.innerHTML = `<div class="chat__options">${items.map((label, i) =>
+      `<button type="button" class="chat__option" data-${attr}="${i}">${esc(label)}</button>`).join('')}</div>`;
+    actions.querySelector('button').focus({ preventScroll: true });
+  }
+  async function startPrice() {
+    quiz.group = quiz.row = null;
+    actions.innerHTML = '';
+    await bot(P.intro[lang]);
+    choices(PRICE_GROUPS.map(g => g.title[lang]), 'pgroup');
+  }
+  async function pickGroup(i) {
+    quiz.group = PRICE_GROUPS[i];
+    actions.innerHTML = '';
+    user(quiz.group.title[lang]);
+    const rows = PRICES.filter(r => r.topic === quiz.group.topic);
+    if (rows.length === 1) return pickRow(0, true);
+    await bot(P.variant[lang]);
+    choices(rows.map(r => `${r.name[lang]} · ${from()} ${money(r.price)}`), 'prow');
+  }
+  async function pickRow(i, silent) {
+    quiz.row = PRICES.filter(r => r.topic === quiz.group.topic)[i];
+    actions.innerHTML = '';
+    if (!silent) user(quiz.row.name[lang]);
+    if (P.supportTopics.includes(quiz.group.topic)) {
+      await bot(P.support[lang]);
+      return choices([P.yes[lang], P.no[lang]], 'psupport');
+    }
+    finishPrice(false);
+  }
+  async function finishPrice(support) {
+    actions.innerHTML = '';
+    const r = quiz.row;
+    let text = P.result[lang].replace('{name}', r.name[lang]).replace('{price}', money(r.price)).replace('{term}', r.term[lang]);
+    if (support) text += P.withSupport[lang].replace('{price}', money(PRICE_SUPPORT.price));
+    await bot(text);
+    await bot(P.note[lang]);
+    topic = { id: 'price', icon: '💰', label: { ru: `Расчёт стоимости: ${r.name.ru}`, en: `Price estimate: ${r.name.en}` }, answer: null, cases: [] };
+    roi.summary = `${r.name.ru}: от ${r.price} BYN, ${r.term.ru}${support ? `; поддержка от ${PRICE_SUPPORT.price} BYN/мес` : ''}`;
+    await bot(T('askContact'));
+    showForm(false);
+  }
+
   /* ── open / close ── */
   async function open(mode) {
     lastFocus = document.activeElement;
@@ -186,6 +246,7 @@
     document.body.classList.add('chat-open');
     labels();
     if (mode === 'roi') { started = true; return startRoi(); }
+    if (mode === 'price') { started = true; return startPrice(); }
     if (!started) { started = true; await bot(T('greeting')); showTopics(); }
     else panel.querySelector('.chat__close').focus({ preventScroll: true });
   }
@@ -200,6 +261,9 @@
     if (opener) { e.preventDefault(); open(opener.dataset.chatOpen); return; }
     const opt = e.target.closest('.chat__option');
     if (opt && opt.dataset.roi !== undefined) return pickRoi(+opt.dataset.roi);
+    if (opt && opt.dataset.pgroup !== undefined) return pickGroup(+opt.dataset.pgroup);
+    if (opt && opt.dataset.prow !== undefined) return pickRow(+opt.dataset.prow);
+    if (opt && opt.dataset.psupport !== undefined) return finishPrice(opt.dataset.psupport === '0');
     if (opt) return pickTopic(opt.dataset.topic);
     if (e.target.closest('.chat__close')) return close();
     const link = e.target.closest('.chat__links a[href^="#"]');

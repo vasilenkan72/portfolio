@@ -226,16 +226,26 @@ $('#filterBtns').addEventListener('click', e => {
 ════════════════════ */
 function renderServices() {
   const grid = $('#servicesGrid');
-  if (!grid || typeof SERVICES === 'undefined') return;
-  const fmt = n => new Intl.NumberFormat('ru-RU').format(n);
-  grid.innerHTML = SERVICES.map(s => `
+  if (!grid || typeof PRICES === 'undefined') return;
+  const fmt  = n => new Intl.NumberFormat('ru-RU').format(n);
+  const from = lang === 'ru' ? 'от' : 'from';
+  grid.innerHTML = PRICE_GROUPS.map(g => `
     <article class="scard reveal-up">
-      <h3 class="scard__name">${esc(s.name[lang])}</h3>
-      <p class="scard__price"><small>${lang === 'ru' ? 'от' : 'from'}</small> ${fmt(s.price)} <small>BYN</small></p>
-      <p class="scard__desc">${esc(s.desc[lang])}</p>
-      <ul class="scard__list">${s.items[lang].map(i => `<li>${esc(i)}</li>`).join('')}</ul>
-      <p class="scard__meta">${lang === 'ru' ? 'Срок' : 'Timeline'}: ${esc(s.term[lang])}</p>
-    </article>`).join('');
+      <h3 class="scard__name">${esc(g.title[lang])}</h3>
+      <ul class="price-list">${PRICES.filter(p => p.topic === g.topic).map(p => `
+        <li class="price-row">
+          <span class="price-row__name">${esc(p.name[lang])}<small>${esc(p.term[lang])}</small></span>
+          <span class="price-row__price"><small>${from}</small> ${fmt(p.price)} <small>BYN</small></span>
+        </li>`).join('')}
+      </ul>
+    </article>`).join('') + `
+    <article class="scard reveal-up">
+      <h3 class="scard__name">${esc(PRICE_SUPPORT.name[lang])}</h3>
+      <p class="scard__price"><small>${from}</small> ${fmt(PRICE_SUPPORT.price)} <small>BYN ${esc(PRICE_SUPPORT.unit[lang])}</small></p>
+      <p class="scard__desc">${lang === 'ru'
+        ? 'Сопровождение после запуска и оплата нейросети, на которой работает агент.'
+        : 'Post-launch support and the AI model your agent runs on.'}</p>
+    </article>`;
   setTimeout(() => initReveal(), 40);
 }
 
