@@ -54,6 +54,8 @@ section { padding: var(--section-gap) 0; }
 .about__points { display: flex; flex-direction: column; border-top: 1px solid var(--color-graphite); }
 .about__points li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--color-graphite); color: var(--color-stone); }
 .about__cta { font-size: 15px; }
+.about__edu { display: flex; flex-direction: column; gap: 10px; padding: 20px; background: var(--color-obsidian); border-radius: var(--radius-lg); font-size: 15px; color: var(--color-stone); }
+.about__edu .link-arrow { color: var(--color-cloud-dancer); }
 .about__points .num { font-size: 13px; font-weight: 500; color: var(--color-ash); letter-spacing: .04em; padding-top: 3px; }
 
 /* ── Stack ── */
