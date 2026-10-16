@@ -185,7 +185,7 @@
     const loss = emp * salary * routine, save = loss * 0.8;
     const months = Math.max(1, Math.ceil(R.implementCost / save));
     const text = R.result[lang].replace('{loss}', fmt(loss)).replace('{save}', fmt(save))
-      .replace('{year}', fmt(save * 12)).replace('{payback}', `${months} ${plural(months, R.months[lang])}`);
+      .replace('{year}', fmt(save * 12)).replace('{cost}', fmt(R.implementCost)).replace('{payback}', `${months} ${plural(months, R.months[lang])}`);
     await bot(text);
     await bot(R.note[lang]);
     topic = { id: 'roi', icon: '📈', label: { ru: 'Расчёт выгоды ИИ-агента', en: 'AI agent benefit estimate' }, answer: null, cases: [] };

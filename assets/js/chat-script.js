@@ -109,9 +109,9 @@ const CHAT_TOPICS = [
 
 /* Расчёт выгоды в диалоге (та же формула, что была в ROI-калькуляторе):
    рутина/мес = сотрудники × зарплата × доля рутины; агент забирает 80%;
-   окупаемость считается для формата «Стандарт» (implementCost). */
+   окупаемость считается для «ИИ-агент под процесс» из прайса (PRICES, data.js). */
 const CHAT_ROI = {
-  implementCost: 1500,
+  get implementCost() { return PRICES.find(p => p.name.ru.startsWith('ИИ-агент под процесс')).price; },
   intro: {
     ru: 'Давайте прикинем, сколько вам может сэкономить ИИ-агент. Три коротких вопроса. Сколько сотрудников у вас заняты рутиной: ответы на однотипные вопросы, заявки, таблицы?',
     en: 'Let’s estimate how much an AI agent could save you. Three quick questions. How many employees handle routine work: repetitive questions, leads, spreadsheets?',
@@ -132,8 +132,8 @@ const CHAT_ROI = {
         { v: 0.6, ru: 'Около 60%', en: 'About 60%' }, { v: 0.8, ru: 'Почти всё время', en: 'Almost all the time' } ] },
   ],
   result: {
-    ru: 'Сейчас рутина обходится вам примерно в {loss} BYN в месяц. ИИ-агент может взять на себя до 80% этой работы: это около {save} BYN экономии в месяц и {year} BYN в год. Внедрение формата «Стандарт» окупится примерно за {payback}.',
-    en: 'Routine currently costs you about {loss} BYN a month. An AI agent can take over up to 80% of it: roughly {save} BYN saved per month and {year} BYN per year. A “Standard” implementation would pay off in about {payback}.',
+    ru: 'Сейчас рутина обходится вам примерно в {loss} BYN в месяц. ИИ-агент может взять на себя до 80% этой работы: это около {save} BYN экономии в месяц и {year} BYN в год. Внедрение ИИ-агента под процесс (от {cost} BYN) окупится примерно за {payback}.',
+    en: 'Routine currently costs you about {loss} BYN a month. An AI agent can take over up to 80% of it: roughly {save} BYN saved per month and {year} BYN per year. An AI agent for your process (from {cost} BYN) would pay off in about {payback}.',
   },
   note: {
     ru: 'Это ориентир по средним значениям, а не обещание. Точную оценку Наталья даст после разбора ваших процессов.',
