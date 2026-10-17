@@ -38,14 +38,15 @@ const PROJECTS = [
   {
     id: 2,
     category: 'bot',
-    title: { ru: 'ASTRA – Контент-агент', en: 'ASTRA – Content Agent' },
+    title: { ru: 'ASTRA – контент-агент', en: 'ASTRA – Content Agent' },
     description: {
-      ru: 'ИИ-агент генерирует контент-план и готовые посты для 4 соцсетей (Telegram, Instagram, Facebook, Threads) и автоматически публикует их по расписанию через Metricool. Один запуск – неделя контента.',
-      en: 'AI agent that generates a content plan and ready-made posts for 4 social networks (Telegram, Instagram, Facebook, Threads) and auto-publishes them on schedule via Metricool. One run – a full week of content.',
+      ru: 'ИИ-агент ведёт канал Astroline: план на неделю, тексты для Telegram, Instagram, Facebook и Threads, фирменные карусели и публикация в 10:00. Владелец только одобряет.',
+      en: 'An AI agent runs the Astroline channel: a weekly plan, posts for Telegram, Instagram, Facebook and Threads, branded carousels and publishing at 10:00. The owner only approves.',
     },
-    tech: ['Gemini API', 'Python', 'Metricool', 'Railway'],
-    link: 'https://t.me/astraline_astra_bot',
-    image: null,
+    tech: ['Gemini API', 'Python', 'PostgreSQL', 'Railway'],
+    link: 'https://t.me/astroline_page',
+    page: 'cases/astra.html',
+    image: 'assets/img/cases/astra/cover-sm.webp',
   },
   {
     id: 3,

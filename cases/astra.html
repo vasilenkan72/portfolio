@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTRA – кейс | Наталья Василенко</title>
+  <meta name="description" content="ИИ-агент ASTRA ведёт Telegram-канал Astroline: план на неделю, тексты для 4 соцсетей, фирменные карусели, автопубликация и ответы на комментарии. Наталья только одобряет.">
+  <meta name="theme-color" content="#0B0B0B">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vasilenkan72.github.io/portfolio/cases/astra.html">
+  <meta property="og:title" content="ASTRA – ИИ-агент, который ведёт канал | кейс Натальи Василенко">
+  <meta property="og:description" content="План на неделю, тексты для 4 соцсетей, фирменные карусели и автопубликация. Владелец только одобряет.">
+  <meta property="og:image" content="https://vasilenkan72.github.io/portfolio/assets/img/cases/astra/s01.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+  <header class="case-header">
+    <nav class="nav">
+      <a class="nav__logo" href="../index.html">Наталья Василенко</a>
+      <a class="case-back link-arrow" href="../index.html#portfolio"><span class="arrow">←</span> Все работы</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="case-hero">
+      <span class="eyebrow">ИИ-агент · контент на автопилоте</span>
+      <h1 class="display">ASTRA</h1>
+      <p class="subtext">ИИ-агент, который ведёт Telegram-канал приложения Astroline: сам предлагает темы на неделю, пишет посты для четырёх соцсетей, рисует фирменные карусели и публикует их по расписанию. От владельца нужно одно – нажать «Одобрить».</p>
+      <dl class="case-meta"><div><dt>Формат</dt><dd>Telegram-бот + планировщик</dd></div><div><dt>Площадки</dt><dd>Telegram, Instagram, Facebook, Threads</dd></div><div><dt>Стек</dt><dd>Python, Gemini, PostgreSQL</dd></div><div><dt>Статус</dt><dd>Работает, публикует в канал</dd></div></dl>
+    </section>
+
+    <div class="case-cover">
+      <img src="../assets/img/cases/astra/s01.webp" alt="Карусель ASTRA: обложка, слайд с мыслью и финальный слайд с кнопкой" width="1600" height="900" data-slide="1">
+    </div>
+
+    <section class="case-body">
+      <h2>Задача</h2>
+      <div class="case-text"><p>Каналу приложения нужен регулярный контент, иначе продукт никто не видит. Но писать посты каждый день, подстраивать текст под каждую соцсеть и оформлять картинки – это несколько часов в неделю ручной работы. Нужен помощник, который делает всё сам, а человек только проверяет и одобряет.</p></div>
+    </section>
+
+    <section class="case-body">
+      <h2>Как работает</h2>
+      <div class="case-text"><ul>
+        <li><strong>Понедельник, утро:</strong> ASTRA присылает план на 7 дней – тема и польза для читателя на каждый день. Темы подбирает в том числе по комментариям подписчиков</li>
+        <li><strong>Одобрение:</strong> кнопка «Одобрить и генерировать» – и агент пишет посты, кнопка «Изменить темы» – и он предлагает другие</li>
+        <li><strong>Тексты под каждую площадку:</strong> для Telegram, Instagram, Facebook и Threads свой формат, длина и хештеги. Второй проход «редактора» убирает канцелярит и проверяет «ё»</li>
+        <li><strong>Фирменные карусели:</strong> 7 слайдов в палитре приложения, одна законченная мысль на слайд, на финальном – кнопка «Разобрать переписку →»</li>
+        <li><strong>Публикация:</strong> каждый пост одобряется кнопкой «В канал» и выходит в 10:00 своего дня</li>
+        <li><strong>Комментарии:</strong> агент отвечает подписчикам в обсуждении, а чувствительные темы (здоровье, деньги, конфликты) не трогает публично и передаёт владельцу</li>
+      </ul></div>
+    </section>
+
+    <section class="case-body">
+      <h2>Качество и безопасность</h2>
+      <div class="case-text"><ul>
+        <li>Тексты проверяются кодом: голос бренда без выдуманного «ко мне приходят клиентки», без психологических ярлыков и обобщений вида «все мужчины»</li>
+        <li>Если фраза на слайде режется на полуслове или ссылка на приложение потерялась – пост перегенерируется автоматически</li>
+        <li>Комментарии подписчиков хранятся 90 дней и удаляются автоматически; имена и ники не сохраняются</li>
+      </ul></div>
+    </section>
+
+    <section class="case-gallery">
+      <div class="case-gallery__head">
+        <h2 class="section-title">Карусель</h2>
+        <button type="button" class="btn btn-ghost" data-slide="2">Листать слайды →</button>
+      </div>
+      <div class="case-gallery__grid case-gallery__grid--slides">
+        <button type="button" data-slide="2" aria-label="Слайд 1"><img src="../assets/img/cases/astra/s02-sm.webp" alt="Слайд 1: обложка" loading="lazy" width="320" height="400"></button>
+        <button type="button" data-slide="3" aria-label="Слайд 2"><img src="../assets/img/cases/astra/s03-sm.webp" alt="Слайд 2" loading="lazy" width="320" height="400"></button>
+        <button type="button" data-slide="4" aria-label="Слайд 3"><img src="../assets/img/cases/astra/s04-sm.webp" alt="Слайд 3" loading="lazy" width="320" height="400"></button>
+        <button type="button" data-slide="5" aria-label="Слайд 4"><img src="../assets/img/cases/astra/s05-sm.webp" alt="Слайд 4" loading="lazy" width="320" height="400"></button>
+        <button type="button" data-slide="6" aria-label="Слайд 5"><img src="../assets/img/cases/astra/s06-sm.webp" alt="Слайд 5" loading="lazy" width="320" height="400"></button>
+        <button type="button" data-slide="7" aria-label="Слайд 6"><img src="../assets/img/cases/astra/s07-sm.webp" alt="Слайд 6: совет" loading="lazy" width="320" height="400"></button>
+        <button type="button" data-slide="8" aria-label="Слайд 7"><img src="../assets/img/cases/astra/s08-sm.webp" alt="Слайд 7: кнопка «Разобрать переписку»" loading="lazy" width="320" height="400"></button>
+      </div>
+    </section>
+
+    <section class="case-gallery">
+      <div class="case-gallery__head">
+        <h2 class="section-title">В работе</h2>
+      </div>
+      <div class="case-gallery__grid case-gallery__grid--top">
+        <button type="button" data-slide="9" aria-label="План на неделю"><img src="../assets/img/cases/astra/s09-sm.webp" alt="ASTRA присылает план постов на неделю" loading="lazy"></button>
+        <button type="button" data-slide="10" aria-label="Одобрение"><img src="../assets/img/cases/astra/s10-sm.webp" alt="Пост одобрен и выйдет в 10:00" loading="lazy"></button>
+        <button type="button" data-slide="11" aria-label="Готовый пост"><img src="../assets/img/cases/astra/s11-sm.webp" alt="Готовый пост с каруселью и подписью" loading="lazy"></button>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <h2>Нужен ИИ-агент для вашего контента?</h2>
+      <a href="../index.html#contact" class="btn btn-primary">Обсудить проект</a>
+    </section>
+
+    <nav class="case-next" aria-label="Другие кейсы">
+      <a class="link-arrow" href="../index.html#portfolio"><span class="arrow">←</span> Все работы</a>
+      <a class="link-arrow" href="solidarity.html">105 лет солидарности <span class="arrow">→</span></a>
+    </nav>
+  </main>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр" data-slides="../assets/img/cases/astra" data-count="11">
+    <div class="lightbox__bar">
+      <span class="lightbox__count">1 / 11</span>
+      <button type="button" class="lightbox__btn lightbox__close" aria-label="Закрыть">×</button>
+    </div>
+    <div class="lightbox__stage"><img src="" alt=""></div>
+    <button type="button" class="lightbox__btn lightbox__prev" aria-label="Назад">←</button>
+    <button type="button" class="lightbox__btn lightbox__next" aria-label="Вперёд">→</button>
+  </div>
+
+  <script src="../assets/js/case.js"></script>
+</body>
+</html>

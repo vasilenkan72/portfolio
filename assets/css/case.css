@@ -62,6 +62,10 @@
 .case-gallery__grid--phones { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
 .case-gallery__grid--phones img { aspect-ratio: 300 / 531; border-radius: var(--radius-lg); }
 
+.case-gallery__grid--slides { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.case-gallery__grid--slides img { aspect-ratio: 4 / 5; }
+.case-gallery__grid--top img { object-position: top; }
+
 /* ── Lightbox ── */
 .lightbox { position: fixed; inset: 0; z-index: 100; background: var(--color-void); display: none; flex-direction: column; }
 .lightbox.open { display: flex; }
