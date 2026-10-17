@@ -341,6 +341,21 @@ function renderReviews() {
 })();
 
 /* ════════════════════
+   COPY EMAIL
+   mailto не откроется, если у посетителя не настроена почтовая программа:
+   поэтому адрес ещё и копируется с подсказкой.
+════════════════════ */
+$$('[data-copy]').forEach(el => el.addEventListener('click', () => {
+  navigator.clipboard?.writeText(el.dataset.copy).then(() => {
+    const label = el.querySelector('span:not(.social-icon):not(.social-arrow)');
+    if (!label || label.dataset.orig) return;
+    label.dataset.orig = label.textContent;
+    label.textContent = lang === 'ru' ? 'Адрес скопирован ✓' : 'Address copied ✓';
+    setTimeout(() => { label.textContent = label.dataset.orig; delete label.dataset.orig; }, 2000);
+  }).catch(() => {});
+}));
+
+/* ════════════════════
    INIT
 ════════════════════ */
 renderPortfolio();
