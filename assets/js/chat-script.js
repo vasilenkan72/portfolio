@@ -38,7 +38,7 @@ const CHAT_TEXT = {
     name:    { ru: 'Как к вам обращаться', en: 'Your name' },
     contact: { ru: 'Telegram (@username) или телефон', en: 'Telegram (@username) or phone' },
     note:    { ru: 'Коротко о задаче (необязательно)', en: 'About your task (optional)' },
-    consent: { ru: 'Согласен(на) на обработку имени и контакта для ответа на запрос.', en: 'I consent to processing my name and contact to answer my request.' },
+    consent: { ru: 'Согласен(на) на обработку имени и контакта для ответа на запрос, включая передачу в Formspree (США); о рисках проинформирован(а).', en: 'I consent to processing my name and contact to answer my request, including transfer to Formspree (USA); I am informed of the risks.' },
     policy:  { ru: 'Политика', en: 'Policy' },
     send:    { ru: 'Отправить', en: 'Send' },
     badContact: { ru: 'Укажите @username, телефон или email', en: 'Enter @username, phone or email' },
