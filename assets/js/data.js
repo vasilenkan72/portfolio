@@ -165,3 +165,37 @@ const PRICES = [
 
 const PRICE_SUPPORT = { price: 100,
   name: { ru: 'Поддержка и абонплата ИИ', en: 'Support and AI subscription' }, unit: { ru: 'в месяц', en: 'per month' } };
+
+/* Частые вопросы. {price:Название} подставляет цену из PRICES, чтобы FAQ не расходился с прайсом. */
+const FAQ = [
+  {
+    q: { ru: 'Чем вы занимаетесь?', en: 'What do you do?' },
+    a: {
+      ru: 'Моя специализация – автоматизация продаж и маркетинга с помощью ИИ: анализ сайта и конкурентов, маркетинговая стратегия, когда продажи просели и нужен план роста, сайты и лендинги, воронки продаж в мессенджерах, Telegram-приложения и ИИ-агенты, которые отвечают клиентам 24/7.',
+      en: 'I specialise in automating sales and marketing with AI: website and competitor audits, a marketing strategy when sales dip and you need a growth plan, websites and landing pages, messenger sales funnels, Telegram apps and AI agents that answer clients 24/7.',
+    },
+  },
+  {
+    q: { ru: 'Сколько это стоит?', en: 'How much does it cost?' },
+    a: {
+      ru: 'Ориентиры такие: экспресс-аудит сайта {price:Экспресс-аудит сайта}, лендинг {price:Лендинг с текстами и формой}, Telegram-бот {price:Telegram-бот для заявок / FAQ}, ИИ-агент {price:ИИ-агент под процесс, с интеграциями}. Точную сумму называю после короткого брифа. Ориентир под вашу задачу можно посчитать прямо здесь.',
+      en: 'Guide prices: express website audit {price:Экспресс-аудит сайта}, landing page {price:Лендинг с текстами и формой}, Telegram bot {price:Telegram-бот для заявок / FAQ}, AI agent {price:ИИ-агент под процесс, с интеграциями}. I give an exact quote after a short brief. You can estimate your task right here.',
+    },
+    action: { mode: 'price', ru: 'Рассчитать стоимость', en: 'Get a price estimate' },
+  },
+  {
+    q: { ru: 'Какие сроки?', en: 'How long does it take?' },
+    a: {
+      ru: 'Аудит 2–3 дня, лендинг 7–10 дней, Telegram-бот 5–7 дней. Стратегию и анализ конкурентов для клиента я сделала за 1 день.',
+      en: 'An audit takes 2–3 days, a landing page 7–10 days, a Telegram bot 5–7 days. A strategy and competitor analysis for a client took me 1 day.',
+    },
+  },
+  {
+    q: { ru: 'Как начать работу?', en: 'How do we start?' },
+    a: {
+      ru: 'Напишите мне в Telegram @natallia_vasilenka или оставьте заявку в форме ниже. Расскажите о задаче, и я предложу 2–3 варианта решения с ценами. Это ни к чему не обязывает.',
+      en: 'Message me on Telegram @natallia_vasilenka or leave a request in the form below. Tell me about your task and I will suggest 2–3 options with prices. No obligation.',
+    },
+    action: { mode: '', ru: 'Обсудить проект', en: 'Discuss a project' },
+  },
+];

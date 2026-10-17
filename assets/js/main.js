@@ -26,6 +26,7 @@ function applyLang(l) {
   document.title = l === 'ru' ? 'Наталья Василенко – AI Expert & Prompt Engineer' : 'Natallia Vasilenko – AI Expert & Prompt Engineer';
   renderPortfolio();
   renderServices();
+  renderFaq();
   renderReviews();
   // filter button text
   $$('.filter-btn').forEach(b => { if (b.dataset[l]) b.textContent = b.dataset[l]; });
@@ -251,6 +252,28 @@ function renderServices() {
 }
 
 /* ════════════════════
+   FAQ
+════════════════════ */
+function renderFaq() {
+  const list = $('#faqList');
+  if (!list || typeof FAQ === 'undefined') return;
+  const fmt = n => new Intl.NumberFormat('ru-RU').format(n);
+  const price = name => {
+    const row = PRICES.find(p => p.name.ru === name);
+    return row ? `${lang === 'ru' ? 'от' : 'from'} ${fmt(row.price)} BYN` : '';
+  };
+  list.innerHTML = FAQ.map((f, i) => `
+    <details class="faq__item reveal-up"${i === 0 ? ' open' : ''}>
+      <summary class="faq__q">${esc(f.q[lang])}<span class="faq__icon" aria-hidden="true">+</span></summary>
+      <div class="faq__a">
+        <p>${esc(f.a[lang].replace(/\{price:([^}]+)\}/g, (_, n) => price(n)))}</p>
+        ${f.action ? `<button type="button" class="link-arrow faq__action" data-chat-open="${esc(f.action.mode)}">${esc(f.action[lang])} <span class="arrow">→</span></button>` : ''}
+      </div>
+    </details>`).join('');
+  setTimeout(() => initReveal(), 40);
+}
+
+/* ════════════════════
    REVIEWS
 ════════════════════ */
 function renderReviews() {
@@ -324,3 +347,4 @@ renderPortfolio();
 renderReviews();
 initReveal();
 renderServices();
+renderFaq();

@@ -74,6 +74,20 @@
 .rcard__role { display: block; font-size: var(--text-caption); color: var(--color-ash); }
 .rcard__link { font-size: 15px; padding-top: 12px; border-top: 1px solid var(--color-graphite); }
 
+/* ── FAQ ── */
+.faq__list { display: flex; flex-direction: column; border-top: 1px solid var(--color-graphite); max-width: 880px; }
+.faq__item { border-bottom: 1px solid var(--color-graphite); }
+.faq__q {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 22px 0; font-size: var(--text-heading); line-height: 1.43; letter-spacing: -0.01em;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q:hover { color: var(--color-coral); }
+.faq__icon { font-size: 24px; color: var(--color-ash); transition: transform .25s; flex-shrink: 0; }
+.faq__item[open] .faq__icon { transform: rotate(45deg); }
+.faq__a { padding: 0 0 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; color: var(--color-stone); max-width: 720px; }
+.faq__action { font-size: 15px; color: var(--color-cloud-dancer); padding: 0; }
+
 /* ── Contact ── */
 .contact__grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
 .contact__left { display: flex; flex-direction: column; gap: 32px; }
