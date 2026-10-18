@@ -91,7 +91,24 @@
       background: linear-gradient(135deg, var(--coral-from), var(--coral-to));
       box-shadow: 0 8px 20px rgba(255,78,42,.3);
     }
-    .btn--alt { color: var(--ink); background: #fff; border: 1px solid #D5E2F5; }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 20px 0 8px;
+      font-weight: 700;
+      text-align: left;
+    }
+    .step span {
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-size: 14px;
+    }
     .btn:hover { transform: translateY(-2px); }
     .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
     .note { margin-top: 20px; font-size: 13px; color: var(--ink-muted); }
@@ -107,16 +124,18 @@
     <p class="tag">Хорарная астрология</p>
     <p class="lead">Ответ на ваш конкретный вопрос: отношения, выбор, решения. Задайте вопрос – карта момента подскажет.</p>
 
+    <p class="step"><span>1</span> Подпишитесь на канал</p>
     <a class="btn btn--main" href="https://t.me/astroline_page" target="_blank" rel="noopener">
-      Перейти в Telegram-канал
+      Подписаться на канал
       <small>разборы, прогнозы и ответы на вопросы</small>
     </a>
-    <a class="btn btn--alt" href="https://t.me/astroline_application_bot" target="_blank" rel="noopener">
-      Задать свой вопрос
-      <small>бот Astroline в Telegram</small>
+    <p class="step"><span>2</span> Задайте свой вопрос</p>
+    <a class="btn btn--main" href="https://t.me/astroline_application_bot" target="_blank" rel="noopener">
+      Открыть бота Astroline
+      <small>ответ по карте момента прямо в Telegram</small>
     </a>
 
-    <p class="note">Откроется приложение Telegram. Если его нет, ссылка откроется в браузере.</p>
+    <p class="note">После подписки вернитесь на эту страницу и нажмите вторую кнопку. Всё открывается в Telegram.</p>
   </main>
   <footer>Сделано <a href="../">Натальей Василенко</a></footer>
 </body>
