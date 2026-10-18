@@ -27,8 +27,8 @@ const PROJECTS = [
     category: 'app',
     title: { ru: 'Astroline Mini App', en: 'Astroline Mini App' },
     description: {
-      ru: 'ИИ-экосистема для астропсихологической платформы: Telegram-бот и Mini App с анализом переписок, хорарными ответами и чат-сессиями с ИИ-психологом. Разработала под ключ – от технической части до автомаркетинга.',
-      en: 'AI ecosystem for an astropsychology platform: Telegram bot and Mini App with correspondence analysis, horary answers, and chat sessions with an AI psychologist. Built end-to-end – from technical setup to automated marketing.',
+      ru: 'ИИ-экосистема для астропсихологической платформы: Telegram-бот и Mini App с анализом переписок, хорарными ответами и чатом с душевным другом Лео. Разработала под ключ – от технической части до автомаркетинга.',
+      en: 'AI ecosystem for an astropsychology platform: Telegram bot and Mini App with correspondence analysis, horary answers, and chats with Leo, a kind-hearted AI companion. Built end-to-end – from technical setup to automated marketing.',
     },
     tech: ['Claude AI', 'Gemini API', 'Python', 'Telegram Mini App'],
     link: 'https://t.me/astroline_application_bot',
