@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astroline – хорарная астрология</title>
+  <meta name="description" content="Ответ на ваш конкретный вопрос по карте момента: отношения, выбор, решения. Канал и бот Astroline в Telegram.">
+  <meta name="theme-color" content="#3D74D4">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vasilenkan72.github.io/portfolio/astroline/">
+  <meta property="og:title" content="Astroline – хорарная астрология">
+  <meta property="og:description" content="Задайте вопрос – карта момента подскажет. Канал и бот Astroline в Telegram.">
+  <meta property="og:image" content="https://vasilenkan72.github.io/portfolio/astroline/og.jpg">
+  <link rel="icon" href="logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Oswald:wght@600&display=swap&subset=cyrillic" rel="stylesheet">
+  <style>
+    :root {
+      --sky-top: #3D74D4;
+      --sky-bottom: #A9CBF2;
+      --glass: rgba(255,255,255,0.86);
+      --glass-border: rgba(255,255,255,0.95);
+      --shadow: 0 8px 24px rgba(30,70,150,0.18);
+      --ink: #0F1E3D;
+      --ink-muted: #5B6B8C;
+      --blue: #2E6FD8;
+      --tint: #EEF4FC;
+      --coral-from: #FF4E2A;
+      --coral-to: #FF7A45;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+      background: linear-gradient(180deg, var(--sky-top), var(--sky-bottom));
+      background-color: var(--sky-top);
+      color: var(--ink);
+      font: 400 16px/1.5 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+    .card {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 24px 24px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .logo {
+      display: block;
+      width: 128px;
+      height: 128px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+    }
+    h1 {
+      font: 600 30px/1.15 'Oswald', 'Arial Narrow', sans-serif;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .tag {
+      margin-top: 4px;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .lead { margin: 16px 0 24px; color: var(--ink-muted); }
+    .btn {
+      display: block;
+      padding: 16px 20px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn small { display: block; margin-top: 2px; font-weight: 500; font-size: 13px; opacity: .85; }
+    .btn + .btn { margin-top: 12px; }
+    .btn--main {
+      color: #fff;
+      background: linear-gradient(135deg, var(--coral-from), var(--coral-to));
+      box-shadow: 0 8px 20px rgba(255,78,42,.3);
+    }
+    .btn--alt { color: var(--ink); background: #fff; border: 1px solid #D5E2F5; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+    .note { margin-top: 20px; font-size: 13px; color: var(--ink-muted); }
+    footer { margin-top: 24px; font-size: 13px; color: rgba(255,255,255,.9); }
+    footer a { color: #fff; }
+    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="logo" src="logo.webp" alt="Логотип Astroline" width="128" height="128">
+    <h1>Astroline</h1>
+    <p class="tag">Хорарная астрология</p>
+    <p class="lead">Ответ на ваш конкретный вопрос: отношения, выбор, решения. Задайте вопрос – карта момента подскажет.</p>
+
+    <a class="btn btn--main" href="https://t.me/astroline_page" target="_blank" rel="noopener">
+      Перейти в Telegram-канал
+      <small>разборы, прогнозы и ответы на вопросы</small>
+    </a>
+    <a class="btn btn--alt" href="https://t.me/astroline_application_bot" target="_blank" rel="noopener">
+      Задать свой вопрос
+      <small>бот Astroline в Telegram</small>
+    </a>
+
+    <p class="note">Откроется приложение Telegram. Если его нет, ссылка откроется в браузере.</p>
+  </main>
+  <footer>Сделано <a href="../">Натальей Василенко</a></footer>
+</body>
+</html>
