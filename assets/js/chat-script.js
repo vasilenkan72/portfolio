@@ -92,12 +92,21 @@ const CHAT_TOPICS = [
   },
   {
     id: 'agent', icon: '🤖',
-    label: { ru: 'ИИ-агент / Автоматизация', en: 'AI agent / Automation' },
+    label: { ru: 'Бот / ИИ-агент', en: 'Bot / AI agent' },
     answer: {
       ru: 'ИИ-агент берёт на себя повторяющуюся работу: отвечает клиентам в мессенджерах, собирает заявки, готовит контент. Контент-агент Натальи ASTRA, например, сам пишет посты для 4 соцсетей и публикует их по расписанию.',
       en: 'An AI agent takes over repetitive work: answers clients in messengers, collects leads, prepares content. Natallia’s content agent ASTRA, for example, writes posts for 4 social networks and publishes them on schedule.',
     },
     cases: [{ href: '#portfolio', ru: 'Смотреть агентов', en: 'See agents' }],
+  },
+  {
+    id: 'automation', icon: '⚙️',
+    label: { ru: 'Автоматизация', en: 'Automation' },
+    answer: {
+      ru: 'Автоматизация убирает ручные шаги между сервисами: заявка с сайта сама попадает в таблицу или CRM, а вам приходит уведомление в Telegram; отчёты по продажам и рекламе собираются без копирования цифр; клиенты получают рассылку и напоминания вовремя.',
+      en: 'Automation removes manual steps between your tools: a lead from your site lands in a sheet or CRM and you get a Telegram alert; sales and ads reports build themselves without copying numbers; clients get mailings and reminders on time.',
+    },
+    cases: [],
   },
   {
     id: 'other', icon: '💬',
@@ -154,5 +163,5 @@ const CHAT_PRICE = {
   note:    { ru: 'Точную стоимость Наталья назовёт после короткого брифа: она зависит от объёма и интеграций.', en: 'Natallia will give the exact price after a short brief: it depends on scope and integrations.' },
   guide:   { ru: 'Ориентир по цене:', en: 'Price guide:' },
   roiLink: { ru: 'Посчитать выгоду ИИ-агента', en: 'Estimate AI agent benefit' },
-  supportTopics: ['site', 'agent', 'webapp'],
+  supportTopics: ['site', 'agent', 'automation', 'webapp'],
 };

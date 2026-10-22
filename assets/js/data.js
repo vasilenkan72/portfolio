@@ -132,7 +132,7 @@ const REVIEWS = [
     link: 'cases/bioil-competitors.html',
   },];
 
-/* ПРАЙС (утверждён Натальей 16.10.2026, цены «от», BYN).
+/* ПРАЙС (утверждён Натальей 16.10.2026, расширен 22.10.2026, цены «от», BYN).
    Один источник для блока «Услуги и цены», ответов ассистента и квиза «Рассчитать стоимость».
    topic = id темы ассистента из chat-script.js. */
 const PRICE_GROUPS = [
@@ -140,6 +140,7 @@ const PRICE_GROUPS = [
   { topic: 'presentation', title: { ru: 'Презентации', en: 'Presentations' } },
   { topic: 'site',         title: { ru: 'Сайты', en: 'Websites' } },
   { topic: 'agent',        title: { ru: 'Боты и ИИ-агенты', en: 'Bots & AI agents' } },
+  { topic: 'automation',   title: { ru: 'Автоматизации', en: 'Automations' } },
   { topic: 'webapp',       title: { ru: 'Приложения', en: 'Apps' } },
 ];
 
@@ -154,14 +155,28 @@ const PRICES = [
     name: { ru: 'Стратегическая презентация с исследованием', en: 'Strategy deck with research' }, term: { ru: 'от 3 дней', en: 'from 3 days' } },
   { topic: 'site', price: 800,
     name: { ru: 'Лендинг с текстами и формой', en: 'Landing page with copy and form' }, term: { ru: '7–10 дней', en: '7–10 days' } },
-  { topic: 'agent', price: 600,
+  { topic: 'site', price: 500,
+    name: { ru: 'Квиз или калькулятор для сайта', en: 'Quiz or calculator for your site' }, term: { ru: '3–5 дней', en: '3–5 days' } },
+  { topic: 'agent', price: 700,
     name: { ru: 'Telegram-бот для заявок / FAQ', en: 'Telegram bot for leads / FAQ' }, term: { ru: '5–7 дней', en: '5–7 days' } },
+  { topic: 'agent', price: 900,
+    name: { ru: 'Бот для записи на услуги', en: 'Booking bot for services' }, term: { ru: '7–10 дней', en: '7–10 days' } },
   { topic: 'agent', price: 1200,
     name: { ru: 'ИИ-ассистент с базой знаний', en: 'AI assistant with knowledge base' }, term: { ru: '2 недели', en: '2 weeks' } },
+  { topic: 'agent', price: 1500,
+    name: { ru: 'СММ-агент: посты в вашем стиле', en: 'SMM agent: posts in your voice' }, term: { ru: '2 недели', en: '2 weeks' } },
   { topic: 'agent', price: 2000,
     name: { ru: 'ИИ-агент под процесс, с интеграциями', en: 'AI agent for a process, with integrations' }, term: { ru: 'от 3 недель', en: 'from 3 weeks' } },
+  { topic: 'automation', price: 700,
+    name: { ru: 'Заявки с сайта в таблицу или CRM + уведомление в Telegram', en: 'Site leads to a sheet or CRM + Telegram alert' }, term: { ru: '5–7 дней', en: '5–7 days' } },
+  { topic: 'automation', price: 900,
+    name: { ru: 'Автоматические отчёты по продажам и рекламе', en: 'Automated sales and ads reports' }, term: { ru: '1–2 недели', en: '1–2 weeks' } },
+  { topic: 'automation', price: 1200,
+    name: { ru: 'Связка CRM + рассылка + уведомления', en: 'CRM + mailing + notifications workflow' }, term: { ru: '2 недели', en: '2 weeks' } },
   { topic: 'webapp', price: 2500,
-    name: { ru: 'Telegram Mini App', en: 'Telegram Mini App' }, term: { ru: 'от 3 недель', en: 'from 3 weeks' } },
+    name: { ru: 'Telegram Mini App: запись, каталог, бронирование', en: 'Telegram Mini App: booking, catalogue, reservations' }, term: { ru: 'от 3 недель', en: 'from 3 weeks' } },
+  { topic: 'webapp', price: 3500,
+    name: { ru: 'Приложение с подпиской и оплатой', en: 'App with subscriptions and payments' }, term: { ru: 'от 4 недель', en: 'from 4 weeks' } },
 ];
 
 const PRICE_SUPPORT = { price: 100,

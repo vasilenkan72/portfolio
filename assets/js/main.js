@@ -241,7 +241,7 @@ function renderServices() {
         </li>`).join('')}
       </ul>
     </article>`).join('') + `
-    <article class="scard reveal-up">
+    <article class="scard scard--wide reveal-up">
       <h3 class="scard__name">${esc(PRICE_SUPPORT.name[lang])}</h3>
       <p class="scard__price"><small>${from}</small> ${fmt(PRICE_SUPPORT.price)} <small>BYN ${esc(PRICE_SUPPORT.unit[lang])}</small></p>
       <p class="scard__desc">${lang === 'ru'
