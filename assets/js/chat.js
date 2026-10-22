@@ -110,7 +110,7 @@
         <input name="contact" required autocomplete="tel" placeholder="${esc(F('contact'))}" aria-label="${esc(F('contact'))}">
         <textarea name="note" rows="2" ${noteRequired ? 'required' : ''} placeholder="${esc(F('note'))}" aria-label="${esc(F('note'))}"></textarea>
         <label class="chat__consent"><input type="checkbox" name="consent" required>
-          <span>${esc(F('consent'))} <a href="privacy.html" target="_blank">${esc(F('policy'))}</a></span></label>
+          <span>${esc(F('consent'))} <a href="privacy.html" target="_blank">${esc(F('policy'))}</a>${esc(F('consentTail'))}</span></label>
         <label class="chat__consent"><input type="checkbox" name="marketing">
           <span>${esc(F('marketing'))}</span></label>
         <p class="chat__err" role="alert" hidden></p>
