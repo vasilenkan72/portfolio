@@ -111,6 +111,8 @@
         <textarea name="note" rows="2" ${noteRequired ? 'required' : ''} placeholder="${esc(F('note'))}" aria-label="${esc(F('note'))}"></textarea>
         <label class="chat__consent"><input type="checkbox" name="consent" required>
           <span>${esc(F('consent'))} <a href="privacy.html" target="_blank">${esc(F('policy'))}</a></span></label>
+        <label class="chat__consent"><input type="checkbox" name="marketing">
+          <span>${esc(F('marketing'))}</span></label>
         <p class="chat__err" role="alert" hidden></p>
         <button type="submit" class="btn btn-primary" disabled>${esc(F('send'))}</button>
       </form>`;
@@ -141,7 +143,7 @@
       const res = await fetch(CHAT_CONFIG.endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ source: 'chat', topic: topic.label.ru, name, contact, note, estimate: ['roi', 'price'].includes(topic.id) ? roi.summary : '', consent: 'yes' }),
+        body: JSON.stringify({ source: 'chat', topic: topic.label.ru, name, contact, note, estimate: ['roi', 'price'].includes(topic.id) ? roi.summary : '', consent: 'yes', marketing: form.marketing.checked ? 'yes' : 'no' }),
       });
       ok = res.ok;
     } catch { ok = false; }
