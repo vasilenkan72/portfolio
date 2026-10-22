@@ -187,8 +187,8 @@ const FAQ = [
   {
     q: { ru: 'Чем вы занимаетесь?', en: 'What do you do?' },
     a: {
-      ru: 'Моя специализация – автоматизация продаж и маркетинга с помощью ИИ: анализ сайта и конкурентов, маркетинговая стратегия, когда продажи просели и нужен план роста, сайты и лендинги, воронки продаж в мессенджерах, Telegram-приложения и ИИ-агенты, которые отвечают клиентам 24/7.',
-      en: 'I specialise in automating sales and marketing with AI: website and competitor audits, a marketing strategy when sales dip and you need a growth plan, websites and landing pages, messenger sales funnels, Telegram apps and AI agents that answer clients 24/7.',
+      ru: 'Моя специализация – автоматизация продаж и маркетинга с помощью ИИ. Делаю анализ сайта и конкурентов и маркетинговую стратегию, когда продажи просели и нужен план роста; сайты, лендинги, квизы и калькуляторы; презентации и коммерческие предложения; ботов и ИИ-агентов, которые отвечают клиентам 24/7, записывают на услуги и пишут посты в вашем стиле; автоматизации, чтобы заявки сами попадали в CRM, а отчёты собирались без ручной работы; Telegram-приложения, в том числе с подпиской и оплатой.',
+      en: 'I specialise in automating sales and marketing with AI. I do website and competitor audits and a marketing strategy when sales dip and you need a growth plan; websites, landing pages, quizzes and calculators; presentations and proposals; bots and AI agents that answer clients 24/7, book appointments and write posts in your voice; automations so leads land in your CRM and reports build themselves; Telegram apps, including ones with subscriptions and payments.',
     },
   },
   {
