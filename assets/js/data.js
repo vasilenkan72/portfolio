@@ -85,6 +85,18 @@ const PROJECTS = [
     image: 'assets/img/cases/vizitka-cover-sm.webp',
   },
   {
+    id: 9,
+    category: 'web',
+    title: { ru: 'Лендинг «Тренажёр уверенности»', en: '“Confidence Trainer” landing page' },
+    description: {
+      ru: 'Продающая страница ИИ-тренажёра разговоров для сетевого бизнеса. Живое демо прямо на странице: посетитель отвечает ИИ-клиенту и получает разбор. Кнопки ведут в ИИ-ассистента, который сразу предлагает пилот и передаёт заявку.',
+      en: 'Sales page for an AI conversation trainer for network marketing teams. A live demo on the page: visitors answer an AI client and get feedback. Buttons lead to the AI assistant, which offers a pilot and passes on the lead.',
+    },
+    tech: ['HTML/CSS', 'JavaScript', 'Telegram-бот', 'Gemini API'],
+    link: 'trener/',
+    image: 'assets/img/cases/trener-cover-sm.webp',
+  },
+  {
     id: 5,
     category: 'presentation',
     title: { ru: '105 лет солидарности', en: '105 Years of Solidarity' },
