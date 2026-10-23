@@ -159,7 +159,8 @@ function renderPortfolio() {
   const grid = $('#portfolioGrid');
   if (!grid) return;
 
-  const list = activeFilter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === activeFilter);
+  const visible = PROJECTS.filter(p => !p.hidden);
+  const list = activeFilter === 'all' ? visible : visible.filter(p => p.category === activeFilter);
 
   if (!list.length) {
     grid.innerHTML = `<p class="pcard__type" style="grid-column:1/-1;padding:40px 0;">${
@@ -172,13 +173,15 @@ function renderPortfolio() {
     app: { ru: 'Telegram Mini App', en: 'Telegram Mini App' },
     bot: { ru: 'ИИ-агент', en: 'AI agent' },
     web: { ru: 'Веб-приложение', en: 'Web app' },
+    landing: { ru: 'Лендинг', en: 'Landing page' },
+    automation: { ru: 'Автоматизация', en: 'Automation' },
     presentation: { ru: 'Презентация', en: 'Presentation' },
   };
 
   grid.innerHTML = list.map(p => {
     const title   = esc(p.title[lang]);
     const desc    = esc(p.description[lang]);
-    const type    = esc((TYPES[p.category] || TYPES.web)[lang]);
+    const type    = esc((TYPES[p.type || p.category] || TYPES.web)[lang]);
     const hasLink = p.link && p.link !== '#';
     const href    = p.page || (hasLink ? p.link : null);
     const isCase  = Boolean(p.page);

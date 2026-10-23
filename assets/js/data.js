@@ -50,11 +50,11 @@ const PROJECTS = [
   },
   {
     id: 10,
-    category: 'bot',
+    category: 'automation',
     title: { ru: 'Мини-CRM для заявок', en: 'Mini CRM for leads' },
     description: {
-      ru: 'Заявка с сайта сама попадает в таблицу-CRM со стадиями, а владелец через 10 минут получает уведомление в Telegram. Защита персональных данных по закону РБ. От 700 BYN под ключ.',
-      en: 'A site lead lands in a CRM sheet with stages by itself, and the owner gets a Telegram alert within 10 minutes. Personal data protection under Belarusian law. From 700 BYN, turnkey.',
+      ru: 'Заявка с сайта сама попадает в таблицу-CRM со стадиями, а владелец через 10 минут получает уведомление в Telegram. Защита персональных данных по закону РБ.',
+      en: 'A site lead lands in a CRM sheet with stages by itself, and the owner gets a Telegram alert within 10 minutes. Personal data protection under Belarusian law.',
     },
     tech: ['Google Таблицы', 'Apps Script', 'Telegram Bot API', 'Formspree'],
     link: '#',
@@ -63,6 +63,7 @@ const PROJECTS = [
   },
   {
     id: 3,
+    hidden: true, // нет обложки и ссылки – вернуть, когда будут
     category: 'bot',
     title: { ru: 'Velvet Night Jazz Agent', en: 'Velvet Night Jazz Agent' },
     description: {
@@ -75,6 +76,7 @@ const PROJECTS = [
   },
   {
     id: 4,
+    hidden: true, // нет обложки; «полная конфиденциальность» неверна (данные уходят в Gemini)
     category: 'web',
     title: { ru: 'AI Relationship Analyzer', en: 'AI Relationship Analyzer' },
     description: {
@@ -100,6 +102,7 @@ const PROJECTS = [
   {
     id: 9,
     category: 'web',
+    type: 'landing', // подпись типа; фильтр остаётся «Веб»
     title: { ru: 'Лендинг «Тренажёр уверенности»', en: '“Confidence Trainer” landing page' },
     description: {
       ru: 'Продающая страница ИИ-тренажёра разговоров для сетевого бизнеса. Живое демо прямо на странице: посетитель отвечает ИИ-клиенту и получает разбор. Кнопки ведут в ИИ-ассистента, который сразу предлагает пилот и передаёт заявку.',
