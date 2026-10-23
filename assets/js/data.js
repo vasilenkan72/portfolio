@@ -51,10 +51,10 @@ const PROJECTS = [
   {
     id: 10,
     category: 'bot',
-    title: { ru: 'LeadBot-лайт – заявки без потерь', en: 'LeadBot Lite – no lost leads' },
+    title: { ru: 'Мини-CRM для заявок', en: 'Mini CRM for leads' },
     description: {
-      ru: 'Заявка с сайта сама попадает в таблицу-CRM со стадиями, а владелец через 10 минут получает уведомление в Telegram. Защита персональных данных по закону РБ, 0 BYN в месяц.',
-      en: 'A site lead lands in a CRM sheet with stages by itself, and the owner gets a Telegram alert within 10 minutes. Personal data protection under Belarusian law, 0 BYN per month.',
+      ru: 'Заявка с сайта сама попадает в таблицу-CRM со стадиями, а владелец через 10 минут получает уведомление в Telegram. Защита персональных данных по закону РБ. От 700 BYN под ключ.',
+      en: 'A site lead lands in a CRM sheet with stages by itself, and the owner gets a Telegram alert within 10 minutes. Personal data protection under Belarusian law. From 700 BYN, turnkey.',
     },
     tech: ['Google Таблицы', 'Apps Script', 'Telegram Bot API', 'Formspree'],
     link: '#',
