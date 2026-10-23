@@ -155,6 +155,8 @@ const PRICES = [
     name: { ru: 'Стратегическая презентация с исследованием', en: 'Strategy deck with research' }, term: { ru: 'от 3 дней', en: 'from 3 days' } },
   { topic: 'site', price: 800,
     name: { ru: 'Лендинг с текстами и формой', en: 'Landing page with copy and form' }, term: { ru: '7–10 дней', en: '7–10 days' } },
+  { topic: 'site', price: 600,
+    name: { ru: 'Сайт-визитка до 5 страниц', en: 'Business card website, up to 5 pages' }, term: { ru: '5–7 дней', en: '5–7 days' } },
   { topic: 'site', price: 500,
     name: { ru: 'Квиз или калькулятор для сайта', en: 'Quiz or calculator for your site' }, term: { ru: '3–5 дней', en: '3–5 days' } },
   { topic: 'agent', price: 700,
