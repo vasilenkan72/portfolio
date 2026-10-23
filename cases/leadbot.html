@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadBot-лайт – кейс | Наталья Василенко</title>
+  <meta name="description" content="Заявки с сайта сами попадают в таблицу-CRM со стадиями, а владелец получает уведомление в Telegram. Защита персональных данных по закону РБ, 0 BYN в месяц.">
+  <meta name="theme-color" content="#0B0B0B">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vasilenkan72.github.io/portfolio/cases/leadbot.html">
+  <meta property="og:title" content="LeadBot-лайт – заявки без потерь | кейс Натальи Василенко">
+  <meta property="og:description" content="Форма на сайте → таблица-CRM → уведомление в Telegram за 10 минут. Без серверов и подписок.">
+  <meta property="og:image" content="https://vasilenkan72.github.io/portfolio/assets/img/cases/leadbot/s01.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+  <header class="case-header">
+    <nav class="nav">
+      <a class="nav__logo" href="../index.html">Наталья Василенко</a>
+      <a class="case-back link-arrow" href="../index.html#portfolio"><span class="arrow">←</span> Все работы</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="case-hero">
+      <span class="eyebrow">Автоматизация · заявки без потерь</span>
+      <h1 class="display">LeadBot-лайт</h1>
+      <p class="subtext">Связка, в которой заявка с сайта сама попадает в таблицу-CRM, а владельцу приходит уведомление в Telegram. Не нужно караулить почту и вспоминать, кому уже ответила: всё в одной таблице со стадиями, а персональные данные хранятся по правилам.</p>
+      <dl class="case-meta"><div><dt>Формат</dt><dd>Форма + таблица + Telegram-бот</dd></div><div><dt>Стек</dt><dd>Formspree, Gmail, Google Таблицы, Apps Script</dd></div><div><dt>Стоимость работы</dt><dd>0 BYN в месяц</dd></div><div><dt>Статус</dt><dd>Работает на моём сайте</dd></div></dl>
+    </section>
+
+    <div class="case-cover">
+      <img src="../assets/img/cases/leadbot/s01.webp" alt="Схема: форма на сайте, почта, таблица-CRM и уведомление в Telegram" width="1600" height="900" data-slide="1">
+    </div>
+
+    <section class="case-body">
+      <h2>Задача</h2>
+      <div class="case-text"><p>Заявки с сайта приходили на почту и тонули среди рассылок и уведомлений. Было непонятно, кому я уже ответила, кто думает, а кто ждёт ответа третий день. Платить каждый месяц за CRM ради нескольких заявок в неделю не хотелось, поэтому я собрала её из бесплатных инструментов, которые и так есть у каждого.</p></div>
+    </section>
+
+    <section class="case-body">
+      <h2>Как работает</h2>
+      <div class="case-text"><ul>
+        <li><strong>Заявка:</strong> клиент заполняет форму или пишет в чат на сайте. Согласие на обработку данных обязательное, согласие на рассылку – отдельная необязательная галочка</li>
+        <li><strong>Почта:</strong> сервис Formspree присылает письмо в Gmail, а скрипт в Google Таблице проверяет почту каждые 10 минут. Есть и кнопка «Проверить почту сейчас»</li>
+        <li><strong>Таблица-CRM:</strong> каждая заявка становится строкой: имя, контакт, задача, источник (форма или чат), тема и расчёт. Повторы скрипт отсекает сам</li>
+        <li><strong>Стадии:</strong> Новая → Ответила → Думает → Договор или Отказ, из выпадающего списка. Рядом – дата последнего контакта</li>
+        <li><strong>Telegram:</strong> бот сразу присылает владельцу уведомление – кто написал, что нужно и откуда пришёл человек</li>
+      </ul></div>
+    </section>
+
+    <section class="case-body">
+      <h2>Защита данных</h2>
+      <div class="case-text"><ul>
+        <li>Через год после последнего контакта строка без договора краснеет: персональные данные нельзя хранить бессрочно, и таблица сама напоминает, что пора удалить</li>
+        <li>Согласие на рассылку записывается отдельно, поэтому письма уходят только тем, кто на них согласился</li>
+        <li>Текст из формы, похожий на формулу, обезвреживается: через сайт нельзя подсунуть в таблицу команду, которая что-то выполнит</li>
+        <li>Ключ от Telegram-бота хранится в закрытых настройках скрипта, а не в коде – даже если показать таблицу, ключ не утечёт</li>
+      </ul></div>
+    </section>
+
+    <section class="case-body">
+      <h2>Кому подойдёт</h2>
+      <div class="case-text"><p>Малому бизнесу и экспертам, у которых заявки приходят с сайта, а полноценная CRM пока избыточна: салонам, репетиторам, мастерам, студиям. Можно подключить к форме на любом сайте, а таблицу и уведомления настроить под ваши стадии и поля. Стоимость – от 700 BYN, срок 5–7 дней.</p></div>
+    </section>
+
+    <section class="case-cta">
+      <h2>Хотите, чтобы заявки не терялись?</h2>
+      <a href="../index.html#contact" class="btn btn-primary">Обсудить проект</a>
+    </section>
+
+    <nav class="case-next" aria-label="Другие кейсы">
+      <a class="link-arrow" href="../index.html#portfolio"><span class="arrow">←</span> Все работы</a>
+      <a class="link-arrow" href="solidarity.html">105 лет солидарности <span class="arrow">→</span></a>
+    </nav>
+  </main>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр" data-slides="../assets/img/cases/leadbot" data-count="1">
+    <div class="lightbox__bar">
+      <span class="lightbox__count">1 / 1</span>
+      <button type="button" class="lightbox__btn lightbox__close" aria-label="Закрыть">×</button>
+    </div>
+    <div class="lightbox__stage"><img src="" alt=""></div>
+    <button type="button" class="lightbox__btn lightbox__prev" aria-label="Назад">←</button>
+    <button type="button" class="lightbox__btn lightbox__next" aria-label="Вперёд">→</button>
+  </div>
+
+  <script src="../assets/js/case.js"></script>
+</body>
+</html>
