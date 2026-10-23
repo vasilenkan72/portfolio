@@ -73,6 +73,18 @@ const PROJECTS = [
     image: null,
   },
   {
+    id: 8,
+    category: 'web',
+    title: { ru: 'Интерактивная визитка', en: 'Interactive business card' },
+    description: {
+      ru: 'Личная продающая визитка в стиле сайта: фото, услуги, кнопка ИИ-ассистента и связь в Telegram. Один лёгкий файл, красиво на телефоне и компьютере, публикация на бесплатном хостинге.',
+      en: 'A personal selling card in the site’s style: photo, services, an AI assistant button and Telegram contact. One lightweight file that looks great on phone and desktop, published on free hosting.',
+    },
+    tech: ['HTML/CSS', 'JavaScript', 'GitHub Pages'],
+    link: 'vizitka/',
+    image: 'assets/img/cases/vizitka-cover-sm.webp',
+  },
+  {
     id: 5,
     category: 'presentation',
     title: { ru: '105 лет солидарности', en: '105 Years of Solidarity' },
@@ -156,7 +168,7 @@ const PRICES = [
   { topic: 'site', price: 800,
     name: { ru: 'Лендинг с текстами и формой', en: 'Landing page with copy and form' }, term: { ru: '7–10 дней', en: '7–10 days' } },
   { topic: 'site', price: 150,
-    name: { ru: 'Интерактивная визитка: фото, услуги, кнопки связи', en: 'Interactive business card: photo, services, contact buttons' }, term: { ru: '1–2 дня', en: '1–2 days' } },
+    name: { ru: 'Интерактивная визитка + публикация на хостинге', en: 'Interactive business card + hosting setup' }, term: { ru: '1–2 дня', en: '1–2 days' } },
   { topic: 'site', price: 500,
     name: { ru: 'Квиз или калькулятор для сайта', en: 'Quiz or calculator for your site' }, term: { ru: '3–5 дней', en: '3–5 days' } },
   { topic: 'agent', price: 700,
