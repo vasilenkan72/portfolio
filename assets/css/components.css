@@ -134,4 +134,7 @@
   .rcard--featured { grid-template-columns: 1fr; gap: 20px; }
   .portfolio__grid, .services__grid { grid-template-columns: 1fr; }
   .contact__form { padding: 20px; }
+  /* на телефоне поля и галочки ярче: на тёмном фоне тонкие рамки теряются */
+  .field input, .field textarea { border: 1.5px solid var(--color-cloud-dancer); }
+  .consent input { border: 2px solid var(--color-coral); }
 }
