@@ -97,8 +97,8 @@
   display: flex; align-items: center; gap: 14px; padding: 16px 0;
   border-bottom: 1px solid var(--color-graphite); font-size: 16px; transition: color .2s;
 }
-.social-icon { color: var(--color-ash); display: flex; transition: color .2s; }
-.social-arrow { margin-left: auto; color: var(--color-ash); transition: transform .2s, color .2s; }
+.social-icon { color: var(--color-coral); display: flex; transition: color .2s; }
+.social-arrow { margin-left: auto; color: var(--color-coral); transition: transform .2s, color .2s; }
 .social-link:hover, .social-link:hover .social-icon, .social-link:hover .social-arrow { color: var(--color-coral); }
 .social-link:hover .social-arrow { transform: translateX(4px); }
 
@@ -106,7 +106,7 @@
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field label { font-size: var(--text-caption); color: var(--color-ash); }
 .field input, .field textarea {
-  background: transparent; border: 1px solid var(--color-graphite); border-radius: var(--radius-md);
+  background: transparent; border: 1px solid var(--color-ash); border-radius: var(--radius-md);
   padding: 14px 16px; font-size: 15px; color: var(--color-cloud-dancer); outline: none;
   transition: border-color .2s; resize: vertical;
 }
@@ -116,7 +116,7 @@
 .consent { display: grid; grid-template-columns: 20px 1fr; gap: 12px; align-items: start; font-size: var(--text-caption); color: var(--color-ash); cursor: pointer; }
 .consent input {
   appearance: none; width: 20px; height: 20px; margin-top: 1px; cursor: pointer;
-  border: 1px solid var(--color-graphite); border-radius: 4px; display: grid; place-content: center;
+  border: 1.5px solid var(--color-cloud-dancer); border-radius: 4px; display: grid; place-content: center;
 }
 .consent input:checked { border-color: var(--color-coral); }
 .consent input:checked::after { content: ''; width: 10px; height: 10px; border-radius: 2px; background: var(--color-coral); }
