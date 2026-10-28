@@ -204,6 +204,7 @@ const PRICE_GROUPS = [
   { topic: 'presentation', title: { ru: 'Презентации', en: 'Presentations' } },
   { topic: 'site',         title: { ru: 'Сайты', en: 'Websites' } },
   { topic: 'agent',        title: { ru: 'Боты и ИИ-агенты', en: 'Bots & AI agents' } },
+  { topic: 'ready',        title: { ru: 'Готовые решения: услуги', en: 'Ready-made: services' } },
   { topic: 'automation',   title: { ru: 'Автоматизации', en: 'Automations' } },
   { topic: 'webapp',       title: { ru: 'Приложения', en: 'Apps' } },
 ];
@@ -223,6 +224,13 @@ const PRICES = [
     name: { ru: 'Интерактивная визитка + публикация на хостинге', en: 'Interactive business card + hosting setup' }, term: { ru: '1–2 дня', en: '1–2 days' } },
   { topic: 'site', price: 500,
     name: { ru: 'Квиз или калькулятор для сайта', en: 'Quiz or calculator for your site' }, term: { ru: '3–5 дней', en: '3–5 days' } },
+  /* Готовые решения на шаблоне ниши (психологи, мастера), утверждены 28.10.2026; демо в demo/ */
+  { topic: 'ready', price: 450,
+    name: { ru: 'Старт: визитка + запись или калькулятор, заявки в Telegram и таблицу', en: 'Start: card + booking or calculator, leads to Telegram and a sheet' }, term: { ru: '4–5 дней, на готовом шаблоне', en: '4–5 days, ready template' } },
+  { topic: 'ready', price: 850,
+    name: { ru: 'Под ключ: + Telegram-бот, база услуг или тканей, которую правите сами', en: 'Turnkey: + Telegram bot, a services or fabrics base you edit yourself' }, term: { ru: '7–10 дней, до 30 позиций в базе', en: '7–10 days, up to 30 items in the base' } },
+  { topic: 'ready', price: 40,
+    name: { ru: 'Поддержка готового решения', en: 'Ready-made solution support' }, term: { ru: 'в месяц', en: 'per month' } },
   { topic: 'agent', price: 700,
     name: { ru: 'Telegram-бот для заявок / FAQ', en: 'Telegram bot for leads / FAQ' }, term: { ru: '5–7 дней', en: '5–7 days' } },
   { topic: 'agent', price: 900,
