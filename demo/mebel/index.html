@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мастерская «Второе дыхание» – перетяжка мебели (демо)</title>
+<meta name="description" content="Демо-визитка мастерской перетяжки мебели с ботом-калькулятором. Пример от Натальи Василенко.">
+<meta property="og:title" content="Делаешь мебель? Посмотри, как тебя могут находить клиенты">
+<meta property="og:description" content="Живой пример визитки мастерской с ботом: расчёт цены и заявка с фото. Пощёлкай сам.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../demo.css">
+<style>
+  :root { --bg: #F5EFE6; --ink: #2E2620; --muted: #75685C; --accent: #B5562F; --card: #FFFBF5;
+    --alt: #EFE5D7; --line: #E0D3C1; --art: linear-gradient(160deg, #E9D3BC, #CFA27C 55%, #A8673F); }
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+  .ba div { aspect-ratio: 1; border-radius: 12px; display: grid; place-items: center; font-size: 13px; color: #fff; font-weight: 600; }
+  .ba .b { background: repeating-linear-gradient(45deg, #9C8F84, #9C8F84 10px, #8E8176 10px, #8E8176 20px); }
+  .ba .a { background: var(--accent); }
+</style>
+</head>
+<body>
+<div class="demo-flag">Это <b>демо</b>: мастерская вымышленная, а бот-калькулятор настоящий – попробуй его ↘</div>
+
+<div class="wrap">
+  <header class="top">
+    <div class="logo">Второе дыхание</div>
+    <a href="#" class="btn" data-bot="calc">Узнать цену</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Перетяжка и ремонт мягкой мебели в Гродно</h1>
+      <p class="muted">Вернём любимому дивану вид как из салона, но дешевле нового. Пришлите фото – назовём цену за 5 минут. Забираем и привозим сами.</p>
+      <div class="btns">
+        <a href="#" class="btn" data-bot="calc">Рассчитать стоимость</a>
+        <a href="#" class="btn ghost" data-bot="photo">Отправить фото мебели</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">🛋️</div>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Что мы делаем</h2>
+    <div class="grid">
+      <div class="card"><h3>Перетяжка</h3><p class="muted">Диваны, кресла, стулья, кухонные уголки. Более 200 тканей в каталоге.</p><div class="price">от 35 BYN</div></div>
+      <div class="card"><h3>Замена поролона</h3><p class="muted">Если диван просел, меняем наполнитель, и он снова держит форму.</p><div class="price">от 60 BYN</div></div>
+      <div class="card"><h3>Ремонт механизмов</h3><p class="muted">Раскладка, пружины, каркас. Чиним то, что скрипит и ломается.</p><div class="price">от 40 BYN</div></div>
+      <div class="card"><h3>Мебель на заказ</h3><p class="muted">Изготовим по вашему размеру и эскизу.</p><div class="price">по проекту</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>До и после</h2>
+    <div class="grid">
+      <div class="card"><div class="ba"><div class="b">ДО</div><div class="a">ПОСЛЕ</div></div><h3>Диван «Честер»</h3><p class="muted">Экокожа, 4 дня</p></div>
+      <div class="card"><div class="ba"><div class="b">ДО</div><div class="a">ПОСЛЕ</div></div><h3>Бабушкино кресло</h3><p class="muted">Велюр, новый поролон, 3 дня</p></div>
+      <div class="card"><div class="ba"><div class="b">ДО</div><div class="a">ПОСЛЕ</div></div><h3>6 стульев</h3><p class="muted">Рогожка, 2 дня</p></div>
+    </div>
+    <p class="muted" style="margin-top:16px;font-size:15px">В настоящей визитке здесь будут ваши фото работ: это главное, что убеждает клиента.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Как мы работаем</h2>
+    <div class="grid">
+      <div class="card"><h3>1. Фото</h3><p class="muted">Присылаете фото в чат, бот сразу называет примерную цену.</p></div>
+      <div class="card"><h3>2. Ткань</h3><p class="muted">Привозим образцы тканей к вам домой.</p></div>
+      <div class="card"><h3>3. Работа</h3><p class="muted">Забираем мебель, 2–5 дней, гарантия 1 год.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="natallia">
+  <div class="wrap">
+    <p class="muted">Это демо сделала Наталья Василенко</p>
+    <h2>Ты делаешь мебель золотыми руками. А о тебе знают только соседи?</h2>
+    <p class="muted" style="max-width:680px">Проверь себя. Если хотя бы два пункта про тебя, заказы уходят к тем, кого просто легче найти.</p>
+    <ul class="check">
+      <li>Фото твоих работ лежат в телефоне, и показать их клиенту можно только при встрече.</li>
+      <li>Каждый спрашивает «сколько стоит?», и ты в десятый раз считаешь в переписке.</li>
+      <li>Заявки теряются между звонками, мессенджерами и работой в цеху.</li>
+      <li>Нет ссылки, которую клиент может переслать знакомым.</li>
+      <li>По запросу «перетяжка мебели Гродно» тебя не найти.</li>
+    </ul>
+    <p style="max-width:680px;margin-bottom:28px">Такую визитку и бота-калькулятора я сделаю под тебя за пару дней. А в NEURO рассказываю, как ИИ помогает мастерам находить заказы: подпишись, там будет польза.</p>
+    <div class="grid">
+      <div class="card"><h3>Старт</h3><p class="muted">Визитка + калькулятор или запись на сайте, заявки в Telegram и таблицу. 4–5 дней.</p><div class="price">450 BYN</div></div>
+      <div class="card"><h3>Под ключ</h3><p class="muted">Всё из «Старта» + Telegram-бот с приёмом фото, база тканей, которую правишь сам, заявки в Telegram и таблицу. 7–10 дней.</p><div class="price">850 BYN</div></div>
+      <div class="card"><h3>Поддержка</h3><p class="muted">Хостинг, работа бота 24/7, мелкие правки.</p><div class="price">40 BYN/мес</div></div>
+    </div>
+    <p class="note">🔥 Первым трём – скидка 30% в обмен на отзыв.</p>
+    <div class="btns">
+      <a class="btn" href="https://t.me/natallia_vasilenka" target="_blank" rel="noopener">Хочу такую же</a>
+      <a class="btn ghost" href="https://t.me/neuro24_7" target="_blank" rel="noopener">Читать NEURO в Telegram</a>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">Демо-страница. Мастерская «Второе дыхание» вымышленная, совпадения случайны. Сделано: <a href="../../">Наталья Василенко</a></div></footer>
+
+<script>
+// Цены для калькулятора: [от, до] в BYN и наценка за ткань
+const BASE = { "Диван": [250, 400], "Кресло": [120, 180], "Стулья (за 1 шт.)": [35, 50], "Кухонный уголок": [180, 280] };
+const FABRIC = { "Рогожка": 1, "Велюр": 1.15, "Экокожа": 1.3 };
+const opt = (obj, key, next) => Object.keys(obj).map((k) => ({ label: k, set: { [key]: k }, next }));
+
+window.BOT = {
+  title: "Второе дыхание", subtitle: "Расчёт цены · отвечает сразу",
+  greet: "Здравствуйте! Я помощник мастерской. Посчитаю цену и приму заявку.",
+  start: "menu",
+  nodes: {
+    menu: { text: "Чем помочь?", options: [
+      { label: "Рассчитать стоимость", next: "calc" },
+      { label: "Отправить фото мебели", next: "photo" },
+      { label: "Сроки и гарантия", next: "terms" } ] },
+    terms: { text: "Обычно 2–5 дней. Забираем и привозим сами по Гродно. Гарантия на работу 1 год.", options: [
+      { label: "Рассчитать стоимость", next: "calc" }, { label: "Назад", next: "menu" } ] },
+    calc: { text: "Что будем перетягивать?", options: opt(BASE, "item", "fabric") },
+    fabric: { text: "Какая ткань нравится?", options: opt(FABRIC, "fabric", "result") },
+    result: {
+      text: (s) => {
+        const [lo, hi] = BASE[s.item].map((p) => Math.round(p * FABRIC[s.fabric] / 5) * 5);
+        return `${s.item}, ${s.fabric.toLowerCase()}: ориентировочно ${lo}–${hi} BYN.\nТочную цену мастер скажет по фото.`;
+      },
+      options: [{ label: "Отправить фото", next: "photo" }, { label: "Вызвать мастера", next: "visit" }] },
+    photo: { text: "Прикрепите фото мебели, мастер посмотрит и уточнит цену.", file: { label: "📷 Выбрать фото", next: "visit" },
+      options: [{ label: "Без фото, вызвать мастера", next: "visit" }] },
+    visit: { text: "Когда удобно, чтобы мастер приехал с образцами тканей?", options: [
+      { label: "Завтра, 10–13", set: { slot: "завтра, 10–13" }, next: "done" },
+      { label: "Завтра, 17–20", set: { slot: "завтра, 17–20" }, next: "done" },
+      { label: "В субботу", set: { slot: "суббота" }, next: "done" } ] },
+    done: { text: (s) => `Заявка принята! Мастер приедет: ${s.slot}${s.photo ? ", фото получено" : ""}. Перезвоним для подтверждения адреса.\n\n(В демо заявка никуда не уходит. В настоящем боте она с фото сразу падает мастеру в Telegram.)`,
+      options: [{ label: "В начало", next: "menu" }] }
+  }
+};
+</script>
+<script src="../concierge.js"></script>
+</body>
+</html>
