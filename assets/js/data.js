@@ -100,6 +100,30 @@ const PROJECTS = [
     image: 'assets/img/cases/vizitka-cover-sm.webp',
   },
   {
+    id: 11,
+    category: 'web',
+    title: { ru: 'Визитка психолога + бот записи (демо)', en: 'Psychologist card + booking bot (demo)' },
+    description: {
+      ru: 'Готовое решение для психологов: визитка с подходом и ценами, бот записи с деликатной анкетой и напоминаниями. Заявки падают в Telegram и таблицу. Специалист вымышленный, бота можно попробовать.',
+      en: 'A ready-made solution for psychologists: a card with approach and prices, a booking bot with a gentle intake and reminders. Leads go to Telegram and a sheet. The specialist is fictional, the bot is live.',
+    },
+    tech: ['HTML/CSS', 'JavaScript', 'Бот записи', 'GitHub Pages'],
+    link: 'demo/psiholog/',
+    image: 'assets/img/cases/demo-psiholog-cover-sm.webp',
+  },
+  {
+    id: 12,
+    category: 'web',
+    title: { ru: 'Визитка мастерской мебели + бот-калькулятор (демо)', en: 'Furniture workshop card + price bot (demo)' },
+    description: {
+      ru: 'Готовое решение для мастеров перетяжки и мебели на заказ: работы «до/после», бот считает цену по виду мебели и ткани, принимает фото и записывает на замер. Мастерская вымышленная, бота можно попробовать.',
+      en: 'A ready-made solution for upholstery and custom furniture makers: before/after gallery, a bot that estimates price by item and fabric, takes photos and books a visit. The workshop is fictional, the bot is live.',
+    },
+    tech: ['HTML/CSS', 'JavaScript', 'Калькулятор', 'GitHub Pages'],
+    link: 'demo/mebel/',
+    image: 'assets/img/cases/demo-mebel-cover-sm.webp',
+  },
+  {
     id: 9,
     category: 'web',
     type: 'landing', // подпись типа; фильтр остаётся «Веб»
