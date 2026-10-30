@@ -71,9 +71,13 @@ function render() {
   $('revenue').textContent = money(r.revenue);
   $('taxSum').textContent = money(r.taxSum);
   $('lossBox').classList.toggle('hidden', !(p.idle > 0));
-  $('lossSum').textContent = money(r.idleLoss);
-  $('lossYear').textContent = `≈ ${money(r.idleLoss * 12)} за год`;
-  $('lossText').textContent = `Это простои, отмены и пустые окна (${p.idle}%): время уже было в вашем графике, но клиент не пришёл или не записался. Онлайн-запись и напоминание накануне возвращают часть этих денег.`;
+  const loss = (r.slots - r.done) * price;                 // от той же округлённой цены, что видит человек
+  $('lossSum').textContent = money(loss);
+  $('lossYear').textContent = `А за год – ${money(loss * 12)}`;
+  const n = (x) => Math.round(x).toLocaleString('ru-RU');
+  $('lossText').textContent = `Как это получается: за месяц вы успеваете ${n(r.slots)} ${gen}. Но около ${n(r.slots - r.done)} из них пропадают: `
+    + `клиент отменил, не пришёл или не дождался ответа и ушёл к другому. Каждый такой пропуск – это ${money(price)}, `
+    + 'которые вы могли заработать. Хорошая новость: часть этих денег можно вернуть.';
 
   const gap = $('gap');
   gap.classList.toggle('hidden', r.gap === undefined);
