@@ -134,7 +134,7 @@ const PROJECTS = [
     },
     tech: ['JavaScript', 'i18n', 'Telegram-бот', 'Gemini API'],
     link: 'cena/',
-    image: 'assets/img/cases/cena-cover-sm.webp',
+    image: 'assets/img/cases/cena-cover-sm.webp?v=2',
   },
   {
     id: 14,
@@ -147,7 +147,7 @@ const PROJECTS = [
     },
     tech: ['JavaScript', 'i18n', 'Telegram-бот', 'Gemini API'],
     link: 'proverka/',
-    image: 'assets/img/cases/proverka-cover-sm.webp',
+    image: 'assets/img/cases/proverka-cover-sm.webp?v=2',
   },
   {
     id: 9,
