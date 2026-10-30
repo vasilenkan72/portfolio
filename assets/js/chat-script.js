@@ -157,7 +157,7 @@ const CHAT_ROI = {
 const CHAT_PRICE = {
   intro:   { ru: 'Подберём ориентир по стоимости. Что нужно сделать?', en: 'Let’s find a price guide. What do you need?' },
   variant: { ru: 'Какой вариант ближе к вашей задаче?', en: 'Which option is closest to your task?' },
-  support: { ru: 'Нужна ли поддержка после запуска? Для ботов и ИИ это ещё и оплата нейросети.', en: 'Do you need support after launch? For bots and AI it also covers the AI model.' },
+  support: { ru: 'Нужна ли поддержка после запуска: правки, обновления, контроль работы?', en: 'Do you need support after launch: edits, updates, keeping it running?' },
   yes:     { ru: 'Да, нужна', en: 'Yes' },
   no:      { ru: 'Нет, только запуск', en: 'No, launch only' },
   result:  { ru: 'Ориентир: «{name}» от {price} BYN, срок {term}.', en: 'Guide: “{name}” from {price} BYN, timeline {term}.' },

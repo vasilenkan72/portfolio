@@ -255,6 +255,8 @@ const PRICES = [
     name: { ru: 'Старт: визитка + запись или калькулятор, заявки в Telegram и таблицу', en: 'Start: card + booking or calculator, leads to Telegram and a sheet' }, term: { ru: '4–5 дней, на готовом шаблоне', en: '4–5 days, ready template' } },
   { topic: 'ready', price: 850,
     name: { ru: 'Под ключ: + Telegram-бот, база услуг или тканей, которую правите сами', en: 'Turnkey: + Telegram bot, a services or fabrics base you edit yourself' }, term: { ru: '7–10 дней, до 30 позиций в базе', en: '7–10 days, up to 30 items in the base' } },
+  { topic: 'ready', price: 300,
+    name: { ru: 'Лид-магнит: калькулятор цены или тест под вашу нишу, кнопка в ваш Telegram', en: 'Lead magnet: price calculator or quiz for your niche, button to your Telegram' }, term: { ru: '3 дня, на готовом движке', en: '3 days, ready engine' } },
   { topic: 'ready', price: 40,
     name: { ru: 'Поддержка готового решения', en: 'Ready-made solution support' }, term: { ru: 'в месяц', en: 'per month' } },
   { topic: 'agent', price: 700,
@@ -280,7 +282,7 @@ const PRICES = [
 ];
 
 const PRICE_SUPPORT = { price: 100,
-  name: { ru: 'Поддержка и абонплата ИИ', en: 'Support and AI subscription' }, unit: { ru: 'в месяц', en: 'per month' } };
+  name: { ru: 'Поддержка ИИ-решений', en: 'AI solution support' }, unit: { ru: 'в месяц', en: 'per month' } };
 
 /* Частые вопросы. {price:Название} подставляет цену из PRICES, чтобы FAQ не расходился с прайсом. */
 const FAQ = [

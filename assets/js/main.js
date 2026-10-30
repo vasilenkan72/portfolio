@@ -249,8 +249,8 @@ function renderServices() {
       <h3 class="scard__name">${esc(PRICE_SUPPORT.name[lang])}</h3>
       <p class="scard__price"><small>${from}</small> ${fmt(PRICE_SUPPORT.price)} <small>BYN ${esc(PRICE_SUPPORT.unit[lang])}</small></p>
       <p class="scard__desc">${lang === 'ru'
-        ? 'Сопровождение после запуска и оплата нейросети, на которой работает агент.'
-        : 'Post-launch support and the AI model your agent runs on.'}</p>
+        ? 'Сопровождение после запуска: правки, обновления и контроль, что бот или агент работает. Нейросеть подключается на ваш аккаунт и оплачивается по её тарифу, для небольших ботов часто бесплатно.'
+        : 'Post-launch support: edits, updates and making sure your bot or agent keeps running. The AI model is connected to your own account and billed at its rates, often free for small bots.'}</p>
     </article>`;
   setTimeout(() => initReveal(), 40);
 }
