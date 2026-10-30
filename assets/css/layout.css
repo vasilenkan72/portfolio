@@ -59,7 +59,7 @@ section { padding: var(--section-gap) 0; }
 .about__cta { font-size: 15px; }
 .about__edu { display: flex; flex-direction: column; gap: 10px; padding: 20px; background: var(--color-obsidian); border-radius: var(--radius-lg); font-size: 15px; color: var(--color-stone); }
 .about__edu .link-arrow { color: var(--color-cloud-dancer); align-self: flex-start; }
-.certs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 4px 0; }
+.certs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 4px 0; }
 .cert { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--color-ash); transition: color .2s; }
 .cert img { width: 100%; height: auto; aspect-ratio: 10 / 7; object-fit: contain; background: var(--color-void); border-radius: var(--radius-md); }
 .cert:hover { color: var(--color-coral); }
