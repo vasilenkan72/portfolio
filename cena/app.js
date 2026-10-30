@@ -4,7 +4,7 @@ import { CURRENCIES, DEFAULT_CURRENCY, scale, nice, roundUp, formatMoney, format
 import { detectLang, applyTexts, renderSwitcher, share } from '../assets/js/i18n.js';
 
 const lang = detectLang();
-const L = await import(`./lang/${lang}.js?v=5`);
+const L = await import(`./lang/${lang}.js?v=6`);
 const T = L.ui;
 const MONEY = ['income', 'current', 'rent', 'transport', 'staff', 'other', 'fees', 'materials'];
 const FIELDS = [...MONEY, 'days', 'hours', 'duration', 'volume', 'idle'];
@@ -105,6 +105,10 @@ function render() {
   $('week').textContent = formatNum(r.perWeek, lang);
   $('revenue').textContent = money(r.revenue);
   $('taxSum').textContent = money(r.taxSum);
+  if (lang === 'ru') {   // бот получает нишу и итог: p_<номер ниши или x>_<потери в месяц>_<валюта>
+    const link = `https://t.me/natallia_assistant_bot?start=p_${state.niche ? ALL.indexOf(state.niche) : 'x'}_${Math.round(loss)}_${state.cur}`;
+    $('lossCta').href = link; $('offerCta').href = link;
+  }
   $('lossBox').classList.toggle('hidden', !(p.idle > 0));
   $('lossSum').textContent = money(loss);
   $('lossYear').textContent = T.lossYear(money(loss * 12));

@@ -2,7 +2,7 @@ import { scoreQuiz } from './score.js';
 import { detectLang, applyTexts, renderSwitcher, share } from '../assets/js/i18n.js';
 
 const lang = detectLang();
-const { ui: T, QUESTIONS, LEVELS } = await import(`./lang/${lang}.js?v=6`);
+const { ui: T, QUESTIONS, LEVELS } = await import(`./lang/${lang}.js?v=7`);
 const $ = (id) => document.getElementById(id);
 let answers = [];
 
@@ -33,6 +33,9 @@ function finish() {
   $('level').textContent = r.level.title;
   $('levelText').textContent = r.level.text;
   $('tipsTitle').textContent = T.tips(r.tips.length);
+  // бот получает балл и номера вопросов с ответом «0 баллов»: q_<балл>_<цифры 1–8>
+  const weak = answers.map((a, i) => (a === 2 ? i + 1 : '')).join('');
+  if (lang === 'ru') $('cta').href = `https://t.me/natallia_assistant_bot?start=q_${r.score}_${weak}`;
   $('tips').replaceChildren(...(r.tips.length ? r.tips : [T.allDone])
     .map((t) => Object.assign(document.createElement('li'), { textContent: t })));
   show('result');
