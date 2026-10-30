@@ -4,131 +4,122 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Калькулятор честной цены услуги</title>
-<meta name="description" content="Посчитайте, сколько должна стоить ваша услуга, чтобы после аренды, материалов, зарплаты помощникам и налогов на руках оставалась нужная сумма. Бесплатно, в BYN.">
+<meta name="description" content="Посчитайте, сколько должна стоить ваша услуга, чтобы после аренды, материалов, зарплаты помощникам и налогов на руках оставалась нужная сумма. Бесплатно. Русский, Polski, Čeština, Deutsch, English.">
 <meta property="og:title" content="Сколько должна стоить ваша услуга?">
-<meta property="og:description" content="Бесплатный калькулятор для мастеров, бригад и специалистов: честная цена за услугу, м², окно или заказ.">
+<meta property="og:description" content="Бесплатный калькулятор для мастеров, бригад и специалистов: честная цена за услугу, м², окно или заказ. BYN, RUB, EUR, PLN, CZK.">
 <meta property="og:url" content="https://vasilenkan72.github.io/portfolio/cena/">
 <meta name="theme-color" content="#0B0B0B">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/tools.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tools.css?v=5">
 </head>
 <body class="glow">
 <main class="wrap wide">
-  <nav class="top"><a href="../">Наталья Василенко</a><a href="../proverka/">Тест для бизнеса →</a></nav>
+  <nav class="top"><a href="../" data-t="navHome">Наталья Василенко</a><span class="langs" id="langs"></span><a href="../proverka/" id="navTest" data-t="navTest">Тест для бизнеса →</a></nav>
 
   <header class="hero">
-    <p class="eyebrow">Бесплатный калькулятор · BYN</p>
-    <h1>Сколько должна стоить ваша услуга?</h1>
-    <p class="lead">Маникюр или натяжные потолки, окна или ремонт под ключ: введите доход, который хотите получать на руки, и свои расходы. Калькулятор покажет цену, ниже которой вы работаете себе в убыток.</p>
+    <p class="eyebrow" data-t="eyebrow">Бесплатный калькулятор</p>
+    <h1 data-t="h1">Сколько должна стоить ваша услуга?</h1>
+    <p class="lead" data-t="lead"></p>
+    <div class="currency"><span class="muted" data-t="currency">Валюта</span><div class="chips" id="currencies"></div></div>
   </header>
 
   <div class="layout">
     <form id="form" autocomplete="off">
       <section class="step">
-        <h2><span class="num">1</span>Ваша услуга</h2>
-        <input type="search" id="search" class="search" placeholder="Найти: окна, потолки, маникюр, ремонт…">
+        <h2><span class="num">1</span><span data-t="step1">Ваша услуга</span></h2>
+        <input type="search" id="search" class="search" data-t-ph="searchPh">
         <div class="chips scroll" id="groups"></div>
         <div class="chips" id="niches"></div>
         <div class="row">
-          <div class="field"><label for="name">Название</label><input type="text" id="name" maxlength="60" placeholder="Например, монтаж кондиционеров"></div>
-          <div class="field"><label for="unit">Считаем цену за</label><select id="unit"></select></div>
+          <div class="field"><label for="name" data-t="nameLabel">Название</label><input type="text" id="name" maxlength="60" data-t-ph="namePh"></div>
+          <div class="field"><label for="unit" data-t="unitLabel">Считаем цену за</label><select id="unit"></select></div>
         </div>
-        <small class="hint">Цифры ниже – типичный ориентир для выбранной услуги. Поменяйте их на свои.</small>
+        <small class="hint" data-t="hint"></small>
       </section>
 
       <section class="step">
-        <h2><span class="num">2</span>Сколько хотите зарабатывать</h2>
+        <h2><span class="num">2</span><span data-t="step2">Сколько хотите зарабатывать</span></h2>
         <div class="row">
-          <div class="field"><label for="income">На руки в месяц</label><div class="suffix" data-s="р."><input type="number" id="income" min="0" step="50" inputmode="decimal"></div></div>
-          <div class="field"><label for="current">Ваша цена сейчас <span class="muted">(если есть)</span></label><div class="suffix" data-s="р."><input type="number" id="current" min="0" step="1" inputmode="decimal"></div></div>
+          <div class="field"><label for="income" data-t="income">На руки в месяц</label><div class="suffix"><input type="number" id="income" min="0" step="50" inputmode="decimal"></div></div>
+          <div class="field"><label for="current"><span data-t="current">Ваша цена сейчас</span> <span class="muted" data-t="ifAny">(если есть)</span></label><div class="suffix"><input type="number" id="current" min="0" step="1" inputmode="decimal"></div></div>
         </div>
       </section>
 
       <section class="step">
-        <h2><span class="num">3</span>Расходы в месяц</h2>
+        <h2><span class="num">3</span><span data-t="step3">Расходы в месяц</span></h2>
         <div class="row">
-          <div class="field"><label for="rent">Аренда: кабинет, цех, гараж</label><div class="suffix" data-s="р."><input type="number" id="rent" min="0" step="10" inputmode="decimal"></div></div>
-          <div class="field"><label for="transport">Авто, топливо, проезд</label><div class="suffix" data-s="р."><input type="number" id="transport" min="0" step="10" inputmode="decimal"></div></div>
-          <div class="field"><label for="staff">Зарплата помощникам, бригаде</label><div class="suffix" data-s="р."><input type="number" id="staff" min="0" step="50" inputmode="decimal"></div></div>
-          <div class="field"><label for="other">Реклама, связь, инструмент, обучение</label><div class="suffix" data-s="р."><input type="number" id="other" min="0" step="10" inputmode="decimal"></div></div>
-          <div class="field"><label for="fees">Взносы ФСЗН и другие платежи</label><div class="suffix" data-s="р."><input type="number" id="fees" min="0" step="5" inputmode="decimal"></div></div>
-          <div class="field"><label for="materials">Материалы на 1 <span class="u" data-f="0">услугу</span></label><div class="suffix" data-s="р."><input type="number" id="materials" min="0" step="0.5" inputmode="decimal"></div><small>Если материалы клиент оплачивает отдельно, ставьте 0</small></div>
+          <div class="field"><label for="rent" data-t="rent"></label><div class="suffix"><input type="number" id="rent" min="0" step="10" inputmode="decimal"></div></div>
+          <div class="field"><label for="transport" data-t="transport"></label><div class="suffix"><input type="number" id="transport" min="0" step="10" inputmode="decimal"></div></div>
+          <div class="field"><label for="staff" data-t="staff"></label><div class="suffix"><input type="number" id="staff" min="0" step="50" inputmode="decimal"></div></div>
+          <div class="field"><label for="other" data-t="other"></label><div class="suffix"><input type="number" id="other" min="0" step="10" inputmode="decimal"></div></div>
+          <div class="field"><label for="fees" data-t="fees"></label><div class="suffix"><input type="number" id="fees" min="0" step="5" inputmode="decimal"></div></div>
+          <div class="field"><label for="materials" id="materialsLbl"></label><div class="suffix"><input type="number" id="materials" min="0" step="0.5" inputmode="decimal"></div><small data-t="materialsNote"></small></div>
         </div>
         <div class="field">
-          <span class="label">Налог с выручки</span>
-          <div class="chips" id="taxes">
-            <button type="button" class="chip" data-tax="10">Самозанятый (НПД) 10%</button>
-            <button type="button" class="chip" data-tax="6">ИП, УСН 6%</button>
-            <button type="button" class="chip" data-tax="0">Не плачу / другое</button>
-          </div>
-          <small>Проверьте свою ставку: она зависит от режима и льгот</small>
+          <span class="label" data-t="taxLabel">Налог с выручки</span>
+          <div class="chips" id="taxes"></div>
+          <div class="suffix hidden" id="taxCustomBox" data-s="%"><input type="number" id="taxCustom" min="0" max="60" step="0.5" inputmode="decimal"></div>
+          <small data-t="taxNote"></small>
         </div>
       </section>
 
       <section class="step">
-        <h2><span class="num">4</span>Загрузка</h2>
+        <h2><span class="num">4</span><span data-t="step4">Загрузка</span></h2>
         <div class="segment" id="modes">
-          <button type="button" data-mode="schedule">По графику, в часах</button>
-          <button type="button" data-mode="volume">По объёму работ</button>
+          <button type="button" data-mode="schedule" data-t="modeSchedule">По графику, в часах</button>
+          <button type="button" data-mode="volume" data-t="modeVolume">По объёму работ</button>
         </div>
         <div class="row three" id="schedule">
-          <div class="field"><label for="days">Рабочих дней в месяц</label><input type="number" id="days" min="1" max="31" step="1" inputmode="numeric"></div>
-          <div class="field"><label for="hours">Часов работы в день</label><input type="number" id="hours" min="0.5" max="16" step="0.5" inputmode="decimal"></div>
-          <div class="field"><label for="duration">Часов на 1 <span class="u" data-f="0">услугу</span></label><input type="number" id="duration" min="0.25" max="12" step="0.25" inputmode="decimal"></div>
+          <div class="field"><label for="days" data-t="days"></label><input type="number" id="days" min="1" max="31" step="1" inputmode="numeric"></div>
+          <div class="field"><label for="hours" data-t="hours"></label><input type="number" id="hours" min="0.5" max="16" step="0.5" inputmode="decimal"></div>
+          <div class="field"><label for="duration" id="durationLbl"></label><input type="number" id="duration" min="0.25" max="12" step="0.25" inputmode="decimal"></div>
         </div>
-        <div class="field" id="volumeBox">
-          <label for="volume">Сколько <span class="u" data-f="1">услуг</span> успеваете за месяц при полной загрузке</label>
-          <input type="number" id="volume" min="0" step="1" inputmode="decimal">
-        </div>
+        <div class="field" id="volumeBox"><label for="volume" id="volumeLbl"></label><input type="number" id="volume" min="0" step="1" inputmode="decimal"></div>
         <div class="field">
-          <label for="idle">Простои, отмены, пустые окна: <b id="idleVal">15%</b></label>
+          <label for="idle"><span data-t="idle">Простои, отмены, пустые окна:</span> <b id="idleVal">15%</b></label>
           <input type="range" id="idle" min="0" max="60" step="1">
-          <small>Часть времени, которая в итоге не оплачена</small>
+          <small data-t="idleNote"></small>
         </div>
       </section>
     </form>
 
     <aside class="result" id="result" aria-live="polite">
-      <p class="eyebrow" id="resTitle">Минимальная цена</p>
+      <p class="eyebrow" id="resTitle"></p>
       <p class="big" id="price">–</p>
       <p class="muted" id="hour"></p>
       <p class="gap hidden" id="gap"></p>
       <div class="stats">
-        <div class="stat"><b id="clients">–</b><span id="clientsLabel">в месяц</span></div>
-        <div class="stat"><b id="week">–</b><span>в неделю</span></div>
-        <div class="stat"><b id="revenue">–</b><span>выручка в месяц</span></div>
-        <div class="stat"><b id="taxSum">–</b><span>налог в месяц</span></div>
+        <div class="stat"><b id="clients">–</b><span id="clientsLabel"></span></div>
+        <div class="stat"><b id="week">–</b><span data-t="perWeek"></span></div>
+        <div class="stat"><b id="revenue">–</b><span data-t="revenue"></span></div>
+        <div class="stat"><b id="taxSum">–</b><span data-t="taxMonth"></span></div>
       </div>
       <div class="loss" id="lossBox">
-        <p class="eyebrow">Столько вы теряете каждый месяц</p>
+        <p class="eyebrow" data-t="lossEyebrow"></p>
         <p class="loss-sum" id="lossSum">–</p>
         <p class="loss-year" id="lossYear"></p>
         <p class="loss-text" id="lossText"></p>
-        <a class="btn" href="https://t.me/natallia_assistant_bot?start=price">Как вернуть эти деньги →</a>
+        <a class="btn" id="lossCta" data-t="lossCta" href="https://t.me/natallia_assistant_bot?start=price"></a>
       </div>
-      <div class="actions"><button type="button" class="ghost" id="share">Отправить коллеге</button><span class="note hidden" id="copied">Ссылка скопирована</span></div>
-      <p class="note">Расчёт ориентировочный. Данные никуда не отправляются: всё считается в вашем браузере.</p>
+      <div class="actions"><button type="button" class="ghost" id="share" data-t="share"></button><span class="note hidden" id="copied" data-t="copied"></span></div>
+      <p class="note" data-t="privacy"></p>
     </aside>
   </div>
 
   <section class="offer">
-    <h2>Как вернуть часть потерянных денег</h2>
-    <p>Клиент чаще доходит до вас, когда может записаться сам в любое время, сразу видит цены и накануне получает напоминание: «Жду вас завтра в 15:00».</p>
-    <p>Я делаю такие страницы и Telegram-ботов. Гродно и вся Беларусь:</p>
-    <ul class="prices">
-      <li><span>Сайт-визитка с кнопками связи</span><b>от 150 р.</b></li>
-      <li><span>Страница с услугами, ценами и заявками</span><b>от 450 р.</b></li>
-      <li><span>Онлайн-запись + бот, который отвечает клиентам и напоминает о визите</span><b>от 850 р.</b></li>
-    </ul>
+    <h2 data-t="offerH"></h2>
+    <p data-t="offerP"></p>
+    <p id="offerLead"></p>
+    <ul class="prices" id="prices"></ul>
     <div class="actions">
-      <a class="btn" href="https://t.me/natallia_assistant_bot?start=price">Хочу так же у себя</a>
-      <a class="ghost" href="../proverka/">Пройти тест за 2 минуты</a>
+      <a class="btn" id="offerCta" href="https://t.me/natallia_assistant_bot?start=price"></a>
+      <a class="ghost" id="offerTest" href="../proverka/" data-t="offerTest"></a>
     </div>
   </section>
 
-  <a class="sticky" id="sticky" href="#result">Минимальная цена: <b id="stickyPrice">–</b> ↓</a>
-  <footer class="foot">Сделано <a href="../">Натальей Василенко</a> · сайты, боты и ИИ-агенты для бизнеса · <a href="https://t.me/natallia_vasilenka">@natallia_vasilenka</a></footer>
+  <a class="sticky" id="sticky" href="#result"><span data-t="sticky"></span> <b id="stickyPrice">–</b> ↓</a>
+  <footer class="foot"><span data-t="foot"></span> · <a href="https://t.me/natallia_vasilenka">@natallia_vasilenka</a></footer>
 </main>
-<script type="module" src="app.js?v=3"></script>
+<script type="module" src="app.js?v=5"></script>
 </body>
 </html>

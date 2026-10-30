@@ -9,8 +9,8 @@
 <meta property="og:description" content="8 вопросов, балл от 0 до 100 и 3 шага именно для вас. Бесплатно.">
 <meta property="og:url" content="https://vasilenkan72.github.io/portfolio/proverka/">
 <meta name="theme-color" content="#0B0B0B">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/tools.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tools.css?v=5">
 <style>
   .progress { height: 2px; background: var(--graphite); border-radius: 2px; margin-bottom: 24px; overflow: hidden; }
   .progress i { display: block; height: 100%; background: var(--coral); width: 0; transition: width .25s; }
@@ -28,13 +28,13 @@
 </head>
 <body class="glow">
 <main class="wrap">
-  <nav class="top"><a href="../">Наталья Василенко</a><a href="../cena/">Калькулятор цены услуги →</a></nav>
+  <nav class="top"><a href="../" data-t="navHome">Наталья Василенко</a><span class="langs" id="langs"></span><a href="../cena/" id="navCalc" data-t="navCalc">Калькулятор цены услуги →</a></nav>
 
   <header id="intro">
-    <p class="eyebrow">Тест · 8 вопросов · 2 минуты</p>
-    <h1>Находят ли вас клиенты онлайн?</h1>
-    <p class="lead">Ответьте честно на 8 вопросов. В конце будет ваш балл от 0 до 100 и три шага, которые дадут больше записей именно вам.</p>
-    <div class="actions"><button class="btn" id="go">Начать тест</button></div>
+    <p class="eyebrow" data-t="eyebrow">Тест · 8 вопросов · 2 минуты</p>
+    <h1 data-t="h1">Находят ли вас клиенты онлайн?</h1>
+    <p class="lead" data-t="lead"></p>
+    <div class="actions"><button class="btn" id="go" data-t="go">Начать тест</button></div>
   </header>
 
   <section class="panel hidden" id="quiz">
@@ -42,41 +42,37 @@
     <p class="eyebrow" id="step"></p>
     <p class="q" id="question" style="margin-top:12px"></p>
     <div class="answers" id="answers"></div>
-    <div class="actions"><button class="ghost hidden" id="back">← Назад</button></div>
+    <div class="actions"><button class="ghost hidden" id="back" data-t="back">← Назад</button></div>
   </section>
 
   <section class="hidden" id="result" aria-live="polite">
     <div class="panel">
-      <p class="eyebrow">Ваш результат</p>
+      <p class="eyebrow" data-t="yourResult">Ваш результат</p>
       <p class="big"><span id="score">0</span><span style="color:var(--ash);font-size:.45em"> / 100</span></p>
       <h2 id="level" style="margin:12px 0 4px"></h2>
       <p style="color:var(--ash)" id="levelText"></p>
     </div>
     <div class="panel">
-      <h2 id="tipsTitle">Ваши 3 шага</h2>
+      <h2 id="tipsTitle"></h2>
       <ol class="tips" id="tips"></ol>
     </div>
     <section class="offer">
-      <h2>Хотите, разберу ваш случай бесплатно?</h2>
-      <p>Напишите ассистенту, чем вы занимаетесь. Я посмотрю, как вас сейчас находят, и подскажу, с чего начать. Без обязательств.</p>
-      <p>Если понадобится помощь:</p>
-      <ul class="prices">
-        <li><span>Сайт-визитка с кнопками связи</span><b>от 150 р.</b></li>
-        <li><span>Страница с услугами, ценами и заявками</span><b>от 450 р.</b></li>
-        <li><span>Онлайн-запись + бот с напоминаниями</span><b>от 850 р.</b></li>
-      </ul>
+      <h2 data-t="offerH"></h2>
+      <p data-t="offerP"></p>
+      <p id="offerLead"></p>
+      <ul class="prices" id="prices"></ul>
       <div class="actions">
-        <a class="btn" id="cta" href="https://t.me/natallia_assistant_bot?start=quiz">Получить разбор</a>
-        <button type="button" class="ghost" id="share">Отправить коллеге</button>
-        <button type="button" class="ghost" id="again">Пройти заново</button>
+        <a class="btn" id="cta" data-t="cta" href="https://t.me/natallia_assistant_bot?start=quiz"></a>
+        <button type="button" class="ghost" id="share" data-t="share"></button>
+        <button type="button" class="ghost" id="again" data-t="again"></button>
       </div>
-      <p class="note hidden" id="copied">Ссылка скопирована</p>
+      <p class="note hidden" id="copied" data-t="copied"></p>
     </section>
-    <p class="note">Ответы никуда не отправляются: тест считается в вашем браузере.</p>
+    <p class="note" data-t="privacy"></p>
   </section>
 
-  <footer class="foot">Сделано <a href="../">Натальей Василенко</a> · сайты, боты и ИИ-агенты для бизнеса · <a href="https://t.me/natallia_vasilenka">@natallia_vasilenka</a></footer>
+  <footer class="foot"><span data-t="foot"></span> · <a href="https://t.me/natallia_vasilenka">@natallia_vasilenka</a></footer>
 </main>
-<script type="module" src="app.js?v=3"></script>
+<script type="module" src="app.js?v=5"></script>
 </body>
 </html>

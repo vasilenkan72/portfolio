@@ -26,9 +26,3 @@ export function calcPrice(p) {
   }
   return result;
 }
-
-// Округление цены вверх до «красивой»: до 0,5 р. для мелких единиц, до 1 р. до 30 р., дальше до 5 р.
-export function roundUp(x) {
-  const step = x < 10 ? 0.5 : x < 30 ? 1 : 5;
-  return Math.ceil(x / step) * step;
-}

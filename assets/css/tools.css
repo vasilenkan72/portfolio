@@ -7,7 +7,8 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--void); color: var(--cloud); font: 400 16px/1.55 var(--font); -webkit-font-smoothing: antialiased; }
+html { background: var(--void); }
+body { min-height: 100vh; background: var(--void); color: var(--cloud); font: 400 16px/1.55 var(--font); -webkit-font-smoothing: antialiased; }
 body.glow { background: radial-gradient(700px 420px at 80% -80px, rgba(255, 122, 89, .16), transparent 70%), var(--void) no-repeat; }
 a { color: inherit; }
 .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
@@ -19,6 +20,14 @@ a { color: inherit; }
 .top a:hover { color: var(--coral); }
 
 .hero { padding: 24px 0 8px; }
+.langs { display: flex; gap: 2px; margin-left: auto; }
+.lang { padding: 4px 7px; border-radius: 6px; font-size: 13px; font-weight: 500; letter-spacing: .03em; color: var(--ash) !important; }
+.lang:hover { color: var(--cloud) !important; }
+.lang.on { color: var(--coral) !important; background: var(--tint); }
+@media (max-width: 560px) { .top { flex-wrap: wrap; } .langs { order: 3; width: 100%; margin-left: -7px; } }
+.currency { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; margin-top: 24px; }
+.currency .chips { margin: 0; }
+.currency .chip { padding: 7px 14px; font-size: 14px; }
 .eyebrow { font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--ash); }
 h1 { font-weight: 400; font-size: clamp(36px, 7vw, 60px); line-height: 1.06; letter-spacing: -0.02em; margin: 16px 0; max-width: 780px; }
 .lead { font-size: 19px; line-height: 1.5; color: var(--ash); max-width: 680px; }
