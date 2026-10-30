@@ -104,6 +104,10 @@ input[type=range] { width: 100%; accent-color: var(--coral); height: 28px; }
 @media (min-width: 640px) { .offer { padding: 36px; } }
 .offer p { color: var(--stone); margin-bottom: 6px; max-width: 680px; }
 
+.prices { list-style: none; margin: 12px 0 4px; max-width: 680px; }
+.prices li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-top: 1px solid rgba(255, 122, 89, .2); color: var(--stone); }
+.prices b { flex: none; font-weight: 500; color: var(--coral); white-space: nowrap; }
+
 .foot { padding: 48px 0 96px; font-size: 14px; color: var(--ash); }
 .foot a { color: var(--stone); }
 .hidden { display: none !important; }
