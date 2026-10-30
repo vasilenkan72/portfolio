@@ -84,6 +84,14 @@ input[type=range] { width: 100%; accent-color: var(--coral); height: 28px; }
 @media (min-width: 640px) { .result { padding: 28px; } }
 .big { font-size: clamp(48px, 10vw, 64px); line-height: 1; letter-spacing: -0.02em; margin: 10px 0 8px; color: var(--cloud); }
 .gap { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: var(--tint); color: var(--coral); font-size: 15px; }
+.gap.ok { background: transparent; border: 1px solid var(--graphite); color: var(--stone); }
+.loss { margin-top: 20px; padding: 20px; border-radius: 14px; border: 1px solid var(--coral);
+        background: linear-gradient(160deg, rgba(255, 122, 89, .22), rgba(255, 122, 89, .06)); }
+.loss .eyebrow { color: var(--coral); }
+.loss-sum { font-size: clamp(36px, 8vw, 44px); line-height: 1.05; letter-spacing: -0.02em; color: var(--coral); margin-top: 8px; }
+.loss-year { font-size: 17px; font-weight: 500; color: var(--cloud); margin-top: 4px; }
+.loss-text { font-size: 15px; line-height: 1.5; color: var(--stone); margin: 12px 0 16px; }
+.loss .btn { display: block; width: 100%; padding: 14px 12px; white-space: nowrap; }
 .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border-radius: 12px; overflow: hidden; margin-top: 20px; }
 .stat { background: var(--obsidian); padding: 14px 16px; }
 .stat b { display: block; font-weight: 400; font-size: 22px; }

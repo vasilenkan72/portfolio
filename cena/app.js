@@ -70,11 +70,14 @@ function render() {
   $('week').textContent = Math.round(r.perWeek).toLocaleString('ru-RU');
   $('revenue').textContent = money(r.revenue);
   $('taxSum').textContent = money(r.taxSum);
-  $('loss').textContent = p.idle > 0
-    ? `Простои и пустые окна (${p.idle}%) стоят вам около ${money(r.idleLoss)} в месяц: это время уже было в графике, но не оплачено.` : '';
+  $('lossBox').classList.toggle('hidden', !(p.idle > 0));
+  $('lossSum').textContent = money(r.idleLoss);
+  $('lossYear').textContent = `≈ ${money(r.idleLoss * 12)} за год`;
+  $('lossText').textContent = `Это простои, отмены и пустые окна (${p.idle}%): время уже было в вашем графике, но клиент не пришёл или не записался. Онлайн-запись и напоминание накануне возвращают часть этих денег.`;
 
   const gap = $('gap');
   gap.classList.toggle('hidden', r.gap === undefined);
+  gap.classList.toggle('ok', !(r.gap > 0.5));
   if (r.gap > 0.5) gap.textContent = `Сейчас вы берёте на ${money(r.gap)} меньше. При вашей цене на руках остаётся ${money(r.currentNet)} вместо ${money(p.income)}.`;
   else if (r.gap !== undefined) gap.textContent = 'Ваша цена покрывает расходы и нужный доход.';
 }
