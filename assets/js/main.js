@@ -174,6 +174,7 @@ function renderPortfolio() {
     bot: { ru: 'ИИ-агент', en: 'AI agent' },
     web: { ru: 'Веб-приложение', en: 'Web app' },
     landing: { ru: 'Лендинг', en: 'Landing page' },
+    leadmagnet: { ru: 'Лид-магнит', en: 'Lead magnet' },
     automation: { ru: 'Автоматизация', en: 'Automation' },
     presentation: { ru: 'Презентация', en: 'Presentation' },
   };

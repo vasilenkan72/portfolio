@@ -124,6 +124,32 @@ const PROJECTS = [
     image: 'assets/img/cases/demo-mebel-cover-sm.webp',
   },
   {
+    id: 13,
+    category: 'web',
+    type: 'leadmagnet', // подпись типа; фильтр остаётся «Веб»
+    title: { ru: 'Калькулятор честной цены услуги', en: 'Fair service price calculator' },
+    description: {
+      ru: 'Лид-магнит для соцсетей: 63 услуги от маникюра до кровли или своя, расходы и налог – и видно минимальную цену и сколько в месяц уходит на пустые окна. 5 языков и 5 валют. Кнопка ведёт в ИИ-ассистента, который уже знает нишу и сумму потерь.',
+      en: 'A lead magnet for social media: 63 services from manicure to roofing, or your own, plus costs and tax – showing the minimum price and how much empty slots cost per month. 5 languages and 5 currencies. The button opens the AI assistant, which already knows the niche and the loss.',
+    },
+    tech: ['JavaScript', 'i18n', 'Telegram-бот', 'Gemini API'],
+    link: 'cena/',
+    image: 'assets/img/cases/cena-cover-sm.webp',
+  },
+  {
+    id: 14,
+    category: 'web',
+    type: 'leadmagnet',
+    title: { ru: 'Тест «Находят ли вас клиенты онлайн»', en: '“Can clients find you online?” quiz' },
+    description: {
+      ru: 'Квиз-лид-магнит: 8 вопросов про карты, запись, отзывы и ответы в 23:00, балл от 0 до 100 и три шага под ответы. В конце мост в калькулятор и разбор у ИИ-ассистента: он получает балл и слабые места. Ответы считаются в браузере.',
+      en: 'A quiz lead magnet: 8 questions on maps, booking, reviews and late-night replies, a 0–100 score and three next steps. It ends with a bridge to the calculator and a review by the AI assistant, which receives the score and weak spots. Answers stay in the browser.',
+    },
+    tech: ['JavaScript', 'i18n', 'Telegram-бот', 'Gemini API'],
+    link: 'proverka/',
+    image: 'assets/img/cases/proverka-cover-sm.webp',
+  },
+  {
     id: 9,
     category: 'web',
     type: 'landing', // подпись типа; фильтр остаётся «Веб»
