@@ -2,7 +2,7 @@ import { scoreQuiz } from './score.js';
 import { detectLang, applyTexts, renderSwitcher, share } from '../assets/js/i18n.js';
 
 const lang = detectLang();
-const { ui: T, QUESTIONS, LEVELS } = await import(`./lang/${lang}.js?v=5`);
+const { ui: T, QUESTIONS, LEVELS } = await import(`./lang/${lang}.js?v=6`);
 const $ = (id) => document.getElementById(id);
 let answers = [];
 
@@ -53,7 +53,7 @@ function drawOffer() {
 
 applyTexts(T);
 renderSwitcher($('langs'), lang);
-$('navCalc').href = `../cena/?lang=${lang}`;
+$('navCalc').href = `../cena/?lang=${lang}`; $('calcBtn').href = `../cena/?lang=${lang}`;
 drawOffer();
 $('go').addEventListener('click', () => { answers = []; show('quiz'); ask(); });
 $('back').addEventListener('click', () => { answers.pop(); ask(); });
