@@ -1,5 +1,5 @@
 // Данные бизнеса. Чтобы сделать сайт под нового клиента, меняется только этот файл и тексты в i18n.js.
-// Цены в BYN за ночь. Занятость (busy) – смещение в днях от сегодня: [начало, ночей].
+// Фото домиков – в img/ (WebP 800×597). Цены в BYN за ночь. Занятость (busy) – смещение в днях от сегодня: [начало, ночей].
 window.SITE = {
   brand: { ru: "Хутор «Ясный лес»", en: "Clear Forest Farmstead" },
   mark: "ЯЛ",
@@ -7,18 +7,18 @@ window.SITE = {
   contact: "https://t.me/NatalliaVas",
 
   units: [
-    { id: "sosna", icon: "🌲", art: "#3E6B4F", guests: 4, price: 120, tag: "tag_popular", busy: [[3, 2], [11, 3]],
+    { id: "sosna", img: "img/sosna.webp", alt: { ru: "Домик «Сосна» с террасой в сосновом лесу", en: "Pine Cabin with a terrace in the pine forest" }, icon: "🌲", art: "#3E6B4F", guests: 4, price: 120, tag: "tag_popular", busy: [[3, 2], [11, 3]],
       name: { ru: "Домик «Сосна»", en: "Pine Cabin" },
       about: { ru: "2 комнаты, кухня, терраса с видом на лес", en: "2 rooms, kitchen, terrace facing the forest" } },
-    { id: "olha", icon: "🏡", art: "#8A6A44", guests: 2, price: 95, tag: "tag_couple", busy: [[1, 3], [8, 2]],
+    { id: "olha", img: "img/olkha.webp", alt: { ru: "Спальня домика «Ольха» с печкой и видом на лес", en: "Alder Cabin bedroom with a wood stove and forest view" }, icon: "🏡", art: "#8A6A44", guests: 2, price: 95, tag: "tag_couple", busy: [[1, 3], [8, 2]],
       name: { ru: "Домик «Ольха»", en: "Alder Cabin" },
       about: { ru: "Для двоих: камин, большая кровать, тишина", en: "For two: fireplace, king bed, silence" } },
-    { id: "dom", icon: "🏠", art: "#5B5F7A", guests: 8, price: 260, tag: null, busy: [[5, 2], [12, 2]],
+    { id: "dom", img: "img/bolshoy.webp", alt: { ru: "Большой дом с мангалом и столом на поляне", en: "Family House with a grill and a table in the clearing" }, icon: "🏠", art: "#5B5F7A", guests: 8, price: 260, tag: null, busy: [[5, 2], [12, 2]],
       name: { ru: "Большой дом", en: "Family House" },
       about: { ru: "4 спальни, гостиная, мангал, баня рядом", en: "4 bedrooms, living room, grill, sauna next door" } },
-    { id: "shater", icon: "⛺", art: "#B07A3A", guests: 2, price: 110, tag: "tag_season", busy: [[2, 1], [9, 4]],
+    { id: "shater", img: "img/glamping.webp", alt: { ru: "Глэмпинг-купол с гирляндой в ночном лесу", en: "Glamping dome with string lights in the night forest" }, icon: "⛺", art: "#B07A3A", guests: 2, price: 110, tag: "tag_season", busy: [[2, 1], [9, 4]],
       name: { ru: "Глэмпинг «Звёздный»", en: "Starry Glamping Tent" },
-      about: { ru: "Шатёр с кроватью и прозрачной крышей", en: "A tent with a real bed and a see-through roof" } },
+      about: { ru: "Прозрачный купол с настоящей кроватью", en: "A see-through dome with a real bed" } },
   ],
 
   // per: "stay" – за весь отдых, "night" – за ночь, "guestNight" – за гостя в сутки

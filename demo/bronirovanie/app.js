@@ -54,7 +54,8 @@
     const g = +$("sGuests").value;
     $("units").innerHTML = S.units.map((u) => `
       <article class="unit${u.id === state.unit ? " active" : ""}">
-        <div class="unit-art" style="--art:${u.art}">${u.tag ? `<span class="tag">${t(u.tag)}</span>` : ""}<span>${u.icon}</span></div>
+        <div class="unit-art">${u.tag ? `<span class="tag">${t(u.tag)}</span>` : ""}
+          <img src="${u.img}" width="800" height="597" loading="lazy" alt="${L(u.alt)}"></div>
         <div class="unit-body">
           <h3>${L(u.name)}</h3>
           <p>${L(u.about)}</p>
@@ -77,8 +78,8 @@
 
   function renderBill() {
     const u = unit(), q = quote();
-    $("cIcon").textContent = u.icon;
-    $("cIcon").style.setProperty("--art", u.art);
+    $("cIcon").src = u.img;
+    $("cIcon").alt = L(u.alt);
     $("cName").textContent = L(u.name);
     $("cAbout").textContent = `${t("up_to")} ${u.guests} ${t("guests_w")} · ${L(u.about)}`;
     const warn = q.error || (q.busy && t("busy")) || (q.small && t("too_small"));
@@ -123,6 +124,7 @@
     document.documentElement.lang = state.lang;
     document.querySelectorAll("[data-i18n]").forEach((el) => { el.innerHTML = t(el.dataset.i18n); });
     document.querySelectorAll("[data-ph]").forEach((el) => { el.placeholder = t(el.dataset.ph); });
+    document.querySelectorAll("[data-alt]").forEach((el) => { el.alt = t(el.dataset.alt); });
     document.querySelectorAll(".brand-name").forEach((el) => { el.textContent = L(S.brand); });
     document.querySelector(".mark").textContent = S.mark;
     renderUnits(); renderExtras(); renderBill(); renderOwner(); renderLists();
