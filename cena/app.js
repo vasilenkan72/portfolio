@@ -58,7 +58,7 @@ function drawOffer() {
     li.append(Object.assign(document.createElement('span'), { textContent: t }), Object.assign(document.createElement('b'), { textContent: T.from(n) }));
     return li;
   }));
-  const tg = lang === 'ru' ? 'https://t.me/natallia_assistant_bot?start=price' : 'https://t.me/natallia_vasilenka';
+  const tg = lang === 'ru' ? 'https://t.me/natallia_assistant_bot?start=price' : 'https://t.me/NatalliaVas';
   $('offerCta').textContent = contact ? T.offerWrite : T.offerCta;
   $('offerCta').href = tg; $('lossCta').href = tg;
 }

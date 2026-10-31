@@ -7,7 +7,7 @@
 const CHAT_CONFIG = {
   contactFirst: false,  // true = сначала контакт, потом ответ; false = сначала полезный ответ
   endpoint: 'https://formspree.io/f/xqevpevr',
-  telegram: 'https://t.me/natallia_vasilenka',
+  telegram: 'https://t.me/NatalliaVas',
 };
 
 const CHAT_TEXT = {

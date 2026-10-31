@@ -313,8 +313,8 @@ const FAQ = [
   {
     q: { ru: 'Как начать работу?', en: 'How do we start?' },
     a: {
-      ru: 'Напишите мне в Telegram @natallia_vasilenka, задайте вопрос ИИ-ассистенту @natallia_assistant_bot (отвечает 24/7) или оставьте заявку в форме ниже. Расскажите о задаче, и я предложу 2–3 варианта решения с ценами. Это ни к чему не обязывает.',
-      en: 'Message me on Telegram @natallia_vasilenka, ask my AI assistant @natallia_assistant_bot (24/7) or leave a request in the form below. Tell me about your task and I will suggest 2–3 options with prices. No obligation.',
+      ru: 'Напишите мне в Telegram @NatalliaVas, задайте вопрос ИИ-ассистенту @natallia_assistant_bot (отвечает 24/7) или оставьте заявку в форме ниже. Расскажите о задаче, и я предложу 2–3 варианта решения с ценами. Это ни к чему не обязывает.',
+      en: 'Message me on Telegram @NatalliaVas, ask my AI assistant @natallia_assistant_bot (24/7) or leave a request in the form below. Tell me about your task and I will suggest 2–3 options with prices. No obligation.',
     },
     action: { mode: '', ru: 'Обсудить проект', en: 'Discuss a project' },
   },

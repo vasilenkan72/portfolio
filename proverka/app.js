@@ -51,7 +51,7 @@ function drawOffer() {
     return li;
   }));
   // русскоязычных ведём в бота-ассистента, остальных – сразу в личку Натальи
-  $('cta').href = lang === 'ru' ? 'https://t.me/natallia_assistant_bot?start=quiz' : 'https://t.me/natallia_vasilenka';
+  $('cta').href = lang === 'ru' ? 'https://t.me/natallia_assistant_bot?start=quiz' : 'https://t.me/NatalliaVas';
 }
 
 applyTexts(T);
