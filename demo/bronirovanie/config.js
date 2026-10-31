@@ -8,16 +8,16 @@ window.SITE = {
 
   units: [
     { id: "sosna", img: "img/sosna.webp", alt: { ru: "Домик «Сосна» с террасой в сосновом лесу", en: "Pine Cabin with a terrace in the pine forest" }, icon: "🌲", art: "#3E6B4F", guests: 4, price: 190, tag: "tag_popular", busy: [[3, 2], [11, 3]],
-      name: { ru: "Домик «Сосна»", en: "Pine Cabin" },
+      name: { ru: "Домик «Сосна»", en: "Pine Cabin" }, short: { ru: "Сосна", en: "Pine" },
       about: { ru: "2 комнаты, кухня, терраса с видом на лес", en: "2 rooms, kitchen, terrace facing the forest" } },
     { id: "olha", img: "img/olkha.webp", alt: { ru: "Спальня домика «Ольха» с печкой и видом на лес", en: "Alder Cabin bedroom with a wood stove and forest view" }, icon: "🏡", art: "#8A6A44", guests: 2, price: 160, tag: "tag_couple", busy: [[1, 3], [8, 2]],
-      name: { ru: "Домик «Ольха»", en: "Alder Cabin" },
+      name: { ru: "Домик «Ольха»", en: "Alder Cabin" }, short: { ru: "Ольха", en: "Alder" },
       about: { ru: "Для двоих: камин, большая кровать, тишина", en: "For two: fireplace, king bed, silence" } },
     { id: "dom", img: "img/bolshoy.webp", alt: { ru: "Большой дом с мангалом и столом на поляне", en: "Family House with a grill and a table in the clearing" }, icon: "🏠", art: "#5B5F7A", guests: 8, price: 320, tag: null, busy: [[5, 2], [12, 2]],
-      name: { ru: "Большой дом", en: "Family House" },
+      name: { ru: "Большой дом", en: "Family House" }, short: { ru: "Дом", en: "House" },
       about: { ru: "4 спальни, гостиная, мангал, баня рядом", en: "4 bedrooms, living room, grill, sauna next door" } },
     { id: "shater", img: "img/glamping.webp", alt: { ru: "Глэмпинг-купол с гирляндой в ночном лесу", en: "Glamping dome with string lights in the night forest" }, icon: "⛺", art: "#B07A3A", guests: 2, price: 220, tag: "tag_season", busy: [[2, 1], [9, 4]],
-      name: { ru: "Глэмпинг «Звёздный»", en: "Starry Glamping Tent" },
+      name: { ru: "Глэмпинг «Звёздный»", en: "Starry Glamping Tent" }, short: { ru: "Глэмпинг", en: "Glamping" },
       about: { ru: "Прозрачный купол с настоящей кроватью", en: "A see-through dome with a real bed" } },
   ],
 

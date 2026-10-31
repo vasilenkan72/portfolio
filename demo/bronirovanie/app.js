@@ -72,7 +72,7 @@
     S.extras.forEach((e) => { was[e.id] = $("x_" + e.id)?.checked; });
     const per = { stay: "per_stay", night: "per_night_x", guestNight: "per_gn" };
     $("extras").innerHTML = S.extras.map((e) => `
-      <label class="extra"><span><input type="checkbox" id="x_${e.id}"${was[e.id] ? " checked" : ""}> ${L(e.name)}</span>
+      <label class="extra"><input type="checkbox" id="x_${e.id}"${was[e.id] ? " checked" : ""}><span>${L(e.name)}</span>
       <small>${e.price} ${S.currency} ${t(per[e.per])}</small></label>`).join("");
   }
 
@@ -107,7 +107,7 @@
         if (s + len < days) b.push(`<i class="clean" style="left:${(s + len) / days * 100}%;width:${1 / days * 100}%"></i>`);
         return b;
       }).join("");
-      return `<div class="g-label">${u.icon} ${L(u.name)}</div><div class="g-track">${blocks}</div>`;
+      return `<div class="g-label"><span class="full">${u.icon} ${L(u.name)}</span><span class="short">${L(u.short)}</span></div><div class="g-track">${blocks}</div>`;
     }).join("");
   }
 
