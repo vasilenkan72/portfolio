@@ -162,9 +162,11 @@ footer { background: #0B0B0B; color: #8A8884; font-size: 14px; padding: 24px 0 4
 @media (max-width: 900px) {
   nav.menu { display: none; }
   .calc { grid-template-columns: 1fr; }
-  .hero { align-items: flex-end; min-height: 560px; }
-  .hero::before { background: linear-gradient(0deg, rgba(31,42,34,.9) 0%, rgba(31,42,34,.6) 50%, rgba(31,42,34,.05) 100%); }
-  .hero-in { padding-bottom: 104px; }
+  /* Телефон: сверху фото с домиком целиком, под ним текст на --ink, стык размыт градиентом */
+  .hero { display: block; min-height: 0; background: #1F2A22; }
+  .hero-img { position: relative; height: 320px; object-position: 82% center; }
+  .hero::before { bottom: auto; height: 320px; background: linear-gradient(0deg, #1F2A22 0%, rgba(31,42,34,0) 45%); }
+  .hero-in { margin-top: -56px; padding-top: 0; padding-bottom: 96px; }
   .hero .cap { top: 14px; bottom: auto; right: 16px; }
   .calc-l { border-right: 0; border-bottom: 1px solid var(--line); }
   .search { grid-template-columns: 1fr 1fr; }
