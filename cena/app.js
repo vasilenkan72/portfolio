@@ -53,7 +53,7 @@ function drawOffer() {
   const contact = contactOnly();
   $('offerLead').textContent = contact ? T.offerContact : T.offerPrices;
   $('prices').classList.toggle('hidden', contact);
-  if (!contact) $('prices').replaceChildren(...[[T.price1, 150], [T.price2, 450], [T.price3, 850]].map(([t, n]) => {
+  if (!contact) $('prices').replaceChildren(...[[T.price1, 150], [T.price2, 650], [T.price3, 1200]].map(([t, n]) => {
     const li = document.createElement('li');
     li.append(Object.assign(document.createElement('span'), { textContent: t }), Object.assign(document.createElement('b'), { textContent: T.from(n) }));
     return li;

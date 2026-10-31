@@ -262,11 +262,13 @@ const PRICES = [
     name: { ru: 'Интерактивная визитка + публикация на хостинге', en: 'Interactive business card + hosting setup' }, term: { ru: '1–2 дня', en: '1–2 days' } },
   { topic: 'site', price: 500,
     name: { ru: 'Квиз или калькулятор для сайта', en: 'Quiz or calculator for your site' }, term: { ru: '3–5 дней', en: '3–5 days' } },
-  /* Готовые решения на шаблоне ниши (психологи, мастера), утверждены 28.10.2026; демо в demo/ */
-  { topic: 'ready', price: 450,
+  /* Готовые решения на шаблоне ниши (психологи, мастера, усадьбы); цены пересмотрены 31.10.2026; демо в demo/ */
+  { topic: 'ready', price: 650,
     name: { ru: 'Старт: визитка + запись или калькулятор, заявки в Telegram и таблицу', en: 'Start: card + booking or calculator, leads to Telegram and a sheet' }, term: { ru: '4–5 дней, на готовом шаблоне', en: '4–5 days, ready template' } },
-  { topic: 'ready', price: 850,
+  { topic: 'ready', price: 1200,
     name: { ru: 'Под ключ: + Telegram-бот, база услуг или тканей, которую правите сами', en: 'Turnkey: + Telegram bot, a services or fabrics base you edit yourself' }, term: { ru: '7–10 дней, до 30 позиций в базе', en: '7–10 days, up to 30 items in the base' } },
+  { topic: 'ready', price: 1800,
+    name: { ru: 'Бронь Pro: календарь занятости без двойных броней, онлайн-предоплата, бот', en: 'Booking Pro: availability calendar with no double bookings, online prepayment, bot' }, term: { ru: '3–4 недели', en: '3–4 weeks' } },
   { topic: 'ready', price: 150,
     name: { ru: 'Лид-магнит: тест для клиентов под вашу нишу, кнопка в ваш Telegram', en: 'Lead magnet: a client quiz for your niche, button to your Telegram' }, term: { ru: '2 дня, на готовом движке', en: '2 days, ready engine' } },
   { topic: 'ready', price: 300,
