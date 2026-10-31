@@ -271,7 +271,7 @@ const PRICES = [
     name: { ru: 'Лид-магнит: тест для клиентов под вашу нишу, кнопка в ваш Telegram', en: 'Lead magnet: a client quiz for your niche, button to your Telegram' }, term: { ru: '2 дня, на готовом движке', en: '2 days, ready engine' } },
   { topic: 'ready', price: 300,
     name: { ru: 'Лид-магнит: калькулятор цены под вашу нишу, кнопка в ваш Telegram', en: 'Lead magnet: a price calculator for your niche, button to your Telegram' }, term: { ru: '3 дня, на готовом движке', en: '3 days, ready engine' } },
-  { topic: 'ready', price: 40,
+  { topic: 'ready', price: 60,
     name: { ru: 'Поддержка готового решения', en: 'Ready-made solution support' }, term: { ru: 'в месяц', en: 'per month' } },
   { topic: 'agent', price: 700,
     name: { ru: 'Telegram-бот для заявок / FAQ', en: 'Telegram bot for leads / FAQ' }, term: { ru: '5–7 дней', en: '5–7 days' } },
