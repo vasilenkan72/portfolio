@@ -124,6 +124,18 @@ const PROJECTS = [
     image: 'assets/img/cases/demo-mebel-cover-sm.webp',
   },
   {
+    id: 15,
+    category: 'web',
+    title: { ru: 'Сайт агроусадьбы с онлайн-бронью (демо)', en: 'Country stay website with online booking (demo)' },
+    description: {
+      ru: 'Шаблон для усадеб, гостевых домов и прокатов: гость выбирает даты и сразу видит свободные домики и цену с выходными, сезоном, скидкой и допуслугами. Бронь за 2 минуты, календарь хозяина, русский и английский. Усадьба вымышленная, расчёт и бронь можно попробовать.',
+      en: 'A template for country stays, guest houses and rentals: guests pick dates and instantly see free cabins and the price with weekends, season, discounts and extras. Booking in 2 minutes, an owner calendar, Russian and English. The farmstead is fictional, pricing and booking are live.',
+    },
+    tech: ['HTML/CSS', 'JavaScript', 'Калькулятор', 'i18n'],
+    link: 'demo/bronirovanie/',
+    image: 'assets/img/cases/demo-bronirovanie-cover-sm.webp',
+  },
+  {
     id: 13,
     category: 'web',
     type: 'leadmagnet', // подпись типа; фильтр остаётся «Веб»
