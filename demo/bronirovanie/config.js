@@ -2,6 +2,7 @@
 // Фото домиков – в img/ (WebP 800×597). Цены в BYN за ночь. Занятость (busy) – смещение в днях от сегодня: [начало, ночей].
 window.SITE = {
   brand: { ru: "Хутор «Ясный лес»", en: "Clear Forest Farmstead" },
+  brandShort: { ru: "Ясный лес", en: "Clear Forest" }, // для узких экранов
   mark: "ЯЛ",
   currency: "BYN",
   contact: "https://t.me/NatalliaVas",

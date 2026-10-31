@@ -204,6 +204,12 @@ footer { background: #0B0B0B; color: #8A8884; font-size: 14px; padding: 24px 0 4
 }
 @media (max-width: 400px) {
   .brand .mark { display: none; }
+}
+@media (max-width: 380px) {
+  .brand-name { font-size: 0; }
+  .brand-name::after { content: attr(data-short); font-size: 14px; }
+}
+@media (max-width: 400px) {
   .brand { font-size: 14px; }
   .right .btn { padding: 8px 10px; font-size: 12px; }
   .langs button { padding: 4px 6px; }

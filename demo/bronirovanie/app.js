@@ -125,7 +125,7 @@
     document.querySelectorAll("[data-i18n]").forEach((el) => { el.innerHTML = t(el.dataset.i18n); });
     document.querySelectorAll("[data-ph]").forEach((el) => { el.placeholder = t(el.dataset.ph); });
     document.querySelectorAll("[data-alt]").forEach((el) => { el.alt = t(el.dataset.alt); });
-    document.querySelectorAll(".brand-name").forEach((el) => { el.textContent = L(S.brand); });
+    document.querySelectorAll(".brand-name").forEach((el) => { el.dataset.short = L(S.brandShort); el.textContent = L(S.brand); });
     document.querySelector(".mark").textContent = S.mark;
     renderUnits(); renderExtras(); renderBill(); renderOwner(); renderLists();
   }
