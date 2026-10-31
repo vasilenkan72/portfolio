@@ -23,7 +23,7 @@ section.alt { background: var(--alt); }
 
 /* Шапка */
 header.top { position: sticky; top: 0; z-index: 30; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; }
 .brand { display: flex; align-items: center; gap: 10px; font: 600 18px Lora, serif; min-width: 0; }
 .brand .mark { width: 32px; height: 32px; border-radius: 9px; background: var(--accent); color: #fff; display: grid; place-items: center; font: 700 13px Manrope, sans-serif; flex: none; }
 nav.menu { display: flex; gap: 22px; font-weight: 600; font-size: 15px; }
@@ -175,8 +175,29 @@ footer { background: #0B0B0B; color: #8A8884; font-size: 14px; padding: 24px 0 4
   .grid3 { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .right .btn { display: none; }
-  .grid4, .stats { grid-template-columns: 1fr; }  .fields3 { grid-template-columns: 1fr 1fr; }
+  /* Шапка: кнопка брони остаётся, всё ужимается */
+  .topbar { gap: 8px; }
+  .brand { font-size: 15px; gap: 8px; }
+  .brand-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .right { gap: 6px; flex: none; }
+  .langs button { padding: 4px 7px; font-size: 11px; }
+  .right .btn { padding: 8px 12px; font-size: 13px; box-shadow: none; }
+  /* Форма: заезд | выезд, затем гостей (узко) | домик (широко) */
+  .search { grid-template-columns: repeat(4, 1fr); }
+  .search .field:nth-child(1), .search .field:nth-child(2) { grid-column: span 2; }
+  .search .field:nth-child(4) { grid-column: span 3; }
+  .search .btn { grid-column: 1 / -1; }
+  /* Цифры в одну строку */
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 8px; padding-top: 24px; }
+  .stats b { font-size: 30px; }
+  .stats span { font-size: 12px; line-height: 1.3; display: block; }
+  .grid4 { grid-template-columns: 1fr; }  .fields3 { grid-template-columns: 1fr 1fr; }
   .gantt { grid-template-columns: 96px 1fr; font-size: 11px; }
   .g-days { font-size: 10px; }
+}
+@media (max-width: 400px) {
+  .brand .mark { display: none; }
+  .brand { font-size: 14px; }
+  .right .btn { padding: 8px 10px; font-size: 12px; }
+  .langs button { padding: 4px 6px; }
 }
