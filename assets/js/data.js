@@ -141,7 +141,7 @@ const PROJECTS = [
     type: 'leadmagnet', // подпись типа; фильтр остаётся «Веб»
     title: { ru: 'Калькулятор честной цены услуги', en: 'Fair service price calculator' },
     description: {
-      ru: 'Лид-магнит для соцсетей: 63 услуги от маникюра до кровли или своя, расходы и налог – и видно минимальную цену и сколько в месяц уходит на пустые окна. 5 языков и 5 валют. Кнопка ведёт в ИИ-ассистента, который уже знает нишу и сумму потерь.',
+      ru: 'Лид-магнит для соцсетей: 63 услуги от маникюра до кровли или своя, расходы и налог – и видно минимальную цену и сколько денег в месяц вы теряете, когда нет заказов. 5 языков и 5 валют. Кнопка ведёт в ИИ-ассистента, который уже знает нишу и сумму потерь.',
       en: 'A lead magnet for social media: 63 services from manicure to roofing, or your own, plus costs and tax – showing the minimum price and how much empty slots cost per month. 5 languages and 5 currencies. The button opens the AI assistant, which already knows the niche and the loss.',
     },
     tech: ['JavaScript', 'i18n', 'Telegram-бот', 'Gemini API'],

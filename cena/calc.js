@@ -17,7 +17,7 @@ export function calcPrice(p) {
     hourPrice: p.mode === 'volume' ? null : price / p.duration,
     taxSum: revenue * tax,
     perWeek: done / 4.33,                                   // в месяце ~4,33 недели
-    idleLoss: (slots - done) * price,                        // сколько стоят простои и пустые окна в месяц
+    idleLoss: (slots - done) * price,                        // сколько стоят простои и отмены в месяц
   };
 
   if (p.current > 0) {                                      // что на руках при нынешней цене
