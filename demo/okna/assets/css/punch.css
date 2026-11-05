@@ -1,0 +1,63 @@
+/* Contrast layer: dark blueprint hero, alternating section colors, stronger type */
+:root { --steel: #464D54; --deep: #171B1F; }
+.eyebrow { font-weight: 600; }
+h2 { font-weight: 800; }
+.btn { border-width: 2px; }
+.btn-accent { box-shadow: 0 6px 18px rgba(226,83,31,.35); }
+.btn-accent:hover { background: #C9441A; border-color: #C9441A; }
+
+/* Blueprint pattern for dark blocks */
+.hero, .dark {
+  background-color: var(--deep);
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: #F1EEE8;
+}
+.hero { padding: 56px 0 72px; }
+.hero .lead, .dark .lead { color: #B8B3AA; }
+.hero .btn:not(.btn-accent) { border-color: rgba(255,255,255,.7); color: #fff; }
+.hero .btn:not(.btn-accent):hover { background: rgba(255,255,255,.08); }
+.hero .facts { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.12); }
+.hero .facts div { background: #1E2328; }
+.hero .facts b { color: #fff; }
+.hero .facts span { color: #A39E95; }
+.hero .eyebrow { color: #FF8A5C; }
+.hero-photo { color: var(--ink); box-shadow: 0 30px 60px rgba(0,0,0,.45); border-top: 5px solid var(--accent); }
+
+/* Symptoms: colored icons, white cards on paper */
+.sym-btn { border-color: transparent; box-shadow: var(--shadow); font-weight: 550; }
+.sym-btn .ico { background: var(--accent-soft); color: var(--accent); }
+.sym-btn[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.sym-btn[aria-pressed="true"] .ico { background: var(--accent); color: #fff; }
+.sym-out { border-left: 6px solid var(--accent); }
+
+/* Scheme section on white */
+.on-white { background: #fff; }
+.on-white .scheme-svg { background: var(--paper); box-shadow: none; border: 1px solid var(--line); }
+.scheme-info { border-top: 5px solid var(--ink); }
+
+/* Calculator on dark */
+.dark .calc .card { background: #fff; color: var(--ink); }
+.dark .calc .res-row { background: var(--paper); }
+.calc input { border-width: 2px; }
+.calc input:focus { border-color: var(--accent); outline: none; }
+
+/* Catalog */
+.cat-card { transition: transform .18s ease, box-shadow .18s ease; border-bottom: 3px solid transparent; }
+.cat-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(27,30,33,.12); border-bottom-color: var(--accent); }
+.cat-card .pic { background: #EAE6DE; height: 132px; }
+.stock { color: var(--accent); }
+.brand { border-color: var(--ink); }
+
+/* Orange band */
+.accent-band { background: var(--accent); color: #fff; }
+.accent-band .eyebrow { color: #FFE1D3; }
+.accent-band .lead { color: #FFE9DF; }
+.accent-band .mark-steps li { color: var(--ink); box-shadow: 0 10px 24px rgba(120,30,0,.25); }
+
+/* Buy & footer */
+.check li { font-weight: 500; }
+footer { background: var(--deep); color: #A39E95; border-top: 0; }
+footer b { color: #fff; }
