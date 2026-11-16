@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/\u0411\u041e\u0413\u0418\u041d\u042f \u041c\u0418\u0420\u0410/AppData/Local/Programs/Python/Python314/Scripts/graphify.EXE\" hook-guard search",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/\u0411\u041e\u0413\u0418\u041d\u042f \u041c\u0418\u0420\u0410/AppData/Local/Programs/Python/Python314/Scripts/graphify.EXE\" hook-guard read",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"C:/Users/\u0411\u041e\u0413\u0418\u041d\u042f \u041c\u0418\u0420\u0410/AppData/Local/Programs/Python/Python314/Scripts/graphify.EXE\" hook-guard compact",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
