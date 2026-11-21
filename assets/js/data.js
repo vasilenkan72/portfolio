@@ -124,6 +124,18 @@ const PROJECTS = [
     image: 'assets/img/cases/demo-mebel-cover-sm.webp?v=2',
   },
   {
+    id: 16,
+    category: 'web',
+    title: { ru: 'Страница мастера красоты + онлайн-запись (демо)', en: 'Beauty master page + online booking (demo)' },
+    description: {
+      ru: 'Готовое решение для маникюра, бровей, косметологов и массажистов: услуги с ценами, свободные окна на неделю, запись без звонков, код акции со Сливок и напоминание накануне. Записи падают мастеру в Telegram. Студия вымышленная, запись и бота можно попробовать.',
+      en: 'A ready-made solution for nail, brow, skincare and massage masters: services with prices, free slots for the week, booking without calls, a promo code from deal sites and a reminder the day before. Bookings go to the master in Telegram. The studio is fictional, booking and the bot are live.',
+    },
+    tech: ['HTML/CSS', 'JavaScript', 'Онлайн-запись', 'GitHub Pages'],
+    link: 'demo/krasota/',
+    image: 'assets/img/cases/demo-krasota-cover-sm.webp',
+  },
+  {
     id: 15,
     category: 'web',
     title: { ru: 'Сайт агроусадьбы с онлайн-бронью (демо)', en: 'Country stay website with online booking (demo)' },
