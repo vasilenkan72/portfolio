@@ -109,7 +109,7 @@ const PROJECTS = [
     },
     tech: ['HTML/CSS', 'JavaScript', 'Бот записи', 'GitHub Pages'],
     link: 'demo/psiholog/',
-    image: 'assets/img/cases/demo-psiholog-cover-sm.webp',
+    image: 'assets/img/cases/demo-psiholog-cover-sm.webp?v=2',
   },
   {
     id: 12,
