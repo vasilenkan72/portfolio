@@ -14,11 +14,56 @@
 <link rel="stylesheet" href="../demo.css">
 <style>
   :root { --bg: #F7F4EE; --ink: #2B2A28; --muted: #6E6B65; --accent: #5E7D6B; --card: #FFFFFF;
-    --alt: #EEF1EC; --line: #DCD8CF; --art: linear-gradient(160deg, #DCE5DD, #B9CBBE 60%, #8FA898); }
+    --alt: #EEF1EC; --line: #DCD8CF; }
+  img { display: block; max-width: 100%; }
+  /* Фото на первом экране + реплики чата поверх */
+  .hero-photo { position: relative; }
+  .hero-photo img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border-radius: 32px; }
+  .bubble { position: absolute; max-width: 250px; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.4;
+    box-shadow: 0 10px 30px rgba(0,0,0,.14); opacity: 0; transform: translateY(8px); animation: pop .5s ease forwards; }
+  .bubble.b-client { left: -28px; top: 40%; background: #fff; border-bottom-left-radius: 4px; animation-delay: .6s; }
+  .bubble.b-bot { right: -20px; top: 58%; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; animation-delay: 1.6s; }
+  .bubble.b-client2 { left: -12px; bottom: 4%; background: #fff; border-bottom-left-radius: 4px; animation-delay: 2.6s; }
+  .bubble small { display: block; font-size: 11px; opacity: .6; margin-bottom: 2px; }
+  @keyframes pop { to { opacity: 1; transform: none; } }
+  /* Темы с фото */
+  .topic { padding: 0; overflow: hidden; }
+  .topic img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .topic div { padding: 18px 20px 22px; }
+  /* Кабинет и онлайн */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .duo figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .duo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .duo figcaption { padding: 16px 20px 20px; }
+  .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+  .about img { border-radius: 24px; aspect-ratio: 3/2; object-fit: cover; width: 100%; }
+  /* Реплики клиентов */
+  .quote { position: relative; padding-top: 34px; }
+  .quote::before { content: "“"; position: absolute; top: 4px; left: 22px; font: 700 54px/1 Georgia, serif; color: var(--accent); opacity: .5; }
+  .quote p { font-size: 16px; }
+  .quote .who { margin-top: 12px; font-size: 14px; color: var(--muted); }
+  /* Уведомление в Telegram для специалиста */
+  .tg { max-width: 420px; background: #17212B; color: #E9EEF2; border-radius: 18px; padding: 16px 18px; font-size: 15px; line-height: 1.5;
+    box-shadow: 0 16px 40px rgba(0,0,0,.25); }
+  .tg .head { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-weight: 600; }
+  .tg .ava { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; font-size: 16px; }
+  .tg .time { color: #7F91A4; font-size: 12px; text-align: right; margin-top: 6px; }
+  .side { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .credit { font-size: 12px; }
+  @media (max-width: 760px) {
+    .hero-photo img { aspect-ratio: 1/1; object-position: center 20%; }
+    .bubble { font-size: 13px; max-width: 200px; }
+    .hero-photo { display: flex; flex-direction: column; gap: 8px; }
+    .hero-photo img { margin-bottom: 8px; }
+    .bubble { position: static; max-width: 85%; }
+    .bubble.b-bot { margin-left: auto; }
+    .duo, .about, .side { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { .bubble { animation: none; opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
-<div class="demo-flag">Это <b>демо</b>: специалист вымышленный, а бот записи настоящий – попробуй его ↘</div>
+<div class="demo-flag">Это <b>демо</b>: специалист вымышленный, а бот записи настоящий – попробуйте его ↘</div>
 
 <div class="wrap">
   <header class="top">
@@ -35,7 +80,12 @@
         <a href="#" class="btn ghost" data-bot="first">Как проходит первая встреча?</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="true">🌿</div>
+    <div class="hero-photo">
+      <img src="img/anna.jpg" alt="Психолог Анна в кабинете" width="600" height="900">
+      <div class="bubble b-client"><small>Клиент, 23:40</small>Здравствуйте! Можно записаться на субботу? Мне сложно звонить</div>
+      <div class="bubble b-bot"><small>Ассистент Анны</small>Конечно. В субботу свободно 12:00. Онлайн или в кабинете?</div>
+      <div class="bubble b-client2"><small>Клиент</small>Онлайн 🙏 Спасибо, что ответили ночью</div>
+    </div>
   </div>
 </div>
 
@@ -43,19 +93,43 @@
   <div class="wrap">
     <h2>С чем я работаю</h2>
     <div class="grid">
-      <div class="card"><h3>Тревога и стресс</h3><p class="muted">Когда мысли не дают уснуть, а тело живёт в постоянном напряжении.</p></div>
-      <div class="card"><h3>Выгорание</h3><p class="muted">Когда работа не радует, а сил нет даже на отдых.</p></div>
-      <div class="card"><h3>Отношения</h3><p class="muted">Конфликты, одиночество, трудности с близкими и границами.</p></div>
-      <div class="card"><h3>Самооценка</h3><p class="muted">Когда внутренний критик громче, чем собственные желания.</p></div>
+      <div class="card topic"><img src="img/trevoga.jpg" alt="" loading="lazy"><div><h3>Тревога и стресс</h3><p class="muted">Когда мысли не дают уснуть, а тело живёт в постоянном напряжении.</p></div></div>
+      <div class="card topic"><img src="img/vygoranie.jpg" alt="" loading="lazy"><div><h3>Выгорание</h3><p class="muted">Когда работа не радует, а сил нет даже на отдых.</p></div></div>
+      <div class="card topic"><img src="img/otnosheniya.jpg" alt="" loading="lazy"><div><h3>Отношения</h3><p class="muted">Конфликты, одиночество, трудности с близкими и границами.</p></div></div>
+      <div class="card topic"><img src="img/samoocenka.jpg" alt="" loading="lazy"><div><h3>Самооценка</h3><p class="muted">Когда внутренний критик громче, чем собственные желания.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap about">
+    <img src="img/about.jpg" alt="Анна Светлова" loading="lazy">
+    <div>
+      <h2>Обо мне</h2>
+      <p>Клинический психолог, 8 лет практики. Работаю в когнитивно-поведенческом подходе и регулярно прохожу супервизию. Всё, что вы рассказываете, остаётся между нами.</p>
+      <p style="margin-top:16px"><span class="tag">БГУ, психология</span><span class="tag">КПТ</span><span class="tag">Супервизия</span><span class="tag">Онлайн и очно</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Где проходят встречи</h2>
+    <div class="duo">
+      <figure><img src="img/kabinet.jpg" alt="Кабинет: кресло и лампа"><figcaption><h3>Кабинет в центре Гродно</h3><p class="muted">Тихо, уютно, отдельный вход. Чай и плед – по желанию.</p></figcaption></figure>
+      <figure><img src="img/online.jpg" alt="Онлайн-сессия"><figcaption><h3>Онлайн из любого города</h3><p class="muted">Zoom или Telegram. Нужны только наушники и полчаса тишины.</p></figcaption></figure>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Обо мне</h2>
-    <p style="max-width:680px">Клинический психолог, 8 лет практики. Работаю в когнитивно-поведенческом подходе и регулярно прохожу супервизию. Всё, что вы рассказываете, остаётся между нами.</p>
-    <p style="margin-top:16px"><span class="tag">БГУ, психология</span><span class="tag">КПТ</span><span class="tag">Супервизия</span><span class="tag">Онлайн и очно</span></p>
+    <h2>Что говорят клиенты</h2>
+    <div class="grid">
+      <div class="card quote"><p>Долго не решалась позвонить. Записалась через бота в час ночи, и это было проще всего на свете.</p><div class="who">Ольга, 34 года</div></div>
+      <div class="card quote"><p>Понравилось, что цены и формат видно сразу. Не пришлось ничего выспрашивать и оправдываться.</p><div class="who">Дмитрий, 41 год</div></div>
+      <div class="card quote"><p>Бот напомнил про сессию за день. Раньше я дважды забывала и чувствовала себя ужасно.</p><div class="who">Марина, 28 лет</div></div>
+    </div>
   </div>
 </section>
 
@@ -75,28 +149,39 @@
   <div class="wrap">
     <p class="muted">Это демо сделала Наталья Василенко</p>
     <h2>Вы классный психолог. Но вас не могут найти?</h2>
-    <p class="muted" style="max-width:680px">Проверьте себя. Если хотя бы два пункта про вас, клиенты уходят к тем, кого просто легче найти.</p>
-    <ul class="check">
-      <li>Чтобы записаться, клиенту нужно написать в личку и ждать, пока вы ответите между сессиями.</li>
-      <li>Нет страницы, которую можно отправить по ссылке: только профиль в соцсети.</li>
-      <li>Цены и форматы вы каждый раз объясняете заново.</li>
-      <li>Клиенты забывают про сессию, и вы сидите перед пустым экраном.</li>
-      <li>По запросу «психолог Гродно» вас не найти.</li>
-    </ul>
-    <p style="max-width:680px;margin-bottom:28px">Такую визитку и бота записи я сделаю под вас за пару дней. А в NEURO рассказываю, как ИИ помогает специалистам находить клиентов: подпишитесь, там будет польза.</p>
+    <div class="side">
+      <div>
+        <p class="muted" style="max-width:680px">Проверьте себя. Если хотя бы два пункта про вас, клиенты уходят к тем, кого просто легче найти.</p>
+        <ul class="check">
+          <li>Чтобы записаться, клиенту нужно написать в личку и ждать, пока вы ответите между сессиями.</li>
+          <li>Нет страницы, которую можно отправить по ссылке: только объявление или профиль в соцсети.</li>
+          <li>Цены и форматы вы каждый раз объясняете заново.</li>
+          <li>Клиенты забывают про сессию, и вы сидите перед пустым экраном.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="margin-bottom:14px">А так выглядит заявка, которая приходит вам, пока вы на сессии:</p>
+        <div class="tg">
+          <div class="head"><div class="ava">🌿</div>Ассистент записи</div>
+          🆕 <b>Новая запись</b><br>Формат: знакомство, онлайн<br>Время: сб, 12:00<br>Контакт: @olga_m<br>Напоминание клиенту: пт, 12:00 ✅
+          <div class="time">23:41</div>
+        </div>
+      </div>
+    </div>
+    <p style="max-width:680px;margin:32px 0 28px">Такую визитку и бота записи я сделаю под вас за пару дней. А в NEURO 24/7 рассказываю, как ИИ помогает специалистам находить клиентов.</p>
     <div class="grid">
-      <div class="card"><h3>Старт</h3><p class="muted">Визитка + калькулятор или запись на сайте, заявки в Telegram и таблицу. 4–5 дней.</p><div class="price">650 BYN</div></div>
-      <div class="card"><h3>Под ключ</h3><p class="muted">Всё из «Старта» + календарь свободных окон, бот записи с напоминаниями, заявки в Telegram и таблицу. 7–10 дней.</p><div class="price">1 200 BYN</div></div>
+      <div class="card"><h3>Старт</h3><p class="muted">Визитка + запись на сайте, заявки в Telegram и таблицу. 4–5 дней.</p><div class="price">650 BYN</div></div>
+      <div class="card"><h3>Под ключ</h3><p class="muted">Всё из «Старта» + календарь свободных окон, бот записи с напоминаниями. 7–10 дней.</p><div class="price">1 200 BYN</div></div>
       <div class="card"><h3>Поддержка</h3><p class="muted">Хостинг, работа бота 24/7, мелкие правки.</p><div class="price">60 BYN/мес</div></div>
     </div>
     <p class="note">🔥 Первым трём – скидка 30% в обмен на отзыв.</p>
     <div class="btns">
       <a class="btn" href="https://t.me/NatalliaVas" target="_blank" rel="noopener">Хочу такую же</a>
-      <a class="btn ghost" href="https://t.me/neuro24_7" target="_blank" rel="noopener">Читать NEURO в Telegram</a>
+      <a class="btn ghost" href="https://t.me/neuro24_7" target="_blank" rel="noopener">Читать NEURO 24/7 в Telegram</a>
     </div>
   </div>
 </section>
-<footer><div class="wrap">Демо-страница. Анна Светлова – вымышленный специалист, совпадения случайны. Сделано: <a href="../../">Наталья Василенко</a></div></footer>
+<footer><div class="wrap">Демо-страница. Анна Светлова и отзывы вымышлены, совпадения случайны. <span class="credit">Фото: StockSnap, rawpixel (CC0).</span> Сделано: <a href="../../">Наталья Василенко</a></div></footer>
 
 <script>
 window.BOT = {
