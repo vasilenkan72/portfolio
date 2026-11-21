@@ -116,12 +116,12 @@ const PROJECTS = [
     category: 'web',
     title: { ru: 'Визитка мастерской мебели + бот-калькулятор (демо)', en: 'Furniture workshop card + price bot (demo)' },
     description: {
-      ru: 'Готовое решение для мастеров перетяжки и мебели на заказ: работы «до/после», бот считает цену по виду мебели и ткани, принимает фото и записывает на замер. Мастерская вымышленная, бота можно попробовать.',
-      en: 'A ready-made solution for upholstery and custom furniture makers: before/after gallery, a bot that estimates price by item and fabric, takes photos and books a visit. The workshop is fictional, the bot is live.',
+      ru: 'Готовое решение для мастеров перетяжки и мебели на заказ: примерка ткани на диван в интерьере, работы, бот считает цену по виду мебели и ткани, принимает фото и записывает на замер. Мастерская вымышленная, бота можно попробовать.',
+      en: 'A ready-made solution for upholstery and custom furniture makers: fabric try-on on a sofa in a room, work gallery, a bot that estimates price by item and fabric, takes photos and books a visit. The workshop is fictional, the bot is live.',
     },
     tech: ['HTML/CSS', 'JavaScript', 'Калькулятор', 'GitHub Pages'],
     link: 'demo/mebel/',
-    image: 'assets/img/cases/demo-mebel-cover-sm.webp',
+    image: 'assets/img/cases/demo-mebel-cover-sm.webp?v=2',
   },
   {
     id: 15,

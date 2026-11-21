@@ -4,25 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Мастерская «Второе дыхание» – перетяжка мебели (демо)</title>
-<meta name="description" content="Демо-визитка мастерской перетяжки мебели с ботом-калькулятором. Пример от Натальи Василенко.">
+<meta name="description" content="Демо-визитка мастерской перетяжки мебели с примеркой ткани и ботом-калькулятором. Пример от Натальи Василенко.">
 <meta property="og:title" content="Делаете мебель? Посмотрите, как вас могут находить клиенты">
-<meta property="og:description" content="Живой пример визитки мастерской с ботом: расчёт цены и заявка с фото. Попробуйте сами.">
-<meta property="og:image" content="https://vasilenkan72.github.io/portfolio/assets/img/cases/demo-mebel-og.jpg">
+<meta property="og:description" content="Живой пример визитки мастерской: примерка ткани на диван, расчёт цены и заявка с фото. Попробуйте сами.">
+<meta property="og:image" content="https://vasilenkan72.github.io/portfolio/assets/img/cases/demo-mebel-og.jpg?v=2">
 <meta property="og:url" content="https://vasilenkan72.github.io/portfolio/demo/mebel/">
 <meta name="robots" content="noindex">
 <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../demo.css">
 <style>
   :root { --bg: #F5EFE6; --ink: #2E2620; --muted: #75685C; --accent: #B5562F; --card: #FFFBF5;
-    --alt: #EFE5D7; --line: #E0D3C1; --art: linear-gradient(160deg, #E9D3BC, #CFA27C 55%, #A8673F); }
-  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-  .ba div { aspect-ratio: 1; border-radius: 12px; display: grid; place-items: center; font-size: 13px; color: #fff; font-weight: 600; }
-  .ba .b { background: repeating-linear-gradient(45deg, #9C8F84, #9C8F84 10px, #8E8176 10px, #8E8176 20px); }
-  .ba .a { background: var(--accent); }
+    --alt: #EFE5D7; --line: #E0D3C1; }
+  img { display: block; max-width: 100%; }
+  /* Фото на первом экране + реплики чата */
+  .hero-photo { position: relative; }
+  .hero-photo img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border-radius: 32px; }
+  .bubble { position: absolute; max-width: 250px; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.4;
+    box-shadow: 0 10px 30px rgba(0,0,0,.14); opacity: 0; transform: translateY(8px); animation: pop .5s ease forwards; }
+  .bubble small { display: block; font-size: 11px; opacity: .6; margin-bottom: 2px; }
+  .b-client { left: -28px; top: 10%; background: #fff; border-bottom-left-radius: 4px; animation-delay: .6s; }
+  .b-bot { right: -20px; top: 36%; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; animation-delay: 1.6s; }
+  .b-client2 { left: -12px; bottom: 6%; background: #fff; border-bottom-left-radius: 4px; animation-delay: 2.6s; }
+  @keyframes pop { to { opacity: 1; transform: none; } }
+  /* Примерка ткани */
+  .fit { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
+  .fit canvas { width: 100%; height: auto; border-radius: 24px; background: #eee; display: block; }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0 20px; }
+  .sw { aspect-ratio: 1; border-radius: 14px; border: 3px solid transparent; cursor: pointer; padding: 0;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); background-image: radial-gradient(rgba(255,255,255,.12) 1px, transparent 1.5px); background-size: 6px 6px; }
+  .sw[aria-pressed="true"] { border-color: var(--ink); }
+  .fit-name { font-weight: 700; font-size: 19px; }
+  .fit-price { font-size: 22px; font-weight: 700; color: var(--accent); margin: 6px 0 4px; }
+  .hint { font-size: 14px; }
+  /* Работы */
+  .work { padding: 0; overflow: hidden; }
+  .work img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .work div { padding: 16px 20px 20px; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+  .duo img { border-radius: 24px; width: 100%; aspect-ratio: 3/2; object-fit: cover; }
+  .quote { position: relative; padding-top: 34px; }
+  .quote::before { content: "“"; position: absolute; top: 4px; left: 22px; font: 700 54px/1 Georgia, serif; color: var(--accent); opacity: .5; }
+  .quote .who { margin-top: 12px; font-size: 14px; color: var(--muted); }
+  /* Заявка мастеру в Telegram */
+  .tg { max-width: 420px; background: #17212B; color: #E9EEF2; border-radius: 18px; padding: 16px 18px; font-size: 15px; line-height: 1.5; box-shadow: 0 16px 40px rgba(0,0,0,.25); }
+  .tg .head { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-weight: 600; }
+  .tg .ava { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+  .tg .time { color: #7F91A4; font-size: 12px; text-align: right; margin-top: 6px; }
+  .side { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  @media (max-width: 760px) {
+    .hero-photo { display: flex; flex-direction: column; gap: 8px; }
+    .hero-photo img { aspect-ratio: 1/1; margin-bottom: 8px; }
+    .bubble { position: static; max-width: 85%; font-size: 13px; }
+    .b-bot { margin-left: auto; }
+    .fit, .duo, .side { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { .bubble { animation: none; opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
-<div class="demo-flag">Это <b>демо</b>: мастерская вымышленная, а бот-калькулятор настоящий – попробуй его ↘</div>
+<div class="demo-flag">Это <b>демо</b>: мастерская вымышленная, а примерка ткани и бот-калькулятор настоящие – попробуйте ↘</div>
 
 <div class="wrap">
   <header class="top">
@@ -33,17 +73,39 @@
   <div class="hero">
     <div>
       <h1>Перетяжка и ремонт мягкой мебели в Гродно</h1>
-      <p class="muted">Вернём любимому дивану вид как из салона, но дешевле нового. Пришлите фото – назовём цену за 5 минут. Забираем и привозим сами.</p>
+      <p class="muted">Вернём любимому дивану вид как из салона, но дешевле нового. Примерьте ткань прямо на сайте, пришлите фото – назовём цену за 5 минут. Забираем и привозим сами.</p>
       <div class="btns">
-        <a href="#" class="btn" data-bot="calc">Рассчитать стоимость</a>
-        <a href="#" class="btn ghost" data-bot="photo">Отправить фото мебели</a>
+        <a href="#primerka" class="btn">Примерить ткань</a>
+        <a href="#" class="btn ghost" data-bot="calc">Рассчитать стоимость</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="true">🛋️</div>
+    <div class="hero-photo">
+      <img src="img/hero.jpg" alt="Кресло после перетяжки" width="900" height="600">
+      <div class="bubble b-client"><small>Клиент, 22:15</small>Можно перетянуть диван? Фото прислала 📷</div>
+      <div class="bubble b-bot"><small>Ассистент мастерской</small>Диван, велюр: примерно 290–460 BYN. Мастер привезёт образцы в субботу?</div>
+      <div class="bubble b-client2"><small>Клиент</small>Да, суббота подходит 👍</div>
+    </div>
   </div>
 </div>
 
-<section class="alt">
+<section class="alt" id="primerka">
+  <div class="wrap">
+    <h2>Примерьте ткань на диван</h2>
+    <div class="fit">
+      <canvas id="fitCanvas" width="960" height="640" aria-label="Диван в интерьере, цвет обивки меняется"></canvas>
+      <div>
+        <p class="muted">Нажмите на образец, и диван «переоденется». В каталоге мастерской больше 200 тканей, мастер привезёт их к вам домой.</p>
+        <div class="swatches" id="swatches"></div>
+        <div class="fit-name" id="fitName"></div>
+        <div class="fit-price" id="fitPrice"></div>
+        <p class="muted hint">Цена за перетяжку дивана, точную мастер назовёт по фото.</p>
+        <p style="margin-top:18px"><a href="#" class="btn" data-bot="photo">Хочу этот цвет – отправить фото</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <h2>Что мы делаем</h2>
     <div class="grid">
@@ -55,25 +117,39 @@
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap">
-    <h2>До и после</h2>
+    <h2>Наши работы</h2>
     <div class="grid">
-      <div class="card"><div class="ba"><div class="b">ДО</div><div class="a">ПОСЛЕ</div></div><h3>Диван «Честер»</h3><p class="muted">Экокожа, 4 дня</p></div>
-      <div class="card"><div class="ba"><div class="b">ДО</div><div class="a">ПОСЛЕ</div></div><h3>Бабушкино кресло</h3><p class="muted">Велюр, новый поролон, 3 дня</p></div>
-      <div class="card"><div class="ba"><div class="b">ДО</div><div class="a">ПОСЛЕ</div></div><h3>6 стульев</h3><p class="muted">Рогожка, 2 дня</p></div>
+      <div class="card work"><img src="img/rabota1.jpg" alt="Диван и кресло после перетяжки" loading="lazy"><div><h3>Комплект для гостиной</h3><p class="muted">Экокожа, новый поролон, 5 дней</p></div></div>
+      <div class="card work"><img src="img/rabota2.jpg" alt="Диван в лофте" loading="lazy"><div><h3>Угловой диван</h3><p class="muted">Рогожка «графит», 4 дня</p></div></div>
+      <div class="card work"><img src="img/rabota3.jpg" alt="Два дивана в полоску" loading="lazy"><div><h3>Пара диванов на дачу</h3><p class="muted">Хлопок в полоску, 6 дней</p></div></div>
     </div>
-    <p class="muted" style="margin-top:16px;font-size:15px">В настоящей визитке здесь будут ваши фото работ: это главное, что убеждает клиента.</p>
+    <p class="muted" style="margin-top:16px;font-size:15px">В настоящей визитке здесь будут ваши фото «до и после»: это главное, что убеждает клиента.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap duo">
+    <img src="img/tkani.jpg" alt="Образцы тканей" loading="lazy" style="aspect-ratio:4/3">
+    <div>
+      <h2>Как мы работаем</h2>
+      <div class="grid" style="grid-template-columns:1fr">
+        <div class="card"><h3>1. Фото и цена</h3><p class="muted">Присылаете фото в чат, бот сразу называет примерную цену.</p></div>
+        <div class="card"><h3>2. Ткань дома</h3><p class="muted">Мастер привозит образцы, выбираете при своём свете и в своём интерьере.</p></div>
+        <div class="card"><h3>3. Работа и гарантия</h3><p class="muted">Забираем мебель, 2–5 дней, гарантия 1 год.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <h2>Как мы работаем</h2>
+    <h2>Что говорят клиенты</h2>
     <div class="grid">
-      <div class="card"><h3>1. Фото</h3><p class="muted">Присылаете фото в чат, бот сразу называет примерную цену.</p></div>
-      <div class="card"><h3>2. Ткань</h3><p class="muted">Привозим образцы тканей к вам домой.</p></div>
-      <div class="card"><h3>3. Работа</h3><p class="muted">Забираем мебель, 2–5 дней, гарантия 1 год.</p></div>
+      <div class="card quote"><p>Примерила три цвета на сайте, пока муж был на работе. Вечером уже спорили только про оттенок зелёного.</p><div class="who">Светлана, Гродно</div></div>
+      <div class="card quote"><p>Отправил фото в 11 вечера, через минуту знал цену. Без звонков и «перезвоним завтра».</p><div class="who">Андрей, Гродно</div></div>
+      <div class="card quote"><p>Бабушкино кресло теперь главное в комнате. Мастер привёз ткани домой, выбирали при нашем свете.</p><div class="who">Ирина, Скидель</div></div>
     </div>
   </div>
 </section>
@@ -82,34 +158,81 @@
   <div class="wrap">
     <p class="muted">Это демо сделала Наталья Василенко</p>
     <h2>Вы делаете мебель золотыми руками. А о вас знают только соседи?</h2>
-    <p class="muted" style="max-width:680px">Проверьте себя. Если хотя бы два пункта про вас, заказы уходят к тем, кого просто легче найти.</p>
-    <ul class="check">
-      <li>Фото ваших работ лежат в телефоне, и показать их клиенту можно только при встрече.</li>
-      <li>Каждый спрашивает «сколько стоит?», и вы в десятый раз считаете в переписке.</li>
-      <li>Заявки теряются между звонками, мессенджерами и работой в цеху.</li>
-      <li>Нет ссылки, которую клиент может переслать знакомым.</li>
-      <li>По запросу «перетяжка мебели Гродно» вас не найти.</li>
-    </ul>
-    <p style="max-width:680px;margin-bottom:28px">Такую визитку и бота-калькулятора я сделаю под вас за пару дней. А в NEURO рассказываю, как ИИ помогает мастерам находить заказы: подпишитесь, там будет польза.</p>
+    <div class="side">
+      <div>
+        <p class="muted">Проверьте себя. Если хотя бы два пункта про вас, заказы уходят к тем, кого просто легче найти.</p>
+        <ul class="check">
+          <li>Фото ваших работ лежат в телефоне, и показать их клиенту можно только при встрече.</li>
+          <li>Каждый спрашивает «сколько стоит?», и вы в десятый раз считаете в переписке.</li>
+          <li>Заявки теряются между звонками, мессенджерами и работой в цеху.</li>
+          <li>Нет ссылки, которую клиент может переслать знакомым.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="margin-bottom:14px">А так выглядит заявка, которая приходит вам, пока вы в цеху:</p>
+        <div class="tg">
+          <div class="head"><div class="ava">🛋️</div>Ассистент мастерской</div>
+          🆕 <b>Новая заявка</b><br>Что: диван, велюр «Изумруд»<br>Фото: 📎 2 шт.<br>Ориентир: 290–460 BYN<br>Выезд мастера: сб, 10–13<br>Телефон: +375 29 •••-••-12
+          <div class="time">22:16</div>
+        </div>
+      </div>
+    </div>
+    <p style="max-width:680px;margin:32px 0 28px">Такую визитку с примеркой ткани и ботом-калькулятором я сделаю под вас за пару дней. А в NEURO 24/7 рассказываю, как ИИ помогает мастерам находить заказы.</p>
     <div class="grid">
-      <div class="card"><h3>Старт</h3><p class="muted">Визитка + калькулятор или запись на сайте, заявки в Telegram и таблицу. 4–5 дней.</p><div class="price">650 BYN</div></div>
-      <div class="card"><h3>Под ключ</h3><p class="muted">Всё из «Старта» + Telegram-бот с приёмом фото, база тканей, которую правите сами, заявки в Telegram и таблицу. 7–10 дней.</p><div class="price">1 200 BYN</div></div>
+      <div class="card"><h3>Старт</h3><p class="muted">Визитка + калькулятор, заявки в Telegram и таблицу. 4–5 дней.</p><div class="price">650 BYN</div></div>
+      <div class="card"><h3>Под ключ</h3><p class="muted">Всё из «Старта» + примерка ваших тканей, Telegram-бот с приёмом фото, база тканей, которую правите сами. 7–10 дней.</p><div class="price">1 200 BYN</div></div>
       <div class="card"><h3>Поддержка</h3><p class="muted">Хостинг, работа бота 24/7, мелкие правки.</p><div class="price">60 BYN/мес</div></div>
     </div>
     <p class="note">🔥 Первым трём – скидка 30% в обмен на отзыв.</p>
     <div class="btns">
       <a class="btn" href="https://t.me/natallia_assistant_bot?start=demo_mebel" target="_blank" rel="noopener">Хочу такую же</a>
-      <a class="btn ghost" href="https://t.me/neuro24_7" target="_blank" rel="noopener">Читать NEURO в Telegram</a>
+      <a class="btn ghost" href="https://t.me/neuro24_7" target="_blank" rel="noopener">Читать NEURO 24/7 в Telegram</a>
     </div>
   </div>
 </section>
-<footer><div class="wrap">Демо-страница. Мастерская «Второе дыхание» вымышленная, совпадения случайны. Сделано: <a href="../../">Наталья Василенко</a></div></footer>
+<footer><div class="wrap">Демо-страница. Мастерская «Второе дыхание» и отзывы вымышлены, совпадения случайны. Фото: StockSnap (CC0). Сделано: <a href="../../">Наталья Василенко</a></div></footer>
 
 <script>
 // Цены для калькулятора: [от, до] в BYN и наценка за ткань
 const BASE = { "Диван": [250, 400], "Кресло": [120, 180], "Стулья (за 1 шт.)": [35, 50], "Кухонный уголок": [180, 280] };
 const FABRIC = { "Рогожка": 1, "Велюр": 1.15, "Экокожа": 1.3 };
 const opt = (obj, key, next) => Object.keys(obj).map((k) => ({ label: k, set: { [key]: k }, next }));
+const range = (item, fabric) => BASE[item].map((p) => Math.round(p * FABRIC[fabric] / 5) * 5);
+
+// Примерка: фото дивана + маска обивки, цвет накладывается умножением (тени и складки сохраняются)
+const SWATCHES = [
+  ["Велюр «Изумруд»", "Велюр", "#2E5E4E"], ["Рогожка «Графит»", "Рогожка", "#55575C"],
+  ["Экокожа «Карамель»", "Экокожа", "#A8683C"], ["Велюр «Терракота»", "Велюр", "#B0543A"],
+  ["Велюр «Сапфир»", "Велюр", "#2C3E6E"], ["Рогожка «Олива»", "Рогожка", "#7A7B4A"],
+  ["Велюр «Пудра»", "Велюр", "#D2A39A"], ["Рогожка «Молоко»", "Рогожка", "#EDE6DA"],
+];
+(function fit() {
+  const cv = document.getElementById("fitCanvas"), ctx = cv.getContext("2d");
+  const photo = new Image(), mask = new Image();
+  const layer = document.createElement("canvas"); layer.width = cv.width; layer.height = cv.height;
+  const lc = layer.getContext("2d");
+  let loaded = 0;
+  photo.onload = mask.onload = () => { if (++loaded === 2) pick(0); };
+  photo.src = "img/primerka.jpg"; mask.src = "img/primerka-mask.png";
+  const box = document.getElementById("swatches");
+  SWATCHES.forEach(([name, , color], i) => {
+    const b = document.createElement("button");
+    b.className = "sw"; b.style.backgroundColor = color; b.title = name; b.setAttribute("aria-label", name);
+    b.onclick = () => pick(i); box.append(b);
+  });
+  function pick(i) {
+    const [name, fabric, color] = SWATCHES[i];
+    lc.globalCompositeOperation = "source-over"; lc.clearRect(0, 0, layer.width, layer.height);
+    lc.fillStyle = color; lc.fillRect(0, 0, layer.width, layer.height);
+    lc.globalCompositeOperation = "multiply"; lc.drawImage(photo, 0, 0);
+    lc.globalCompositeOperation = "destination-in"; lc.drawImage(mask, 0, 0);
+    ctx.drawImage(photo, 0, 0); ctx.drawImage(layer, 0, 0);
+    [...box.children].forEach((b, j) => b.setAttribute("aria-pressed", j === i));
+    const [lo, hi] = range("Диван", fabric);
+    document.getElementById("fitName").textContent = name;
+    document.getElementById("fitPrice").textContent = `≈ ${lo}–${hi} BYN`;
+  }
+})();
 
 window.BOT = {
   title: "Второе дыхание", subtitle: "Расчёт цены · отвечает сразу",
@@ -126,7 +249,7 @@ window.BOT = {
     fabric: { text: "Какая ткань нравится?", options: opt(FABRIC, "fabric", "result") },
     result: {
       text: (s) => {
-        const [lo, hi] = BASE[s.item].map((p) => Math.round(p * FABRIC[s.fabric] / 5) * 5);
+        const [lo, hi] = range(s.item, s.fabric);
         return `${s.item}, ${s.fabric.toLowerCase()}: ориентировочно ${lo}–${hi} BYN.\nТочную цену мастер скажет по фото.`;
       },
       options: [{ label: "Отправить фото", next: "photo" }, { label: "Вызвать мастера", next: "visit" }] },
