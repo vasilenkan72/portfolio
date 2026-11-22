@@ -8,10 +8,19 @@
 <meta property="og:title" content="ИИ-сканер бизнеса: какую работу за вас может делать ИИ?">
 <meta property="og:description" content="6 вопросов, 2 минуты. Разбор по 4 нейросотрудникам под ваш формат. Бесплатно.">
 <meta property="og:url" content="https://vasilenkan72.github.io/portfolio/kviz/">
-<meta name="theme-color" content="#0B0B0B">
+<meta name="theme-color" content="#EEF6DC">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/tools.css?v=6">
 <style>
+  /* Своя светлая салатовая тема квиза (просьба Натальи 22.11): переопределяем токены tools.css только на этой странице */
+  :root { --void: #EEF6DC; --obsidian: #FBFDF5; --graphite: #CFE3AE; --ash: #5C6E45; --stone: #33432A; --cloud: #1E2B14;
+          --coral: #5A9A2C; --coral-hover: #4C8723; --tint: rgba(90, 154, 44, .10); --line: rgba(70, 110, 30, .14); }
+  body.glow { background: radial-gradient(900px 520px at 85% -120px, #C6E595, transparent 70%),
+                          radial-gradient(700px 480px at -10% 105%, #D9EFB8, transparent 70%), var(--void) no-repeat; }
+  .btn { color: #FFFFFF; }
+  .panel { box-shadow: 0 6px 24px rgba(70, 110, 30, .08); }
+  .offer { background: linear-gradient(135deg, rgba(160, 210, 100, .35), rgba(255, 255, 255, .6)); border-color: rgba(90, 154, 44, .35); }
+  .bridge { border-color: rgba(90, 154, 44, .4); }
   .progress { height: 2px; background: var(--graphite); border-radius: 2px; margin-bottom: 24px; overflow: hidden; }
   .progress i { display: block; height: 100%; background: var(--coral); width: 0; transition: width .25s; }
   .answers { display: grid; gap: 10px; margin-top: 20px; }
@@ -96,10 +105,10 @@
       <button type="button" class="ghost" id="again">Пройти заново</button>
     </div>
     <p class="note hidden" id="copied">Ссылка скопирована</p>
-    <p class="note">Ответы никуда не отправляются: квиз считается в вашем браузере. В Telegram уходит только итог, если вы нажмёте кнопку. Нет Telegram? <a href="https://viber.me/375296588003">Напишите в Viber</a>.</p>
+    <p class="note">Ответы никуда не отправляются: квиз считается в вашем браузере. В Telegram уходит только итог, если вы нажмёте кнопку.</p>
   </section>
 
-  <footer class="foot">Наталья Василенко · NEURO 24/7 · 🔊 Бизнес должен звучать: его должны видеть и слышать. О вас должны знать! · <a href="https://t.me/NatalliaVas">@NatalliaVas</a> · <a href="https://viber.me/375296588003">Viber</a></footer>
+  <footer class="foot">Наталья Василенко · NEURO 24/7 · 🔊 Бизнес должен звучать: его должны видеть и слышать. О вас должны знать! · <a href="https://t.me/natallia_assistant_bot?start=kviz">ИИ-ассистент в Telegram</a></footer>
 </main>
 <script type="module" src="app.js?v=1"></script>
 </body>
