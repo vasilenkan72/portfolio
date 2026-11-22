@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ИИ-сканер бизнеса</title>
+<meta name="description" content="6 вопросов за 2 минуты: какой нейросотрудник нужен вашему делу в первую очередь, что он возьмёт на себя и сколько стоит запуск.">
+<meta property="og:title" content="ИИ-сканер бизнеса: какую работу за вас может делать ИИ?">
+<meta property="og:description" content="6 вопросов, 2 минуты. Разбор по 4 нейросотрудникам под ваш формат. Бесплатно.">
+<meta property="og:url" content="https://vasilenkan72.github.io/portfolio/kviz/">
+<meta name="theme-color" content="#0B0B0B">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tools.css?v=6">
+<style>
+  .progress { height: 2px; background: var(--graphite); border-radius: 2px; margin-bottom: 24px; overflow: hidden; }
+  .progress i { display: block; height: 100%; background: var(--coral); width: 0; transition: width .25s; }
+  .answers { display: grid; gap: 10px; margin-top: 20px; }
+  .answer { display: flex; gap: 14px; align-items: center; text-align: left; background: transparent; color: var(--cloud);
+            font: 400 16px/1.43 var(--font); border: 1px solid var(--graphite); border-radius: 10px; padding: 16px 18px; cursor: pointer; }
+  .answer:hover { border-color: var(--ash); }
+  .answer:focus-visible { outline: none; border-color: var(--coral); }
+  .answer b { flex: none; width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--graphite); color: var(--ash);
+              display: grid; place-items: center; font-size: 13px; font-weight: 500; }
+  .q { font-size: 22px; line-height: 1.35; letter-spacing: -0.01em; }
+  .checks { list-style: none; margin-top: 16px; display: grid; gap: 8px; color: var(--stone); }
+  .bars { display: grid; gap: 18px; margin-top: 20px; }
+  .bar-row { display: flex; justify-content: space-between; gap: 12px; color: var(--ash); }
+  .bar-row.lead { color: var(--cloud); font-weight: 500; }
+  .bar { height: 6px; background: var(--graphite); border-radius: 6px; margin-top: 8px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--ash); border-radius: 6px; }
+  .bar-row.lead + .bar i { background: var(--coral); }
+  .card-lead { border-left: 2px solid var(--coral); }
+  .does { margin: 12px 0 0 18px; color: var(--stone); display: grid; gap: 6px; }
+  .price { margin-top: 16px; color: var(--cloud); }
+  .others { display: grid; gap: 10px; margin-top: 16px; }
+  .others p { color: var(--ash); padding-top: 10px; border-top: 1px solid var(--graphite); }
+  .others b { color: var(--stone); font-weight: 500; }
+</style>
+</head>
+<body class="glow">
+<main class="wrap">
+  <nav class="top"><a href="../">Наталья Василенко</a><a href="../cena/">Калькулятор цены услуги →</a></nav>
+
+  <header id="intro">
+    <p class="eyebrow">Квиз · 6 вопросов · 2 минуты</p>
+    <h1>ИИ-сканер бизнеса</h1>
+    <p class="lead">Какую работу в вашем деле уже сейчас может взять на себя ИИ? За 2 минуты покажем, какой нейросотрудник нужен вам в первую очередь и с чего выгоднее начать.</p>
+    <ul class="checks">
+      <li>✅ Разбор по 4 нейросотрудникам под ваш формат</li>
+      <li>✅ Кто нужен вам первым</li>
+      <li>✅ Что именно он возьмёт на себя</li>
+      <li>✅ Сроки и стоимость запуска</li>
+    </ul>
+    <div class="actions"><button class="btn" id="go">Начать сканирование →</button></div>
+  </header>
+
+  <section class="panel hidden" id="quiz">
+    <div class="progress"><i id="bar"></i></div>
+    <p class="eyebrow" id="step"></p>
+    <p class="q" id="question" style="margin-top:12px"></p>
+    <div class="answers" id="answers"></div>
+    <div class="actions"><button class="ghost hidden" id="back">← Назад</button></div>
+  </section>
+
+  <section class="hidden" id="result" aria-live="polite">
+    <div class="panel">
+      <p class="eyebrow">Ваш ИИ-профиль</p>
+      <div class="bars" id="bars"></div>
+    </div>
+    <div class="panel card-lead">
+      <p class="eyebrow">Ваш первый нейросотрудник</p>
+      <h2 id="leadName" style="margin-top:8px"></h2>
+      <p style="color:var(--ash);margin-top:8px" id="leadWhy"></p>
+      <p style="margin-top:16px">Что возьмёт на себя:</p>
+      <ul class="does" id="leadDoes"></ul>
+      <p class="price">Запуск: <b id="leadPrice"></b></p>
+      <p class="note hidden" id="health"></p>
+    </div>
+    <div class="panel">
+      <h2>Остальные в вашей команде</h2>
+      <div class="others" id="others"></div>
+      <p style="margin-top:16px;color:var(--stone)">⚡ <b>Важно:</b> нейросотрудники работают в команде. Начинать выгоднее с того, у кого процент выше, остальных можно подключить потом.</p>
+    </div>
+    <section class="offer">
+      <h2>Хотите узнать, как это будет работать у вас?</h2>
+      <p>Напишите, и я бесплатно разберу ваш результат за 15 минут: что запускать первым и сколько это будет стоить.</p>
+      <div class="actions"><a class="btn" id="cta" href="https://t.me/natallia_assistant_bot">Обсудить мой результат в Telegram</a></div>
+    </section>
+    <div class="panel bridge">
+      <p class="eyebrow">Понравился этот квиз?</p>
+      <p id="offerText" style="margin-top:8px"></p>
+      <div class="actions"><a class="btn" id="kz" href="https://t.me/natallia_assistant_bot">Хочу такой квиз</a></div>
+    </div>
+    <div class="actions">
+      <button type="button" class="ghost" id="share">Отправить знакомому</button>
+      <button type="button" class="ghost" id="again">Пройти заново</button>
+    </div>
+    <p class="note hidden" id="copied">Ссылка скопирована</p>
+    <p class="note">Ответы никуда не отправляются: квиз считается в вашем браузере. В Telegram уходит только итог, если вы нажмёте кнопку. Нет Telegram? <a href="https://viber.me/375296588003">Напишите в Viber</a>.</p>
+  </section>
+
+  <footer class="foot">Наталья Василенко · NEURO 24/7 · 🔊 Бизнес должен звучать: его должны видеть и слышать. О вас должны знать! · <a href="https://t.me/NatalliaVas">@NatalliaVas</a> · <a href="https://viber.me/375296588003">Viber</a></footer>
+</main>
+<script type="module" src="app.js?v=1"></script>
+</body>
+</html>
