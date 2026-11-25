@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кабинет «Пятёрка» – репетиторы в Гродно (демо)</title>
+<meta name="description" content="Демо-страница репетитора с калькулятором цены и записью на пробное занятие. Пример от Натальи Василенко: родитель сам видит цену и свободное время.">
+<meta property="og:title" content="Родители записываются на пробное сами, пока вы ведёте урок">
+<meta property="og:description" content="Живой пример страницы репетитора: калькулятор цены, свободные окна, запись в боте, напоминание накануне. Попробуйте сами.">
+<meta property="og:url" content="https://vasilenkan72.github.io/portfolio/demo/repetitor/">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../demo.css">
+<style>
+  /* Палитра из квиза «ИИ-сканер бизнеса»: светлый салатовый + зелёный */
+  :root { --bg: #FBFDF5; --ink: #1E2B14; --muted: #5C6E45; --accent: #4C8723; --card: #FFFFFF;
+    --alt: #EEF6DC; --line: #CFE3AE; --soft: #5A9A2C; }
+  /* Первый экран: карточка недели вместо фото */
+  .week { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 22px;
+    box-shadow: 0 18px 50px rgba(30,43,20,.10); }
+  .week h4 { font-size: 14px; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
+  .lesson { display: grid; grid-template-columns: 58px 1fr; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 14px;
+    background: var(--alt); margin-bottom: 8px; font-size: 15px; line-height: 1.35; }
+  .lesson b { color: var(--accent); font-size: 16px; }
+  .lesson.free { background: #fff; border: 1.5px dashed var(--soft); }
+  .bubble { position: absolute; max-width: 250px; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.4;
+    box-shadow: 0 10px 30px rgba(0,0,0,.14); opacity: 0; transform: translateY(8px); animation: pop .5s ease forwards; }
+  .bubble.b-client { left: -34px; top: -26px; background: #fff; border-bottom-left-radius: 4px; animation-delay: .6s; }
+  .bubble.b-bot { right: -22px; bottom: -30px; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; animation-delay: 1.6s; }
+  .bubble small { display: block; font-size: 11px; opacity: .65; margin-bottom: 2px; }
+  @keyframes pop { to { opacity: 1; transform: none; } }
+  .teacher .ava { width: 56px; height: 56px; border-radius: 50%; background: var(--alt); border: 1px solid var(--line);
+    display: grid; place-items: center; font-weight: 700; color: var(--accent); font-size: 20px; margin-bottom: 12px; }
+  /* Калькулятор и окна */
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+  .calc { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 18px; }
+  .chip { border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 9px 14px;
+    font: inherit; font-size: 14px; cursor: pointer; }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip:disabled { opacity: .35; text-decoration: line-through; cursor: default; }
+  .result { background: var(--alt); border-radius: 20px; padding: 22px; position: sticky; top: 16px; }
+  .calc-sum { font-size: 40px; font-weight: 700; color: var(--accent); line-height: 1.1; }
+  .trial { margin: 14px 0 18px; font-weight: 600; }
+  .days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .day h4 { margin: 0 0 8px; font-size: 14px; color: var(--muted); font-weight: 600; }
+  .day .chip { width: 100%; margin-bottom: 6px; padding: 8px 0; }
+  .confirm { margin-top: 20px; padding: 16px 18px; border-radius: 16px; background: var(--alt); display: none; }
+  .confirm.show { display: block; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; margin-bottom: 10px; }
+  summary { font-weight: 600; cursor: pointer; }
+  details p { margin-top: 10px; }
+  .quote { position: relative; padding-top: 34px; }
+  .quote::before { content: "“"; position: absolute; top: 4px; left: 22px; font: 700 54px/1 Georgia, serif; color: var(--soft); opacity: .5; }
+  .quote .who { margin-top: 12px; font-size: 14px; color: var(--muted); }
+  .tg { max-width: 420px; background: #17212B; color: #E9EEF2; border-radius: 18px; padding: 16px 18px; font-size: 15px; line-height: 1.5;
+    box-shadow: 0 16px 40px rgba(0,0,0,.25); }
+  .tg .head { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-weight: 600; }
+  .tg .ava { width: 34px; height: 34px; border-radius: 50%; background: var(--soft); display: grid; place-items: center; font-size: 16px; }
+  .tg .time { color: #7F91A4; font-size: 12px; text-align: right; margin-top: 6px; }
+  .side { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  @media (max-width: 760px) {
+    .week { margin-top: 8px; }
+    .bubble { position: static; max-width: 85%; font-size: 13px; margin-bottom: 8px; }
+    .bubble.b-bot { margin: 8px 0 0 auto; }
+    .calc, .side { grid-template-columns: 1fr; }
+    .result { position: static; }
+    .days { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) { .bubble { animation: none; opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+<div class="demo-flag">Это <b>демо</b>: кабинет вымышленный, а калькулятор, запись и бот настоящие – попробуйте ↘</div>
+
+<div class="wrap">
+  <header class="top">
+    <div class="logo">Кабинет «Пятёрка»</div>
+    <a href="#" class="btn" data-bot>Пробное бесплатно</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Репетиторы для школьников: цена и запись на пробное за минуту</h1>
+      <p class="muted">Английский, математика, физика, русский язык и подготовка к школе. Онлайн, в кабинете в Гродно или с выездом. Посчитайте цену, выберите свободное время, а первое занятие 30 минут – бесплатно.</p>
+      <div class="btns">
+        <a href="#cena" class="btn">Посчитать цену</a>
+        <a href="#okna" class="btn ghost">Свободное время</a>
+      </div>
+    </div>
+    <div class="week">
+      <div class="bubble b-client"><small>Мама ученика, 22:40</small>Здравствуйте! Сыну 7 класс, математика. Есть пробное на этой неделе?</div>
+      <h4>Четверг у Андрея (математика, физика)</h4>
+      <div class="lesson"><b>15:30</b><span>Алгебра, 8 класс · онлайн</span></div>
+      <div class="lesson"><b>16:30</b><span>Физика, ЦЭ · в кабинете</span></div>
+      <div class="lesson free"><b>17:30</b><span>Свободно – пробное 30 минут</span></div>
+      <div class="lesson"><b>18:30</b><span>Математика, 5 класс · онлайн</span></div>
+      <div class="bubble b-bot"><small>Помощник кабинета</small>Да, в четверг свободно 17:30, пробное бесплатно. Записать?</div>
+    </div>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Преподаватели</h2>
+    <div class="grid">
+      <div class="card teacher"><div class="ava">И</div><h3>Ирина</h3><p class="muted">Английский, 2–11 класс, ЦЭ/ЦТ, разговорный для взрослых. Стаж 9 лет.</p><div class="price">от 27 р.</div></div>
+      <div class="card teacher"><div class="ava">А</div><h3>Андрей</h3><p class="muted">Математика и физика, 5–11 класс, подготовка к ЦЭ/ЦТ. Стаж 12 лет.</p><div class="price">от 25 р.</div></div>
+      <div class="card teacher"><div class="ava">О</div><h3>Ольга</h3><p class="muted">Русский язык, начальные классы, подготовка к школе. Стаж 15 лет.</p><div class="price">от 20 р.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="cena">
+  <div class="wrap">
+    <h2>Сколько стоит занятие</h2>
+    <p class="muted" style="max-width:640px;margin-bottom:20px">Вместо «цена договорная»: родитель сам выбирает параметры и сразу видит ориентир. Вопрос «а сколько стоит?» больше не повторяется в каждой переписке.</p>
+    <div class="panel calc">
+      <div>
+        <b>Предмет</b><div class="chips" id="calc-subj"></div>
+        <b>Цель</b><div class="chips" id="calc-goal"></div>
+        <b>Формат</b><div class="chips" id="calc-form"></div>
+        <b>Длительность</b><div class="chips" id="calc-len"></div>
+      </div>
+      <div class="result" id="calc-out" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="okna" class="alt">
+  <div class="wrap">
+    <h2>Запись на пробное занятие</h2>
+    <p class="muted" style="max-width:640px">Свободное время видно сразу, занятое зачёркнуто. Не нужно переписывать окна в объявлении вручную.</p>
+    <div class="panel" style="margin-top:20px">
+      <b>1. Преподаватель</b>
+      <div class="chips" id="teach"></div>
+      <b>2. Время</b>
+      <div class="days" id="days" style="margin-top:10px"></div>
+      <div class="confirm" id="confirm"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Частые вопросы родителей</h2>
+    <details><summary>Как проходит пробное занятие?</summary><p>30 минут: преподаватель знакомится с учеником, проверяет уровень и говорит, сколько занятий в неделю нужно. Это бесплатно и ни к чему не обязывает.</p></details>
+    <details><summary>Как занимаются онлайн?</summary><p>В Zoom или Google Meet. Ссылка приходит накануне вместе с напоминанием, домашнее задание – в тот же чат.</p></details>
+    <details><summary>Что если ребёнок заболел?</summary><p>Предупредите до 9:00 дня занятия, и перенос бесплатный. Бот сам предложит новое время.</p></details>
+    <details><summary>Можно ли платить за месяц?</summary><p>Да, абонемент на 8 занятий дешевле разовых примерно на 10%.</p></details>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Что говорят родители</h2>
+    <div class="grid">
+      <div class="card quote"><p>Записала сына на пробное в 23:00, когда он наконец сказал, что не понимает алгебру. Утром уже было время.</p><div class="who">Наталья, мама восьмиклассника</div></div>
+      <div class="card quote"><p>Сразу увидела цену, не пришлось писать и ждать ответа. И напоминание накануне очень выручает.</p><div class="who">Светлана</div></div>
+      <div class="card quote"><p>Дочь заболела, перенесли занятие в боте за минуту, без звонков.</p><div class="who">Игорь</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="natallia">
+  <div class="wrap">
+    <p class="muted">Это демо сделала Наталья Василенко</p>
+    <h2>Вы отличный преподаватель. Но запись съедает ваше время?</h2>
+    <div class="side">
+      <div>
+        <p class="muted" style="max-width:680px">Работает одинаково для частного репетитора и для кабинета. Если хотя бы два пункта про вас, вы теряете учеников, пока ведёте урок.</p>
+        <ul class="check">
+          <li>Каждый новый родитель спрашивает одно и то же: сколько стоит, онлайн или очно, когда есть время.</li>
+          <li>В объявлении цена «договорная» или «от», и часть людей просто не пишет.</li>
+          <li>Свободные окна вы переписываете в тексте объявления вручную.</li>
+          <li>На сообщения отвечаете только после уроков, поздно вечером.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="margin-bottom:14px">А так выглядит заявка, которая приходит вам, пока вы ведёте урок:</p>
+        <div class="tg">
+          <div class="head"><div class="ava">📚</div>Помощник записи</div>
+          🆕 <b>Пробное занятие</b><br>Предмет: математика, 7 класс<br>Формат: онлайн<br>Время: чт, 17:30<br>Контакт: @mama_gr<br>Напоминание родителю: ср, 17:30 ✅
+          <div class="time">22:41</div>
+        </div>
+      </div>
+    </div>
+    <p style="max-width:680px;margin:32px 0 28px">Такую страницу с калькулятором, записью и ботом я сделаю под вас за несколько дней: ваши предметы, цены и расписание, а заявки приходят вам в Telegram. А в NEURO 24/7 рассказываю, как ИИ помогает специалистам находить клиентов.</p>
+    <div class="btns">
+      <a class="btn" href="https://t.me/natallia_assistant_bot?start=demo_repetitor" target="_blank" rel="noopener">Хочу такую же</a>
+      <a class="btn ghost" href="https://t.me/neuro24_7" target="_blank" rel="noopener">Читать NEURO 24/7 в Telegram</a>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">Демо-страница. Кабинет «Пятёрка», преподаватели, цены и отзывы вымышлены, совпадения случайны. Сделано: <a href="../../">Наталья Василенко</a></div></footer>
+
+<script src="calc.js"></script>
+<script src="slots.js"></script>
+<script src="bot.js"></script>
+<script src="../concierge.js"></script>
+</body>
+</html>
