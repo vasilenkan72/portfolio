@@ -335,7 +335,13 @@ function renderReviews() {
         ok.classList.remove('hidden');
       } else throw new Error();
     } catch {
-      err.textContent = err.dataset[lang] || err.dataset.ru;
+      err.textContent = (err.dataset[lang] || err.dataset.ru) + ' ';
+      const tg = document.createElement('a');
+      tg.href = 'https://t.me/NatalliaVas';
+      tg.target = '_blank';
+      tg.rel = 'noopener';
+      tg.textContent = '@NatalliaVas';
+      err.append(tg);
       err.classList.remove('hidden');
     } finally {
       syncConsent();
