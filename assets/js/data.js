@@ -272,6 +272,9 @@ const PRICES = [
     name: { ru: 'Лендинг с текстами и формой', en: 'Landing page with copy and form' }, term: { ru: '7–10 дней', en: '7–10 days' } },
   { topic: 'site', price: 150,
     name: { ru: 'Интерактивная визитка + публикация на хостинге', en: 'Interactive business card + hosting setup' }, term: { ru: '1–2 дня', en: '1–2 days' } },
+  /* Первая ступень для компаний с сайтом, решение Натальи 28.11.2026 */
+  { topic: 'site', price: 250,
+    name: { ru: 'Доработка сайта по аудиту: мессенджеры, форма заявки, согласие на данные, правки по топ-3', en: 'Site fixes from an audit: messengers, lead form, data consent, top-3 fixes' }, term: { ru: '2–4 дня', en: '2–4 days' } },
   { topic: 'site', price: 500,
     name: { ru: 'Квиз или калькулятор для сайта', en: 'Quiz or calculator for your site' }, term: { ru: '3–5 дней', en: '3–5 days' } },
   /* Готовые решения на шаблоне ниши (психологи, мастера, усадьбы); цены пересмотрены 31.10.2026; демо в demo/ */
