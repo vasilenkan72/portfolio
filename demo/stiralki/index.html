@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ремонт стиральных машин в Гродно – мастер Олег (демо)</title>
+<meta name="description" content="Пример страницы-визитки мастера по ремонту стиральных машин: цены по неисправностям, кнопки звонка и Viber, заявка с маркой и поломкой.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../demo.css">
+<style>
+  :root { --bg: #F4F8FB; --ink: #10243A; --muted: #4F6478; --accent: #1F6FD1; --card: #FFFFFF;
+    --alt: #E4EEF8; --line: #C9DAEC; --viber: #7360F2; }
+  .hero-card { background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 24px;
+    box-shadow: 0 18px 50px rgba(16,36,58,.10); }
+  .hero-card h4 { font-size: 14px; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
+  .row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 15px; }
+  .row:last-child { border: 0; }
+  .row b { color: var(--accent); white-space: nowrap; }
+  .btn.viber { background: var(--viber); }
+  .faults { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .fault { text-align: left; font: inherit; cursor: pointer; background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 18px; color: var(--ink); }
+  .fault:hover, .fault.on { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+  .fault b { display: block; font-size: 17px; margin-bottom: 4px; }
+  .fault span { color: var(--accent); font-weight: 700; font-size: 20px; }
+  .hint { font-size: 14px; color: var(--muted); margin-top: 14px; }
+  .trust { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .trust .card b { display: block; font-size: 28px; color: var(--accent); line-height: 1.2; }
+  .review { border: 2px dashed var(--line); background: var(--card); border-radius: 18px; padding: 24px; }
+  .stars { color: #F2A900; font-size: 20px; letter-spacing: 2px; }
+  .side { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  form { display: grid; gap: 12px; }
+  label { font-size: 14px; font-weight: 600; }
+  input, select { width: 100%; font: inherit; padding: 13px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); margin-top: 4px; }
+  .tg { background: #17212B; color: #E9EEF2; border-radius: 18px; padding: 16px 18px; font-size: 15px; line-height: 1.55;
+    box-shadow: 0 16px 40px rgba(0,0,0,.25); }
+  .tg .head { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-weight: 600; }
+  .tg .ava { width: 34px; height: 34px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+  .tg .time { color: #7F91A4; font-size: 12px; text-align: right; margin-top: 6px; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #10243A; color: #fff; padding: 12px 18px;
+    border-radius: 12px; font-size: 15px; display: none; z-index: 30; max-width: calc(100vw - 32px); }
+  .call-bar { display: none; }
+  @media (max-width: 760px) {
+    .side { grid-template-columns: 1fr; }
+    .call-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 16px;
+      background: rgba(244,248,251,.96); border-top: 1px solid var(--line); z-index: 25; }
+    .call-bar .btn { text-align: center; padding: 13px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="demo-flag">Это <b>пример</b> страницы на данных из вашего объявления. Цены условные – впишете свои</div>
+
+<div class="wrap">
+  <header class="top">
+    <div class="logo">🧺 Мастер Олег</div>
+    <a href="#zayavka" class="btn">Оставить заявку</a>
+  </header>
+  <div class="hero">
+    <div>
+      <h1>Ремонт стиральных машин в Гродно – выезд в день обращения</h1>
+      <p class="muted">Опыт больше 20 лет. Чиним за один визит, с гарантией и без накруток. Цены видны заранее – выберите, что случилось.</p>
+      <div class="btns">
+        <a href="#" class="btn" data-demo="call">📞 Позвонить</a>
+        <a href="#" class="btn viber" data-demo="viber">💬 Написать в Viber</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h4>Частые поломки и цены «от»</h4>
+      <div class="row">Не сливает воду <b>от 40 р.</b></div>
+      <div class="row">Не отжимает <b>от 40 р.</b></div>
+      <div class="row">Не греет воду <b>от 50 р.</b></div>
+      <div class="row">Шумит при отжиме <b>от 70 р.</b></div>
+      <div class="row">Протекает <b>от 40 р.</b></div>
+    </div>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Что случилось с машиной?</h2>
+    <div class="faults" id="faults"></div>
+    <p class="hint">Нажмите на поломку – она сразу попадёт в заявку ниже. Цены – пример, мастер впишет свои.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Почему мне доверяют</h2>
+    <div class="trust">
+      <div class="card"><b>20+ лет</b>ремонтирую стиральные машины</div>
+      <div class="card"><b>1 визит</b>обычно хватает, чтобы всё починить</div>
+      <div class="card"><b>Гарантия</b>на работу и установленные детали</div>
+      <div class="card"><b>Без накруток</b>честная цена за работу</div>
+    </div>
+    <h2 style="margin-top:48px">Отзывы</h2>
+    <div class="review">
+      <div class="stars">★★★★★ <span class="muted" style="font-size:15px">5,0 на Куфаре</span></div>
+      <p style="margin-top:8px">Здесь будет ваш настоящий отзыв с Куфара – дословно, с именем клиента.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="zayavka">
+  <div class="wrap side">
+    <div>
+      <h2>Заявка за 30 секунд</h2>
+      <form id="form">
+        <label>Марка машины<input id="brand" placeholder="Например, LG, Samsung, Bosch" required></label>
+        <label>Что случилось<select id="fault" required></select></label>
+        <label>Телефон<input id="phone" type="tel" placeholder="+375 (__) ___-__-__" required></label>
+        <button class="btn" type="submit">Отправить мастеру</button>
+      </form>
+    </div>
+    <div>
+      <p style="margin-bottom:14px">Так заявка приходит мастеру в Telegram или Viber, пока он на выезде:</p>
+      <div class="tg">
+        <div class="head"><div class="ava">🧺</div>Заявки с сайта</div>
+        🆕 <b>Новая заявка</b><br>Марка: <span id="pBrand">Samsung</span><br>Поломка: <span id="pFault">не сливает воду</span><br>Ориентир: <span id="pPrice">от 40 р.</span><br>Телефон: <span id="pPhone">+375 29 …</span>
+        <div class="time" id="pTime">10:12</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="natallia">
+  <div class="wrap">
+    <h2>Олег, это ваша страница в черновике</h2>
+    <p class="muted" style="max-width:680px">Я взяла данные из вашего объявления на Куфаре и только оформила их. Эту ссылку можно отправлять клиентам и поставить в Viber: человек сразу видит цены и пишет уже с маркой и поломкой, без пустых звонков «а сколько стоит?».</p>
+    <ul class="check">
+      <li>Впишем ваши цены, телефон и настоящие отзывы</li>
+      <li>Заявки будут приходить вам в Telegram или Viber</li>
+      <li>Страница открывается с телефона, ссылку легко переслать</li>
+    </ul>
+    <div class="btns">
+      <a class="btn" href="https://t.me/NatalliaVas" target="_blank" rel="noopener">Написать Наталье</a>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">Пример страницы. Цены условные, телефон и кнопки в демо не работают. Сделано: <a href="../../">Наталья Василенко</a> · NEURO 24/7</div></footer>
+
+<div class="call-bar">
+  <a href="#" class="btn" data-demo="call">📞 Позвонить</a>
+  <a href="#" class="btn viber" data-demo="viber">💬 Viber</a>
+</div>
+<div class="toast" id="toast"></div>
+<script src="page.js"></script>
+</body>
+</html>
